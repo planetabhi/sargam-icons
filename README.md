@@ -1,4 +1,4 @@
-![](Help/Images/cover.png)
+![](help/images/cover.png)
 
 # Sargam Icons
 
@@ -14,8 +14,6 @@ Each icon is designed on a 24x24 grid with an emphasis on simplicity, consistenc
 6. Figma library and individual SVG files.
 
 Install `npm i sargam-icons`
-
----
 
 [Get a Figma Copy](https://www.figma.com/community/file/1152296792728333709)
 

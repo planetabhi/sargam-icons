@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Inter:wght@500&display=swap');
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* Custom starts. */
+/* svgo -f src/assets/line -o icons/line */
+
+
+body {
+  background-color: #E7E5E0;
+  color: #2C2B2A;
+  font-weight: 400; font-family: 'EB Garamond', serif;
+}
+
+header {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 32px;
+  margin-bottom: 40px;
+  max-width: 640px;
+  width: 94%;
+  text-align: center;
+}
+
+header h1{ font-size: 28px; line-height: 42px; font-weight: 400; font-family: 'EB Garamond', serif;}
+
+main { margin-left: 40px; margin-right: 40px;}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-grid-item {
+  height: 80px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 33.3333%;
+  flex-basis: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #E7E5E0 0%, rgba(248, 247, 246, 0.24) 100%);
+  transition: .3s;
+}
+.flex-grid-item :hover {
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+}
+
+.blank {
+  height: 0;
+}
+
+.flex-grid-item:nth-child(1){}
+
+header .CTAs button{
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 15px;
+  line-height: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #72716D;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: .3s;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgba(44, 43, 42, 0.1);
+}
+header .CTAs button:hover{
+  color: #fff;
+  background-color: #2C2B2A;
+}
+
+.details {
+  margin: 0 auto;
+  padding-top: 32px;
+  margin-bottom: 40px;
+  max-width: 640px;
+  width: 94%;
+}
+
+ .footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Custom ends. */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

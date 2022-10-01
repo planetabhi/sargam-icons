@@ -1,17 +1,1 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5 13H1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M23 13H19" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M12 2L12 6" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M7.05023 8.05026L4.2218 5.22183" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M19.7782 5.22183L16.9498 8.05026" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M8 13C8 10.79 9.79 9 12 9C14.21 9 16 10.79 16 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M12 16H12.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16 16H16.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 16H20.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8 16H8.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 19H12.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 22H12.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16 19H16.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8 19H8.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 16H4.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
+<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 13H1M23 13h-4M12 2v4M7.05 8.05 4.222 5.222M19.778 5.222 16.95 8.05M8 13c0-2.21 1.79-4 4-4s4 1.79 4 4" stroke="#000" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/><path d="M12 16h.1M16 16h.1M20 16h.1M8 16h.1M12 19h.1M12 22h.1M16 19h.1M8 19h.1M4 16h.1" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>

@@ -1,8 +1,7 @@
 {
   "name": "sargam-icons",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "A collection of 500+ open-source icons devoted to match your exquisite designs.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,12 +10,19 @@
     "url": "git+https://github.com/planetabhi/sargam-icons.git"
   },
   "keywords": [
-    "icons"
+    "icons",
+    "line-icons",
+    "fill-icons",
+    "iconset"
   ],
   "author": "Abhimanyu Rana",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/planetabhi/sargam-icons/issues"
   },
-  "homepage": "https://github.com/planetabhi/sargam-icons#readme"
+  "homepage": "https://github.com/planetabhi/sargam-icons#readme",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "main": "index.html"
 }
