@@ -201,8 +201,6 @@ header h1 span{
   font-style: italic;
  }
 
-main { margin-left: 40px; margin-right: 40px;}
-
 .flex-grid {
   display: flex;
   flex-wrap: wrap;
