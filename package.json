@@ -1,6 +1,6 @@
 {
   "name": "sargam-icons",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A collection of 500+ open-source icons devoted to match your exquisite designs.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

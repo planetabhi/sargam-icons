@@ -1,12 +1,11 @@
 ![](help/images/cover.png)
 
 # Sargam Icons
+A collection of 700+ open-source icons devoted to match your exquisite designs.
 
-A collection of 500+ open-source icons devoted to match your exquisite designs. Every single detail in each icon was carefully tuned to present minimalism and elegance.
+Every single detail in each icon is tuned to present minimalism & elegance. Each icon is designed on a 24x24 grid emphasising simplicity, consistency, & flexibility. With 700+ icons, Sargam covers the essential needs for your app, web and graphic needs.
 
-Each icon is designed on a 24x24 grid with an emphasis on simplicity, consistency, and flexibility. With 500+ icons, Sargam provides the most essential icons for your app, web and graphic needs.
-
-1. 500+ free, open-source icons available for any use.
+1. 700+ free, open-source icons available for any use.
 2. Designed on a 24x24 (@0.5x for 48px) grid.
 3. Graceful design with emphasis on simplicity and consistency.
 4. Built using SVG stroke giving maximum flexibility on styling.

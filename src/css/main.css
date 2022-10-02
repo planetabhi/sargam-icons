@@ -1,4 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+@font-face {
+  font-family: 'EB Garamond Initials Fill2';
+  src: url('../fonts/EBGaramondInitialsF2.woff2') format('woff2'),
+      url('../fonts/EBGaramondInitialsF2.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond Initials Fill1';
+  src: url('../fonts/EBGaramondInitialsF1.woff2') format('woff2'),
+      url('../fonts/EBGaramondInitialsF1.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 08';
+  src: url('../fonts/EBGaramond08-Italic.woff2') format('woff2'),
+      url('../fonts/EBGaramond08-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond Initials';
+  src: url('../fonts/EBGaramondInitials.woff2') format('woff2'),
+      url('../fonts/EBGaramondInitials.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 12 All SC';
+  src: url('../fonts/EBGaramond12-AllSC.woff2') format('woff2'),
+      url('../fonts/EBGaramond12-AllSC.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 12';
+  src: url('../fonts/EBGaramond12-Italic.woff2') format('woff2'),
+      url('../fonts/EBGaramond12-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond SC 08';
+  src: url('../fonts/EBGaramondSC08-Regular.woff2') format('woff2'),
+      url('../fonts/EBGaramondSC08-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 12';
+  src: url('../fonts/EBGaramond12-Regular.woff2') format('woff2'),
+      url('../fonts/EBGaramond12-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond SC 12';
+  src: url('../fonts/EBGaramondSC12-Regular.woff2') format('woff2'),
+      url('../fonts/EBGaramondSC12-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 html {
   color: #222;
@@ -6,12 +87,12 @@ html {
   line-height: 1.4;
 }
 ::-moz-selection {
-  background: #b3d4fc;
+  background: #FCF2BC;
   text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
+  background: #FCF2BC;
   text-shadow: none;
 }
 
@@ -87,6 +168,7 @@ textarea {
 
 /* Custom starts. */
 /* svgo -f src/assets/line -o icons/line */
+/* svgo -f src/assets/fill -o icons/fill */
 
 
 body {
@@ -100,12 +182,24 @@ header {
   margin: 0 auto;
   padding-top: 32px;
   margin-bottom: 40px;
-  max-width: 640px;
+  max-width: 770px;
   width: 94%;
   text-align: center;
 }
 
-header h1{ font-size: 28px; line-height: 42px; font-weight: 400; font-family: 'EB Garamond', serif;}
+header h1{ 
+  font-size: 28px; 
+  line-height: 42px; 
+  font-weight: 400; 
+  font-family: 'EB Garamond SC 12', serif; 
+  letter-spacing: -0.4px;
+}
+
+header h1 span{ 
+  font-family: 'EB Garamond 12', serif;
+  font-weight: normal;
+  font-style: italic;
+ }
 
 main { margin-left: 40px; margin-right: 40px;}
 
@@ -161,13 +255,32 @@ header .CTAs button:hover{
   margin: 0 auto;
   padding-top: 32px;
   margin-bottom: 40px;
-  max-width: 640px;
+  max-width: 770px;
   width: 94%;
+  font-family: 'EB Garamond 12';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.details span{
+  font-family: 'EB Garamond 12', serif;
+    font-weight: normal;
+    font-style: italic;
 }
 
  .footer {
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
+  font-family: 'EB Garamond 12 All SC', serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #72716D;
+}
+
+.footer a{
+  color: #09847E;
 }
 
 /* Custom ends. */
