@@ -1,4 +1,4 @@
-![](help/images/cover.png)
+![](src/cover.png)
 
 # Sargam Icons
 A collection of 700+ open-source icons devoted to match your exquisite designs.
