@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 @font-face {
   font-family: 'EB Garamond Initials Fill2';
@@ -172,17 +172,16 @@ textarea {
 
 
 body {
-  background-color: #E7E5E0;
+  background-color: #F8F7F6;
   color: #2C2B2A;
   font-weight: 400; font-family: 'EB Garamond', serif;
 }
 
 header {
-  max-width: 640px;
+  max-width: 570px;
   margin: 0 auto;
   padding-top: 32px;
   margin-bottom: 40px;
-  max-width: 770px;
   width: 94%;
   text-align: center;
 }
@@ -192,7 +191,7 @@ header h1{
   line-height: 42px; 
   font-weight: 400; 
   font-family: 'EB Garamond SC 12', serif; 
-  letter-spacing: -0.4px;
+  letter-spacing: -0.8px;
 }
 
 header h1 span{ 
@@ -214,11 +213,10 @@ header h1 span{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #E7E5E0 0%, rgba(248, 247, 246, 0.24) 100%);
-  transition: .3s;
+  background: linear-gradient(0deg, #FFFFFF 0%, rgba(248, 247, 246, 0) 100%);
 }
 .flex-grid-item :hover {
-  height: 64px;
+  height: 40px;
   align-items: center;
   justify-content: center;
 }
@@ -230,23 +228,28 @@ header h1 span{
 .flex-grid-item:nth-child(1){}
 
 header .CTAs button{
-  border: none;
   outline: none;
-  background-color: rgba(0, 0, 0, 0);
-  font-size: 15px;
-  line-height: 24px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  color: #72716D;
+  font-size: 14px;
+  line-height: 25px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
   padding: 6px 16px;
   cursor: pointer;
   transition: .3s;
+  letter-spacing: 0.4px;
+
+  color: #2C2B2A;
   background: #FFFFFF;
-  box-shadow: 0px 2px 4px rgba(44, 43, 42, 0.1);
+  border: 1px solid #2C2B2A;
+  margin-left: 4px;
+  border-radius: 3.2px;
+  box-shadow: 0px 12px 32px rgba(44, 43, 42, 0.16);
+
 }
 header .CTAs button:hover{
-  color: #fff;
-  background-color: #2C2B2A;
+  color: #09847E;
+  background: #F5FBFB;
+  box-shadow: none;
 }
 
 .details {
@@ -271,10 +274,12 @@ header .CTAs button:hover{
  .footer {
   padding: 2rem;
   text-align: center;
-  font-family: 'EB Garamond 12 All SC', serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #72716D;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 .footer a{

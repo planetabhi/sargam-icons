@@ -15,5 +15,6 @@ Every single detail in each icon is tuned to present minimalism & elegance. Each
 Install `npm i sargam-icons`
 
 [Get a Figma Copy](https://www.figma.com/community/file/1152296792728333709)
+[Download SVGs](https://github.com/planetabhi/sargam-icons)
 
 [Follow on Twitter for updates; @SargamDesign](https://twitter.com/SargamDesign)

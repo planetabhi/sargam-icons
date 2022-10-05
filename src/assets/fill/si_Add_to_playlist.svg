@@ -1,6 +1,6 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M4 11H16" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M15 15L17 17L21 13" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 7H16" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M4 15H12" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M3 7C3 6.44772 3.44772 6 4 6H16C16.5523 6 17 6.44772 17 7C17 7.55228 16.5523 8 16 8H4C3.44772 8 3 7.55228 3 7Z" fill="black"/>
+<path d="M4 10C3.44772 10 3 10.4477 3 11C3 11.5523 3.44772 12 4 12H16C16.5523 12 17 11.5523 17 11C17 10.4477 16.5523 10 16 10H4Z" fill="black"/>
+<path d="M21.7071 13.7071C22.0976 13.3166 22.0976 12.6834 21.7071 12.2929C21.3166 11.9024 20.6834 11.9024 20.2929 12.2929L17 15.5858L15.7071 14.2929C15.3166 13.9024 14.6834 13.9024 14.2929 14.2929C13.9024 14.6834 13.9024 15.3166 14.2929 15.7071L16.2929 17.7071C16.6834 18.0976 17.3166 18.0976 17.7071 17.7071L21.7071 13.7071Z" fill="black"/>
+<path d="M4 14C3.44772 14 3 14.4477 3 15C3 15.5523 3.44772 16 4 16H12C12.5523 16 13 15.5523 13 15C13 14.4477 12.5523 14 12 14H4Z" fill="black"/>
 </svg>

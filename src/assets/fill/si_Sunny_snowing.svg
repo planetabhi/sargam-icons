@@ -1,17 +1,17 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5 13H1" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M23 13H19" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M12 2L12 6" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M7.05023 8.05023L4.2218 5.2218" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M19.7782 5.2218L16.9498 8.05023" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M8 13C8 10.79 9.79 9 12 9C14.21 9 16 10.79 16 13" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
-<path d="M12 16H12.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16 16H16.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 16H20.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8 16H8.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 19H12.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 22H12.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16 19H16.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8 19H8.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 16H4.1" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 1C12.5523 1 13 1.44772 13 2V6C13 6.55228 12.5523 7 12 7C11.4477 7 11 6.55228 11 6V2C11 1.44772 11.4477 1 12 1Z" fill="black"/>
+<path d="M1 12C0.447715 12 0 12.4477 0 13C0 13.5523 0.447715 14 1 14H5C5.55228 14 6 13.5523 6 13C6 12.4477 5.55228 12 5 12H1Z" fill="black"/>
+<path d="M18 13C18 12.4477 18.4477 12 19 12H23C23.5523 12 24 12.4477 24 13C24 13.5523 23.5523 14 23 14H19C18.4477 14 18 13.5523 18 13Z" fill="black"/>
+<path d="M4.92891 4.51469C4.53838 4.12417 3.90522 4.12417 3.51469 4.51469C3.12417 4.90522 3.12417 5.53838 3.51469 5.92891L6.34312 8.75734C6.73365 9.14786 7.36681 9.14786 7.75734 8.75734C8.14786 8.36681 8.14786 7.73365 7.75734 7.34312L4.92891 4.51469Z" fill="black"/>
+<path d="M20.4853 5.92891C20.8758 5.53838 20.8758 4.90522 20.4853 4.51469C20.0948 4.12417 19.4616 4.12417 19.0711 4.51469L16.2427 7.34312C15.8521 7.73365 15.8521 8.36681 16.2427 8.75734C16.6332 9.14786 17.2663 9.14786 17.6569 8.75734L20.4853 5.92891Z" fill="black"/>
+<path d="M7 13C7 10.2377 9.23771 8 12 8C14.7623 8 17 10.2377 17 13C17 13.5523 16.5523 14 16 14H8C7.44772 14 7 13.5523 7 13Z" fill="black"/>
+<path d="M4 15C3.44772 15 3 15.4477 3 16C3 16.5523 3.44772 17 4 17H4.1C4.65228 17 5.1 16.5523 5.1 16C5.1 15.4477 4.65228 15 4.1 15H4Z" fill="black"/>
+<path d="M7 16C7 15.4477 7.44772 15 8 15H8.1C8.65228 15 9.1 15.4477 9.1 16C9.1 16.5523 8.65228 17 8.1 17H8C7.44772 17 7 16.5523 7 16Z" fill="black"/>
+<path d="M12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17H12.1C12.6523 17 13.1 16.5523 13.1 16C13.1 15.4477 12.6523 15 12.1 15H12Z" fill="black"/>
+<path d="M15 16C15 15.4477 15.4477 15 16 15H16.1C16.6523 15 17.1 15.4477 17.1 16C17.1 16.5523 16.6523 17 16.1 17H16C15.4477 17 15 16.5523 15 16Z" fill="black"/>
+<path d="M19 16C19 15.4477 19.4477 15 20 15H20.1C20.6523 15 21.1 15.4477 21.1 16C21.1 16.5523 20.6523 17 20.1 17H20C19.4477 17 19 16.5523 19 16Z" fill="black"/>
+<path d="M12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20H12.1C12.6523 20 13.1 19.5523 13.1 19C13.1 18.4477 12.6523 18 12.1 18H12Z" fill="black"/>
+<path d="M12 21C11.4477 21 11 21.4477 11 22C11 22.5523 11.4477 23 12 23H12.1C12.6523 23 13.1 22.5523 13.1 22C13.1 21.4477 12.6523 21 12.1 21H12Z" fill="black"/>
+<path d="M16 18C15.4477 18 15 18.4477 15 19C15 19.5523 15.4477 20 16 20H16.1C16.6523 20 17.1 19.5523 17.1 19C17.1 18.4477 16.6523 18 16.1 18H16Z" fill="black"/>
+<path d="M8 18C7.44772 18 7 18.4477 7 19C7 19.5523 7.44772 20 8 20H8.1C8.65228 20 9.1 19.5523 9.1 19C9.1 18.4477 8.65228 18 8.1 18H8Z" fill="black"/>
 </svg>
