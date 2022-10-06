@@ -11,17 +11,16 @@ Every single detail in each icon is tuned to present minimalism & elegance. Each
 4. Built using SVG stroke giving maximum flexibility on styling.
 5. Optimized SVGs for web usage.
 6. Figma library and individual SVG files.
+   
 
----
+- [Sargam Icons](https://sargamicons.com/)
 
-[sargamicons.com]([www.sargamicons.com](https://sargamicons.com/))
+- [Get a Figma copy](https://www.figma.com/community/file/1152296792728333709)
 
-[Get a Figma copy](https://www.figma.com/community/file/1152296792728333709)
+- [Figma export and compression walkthrough](https://youtu.be/U8YUGdzhygE)
 
-[Figma export and compression walkthrough](https://youtu.be/U8YUGdzhygE)
+- [Download SVGs](https://github.com/planetabhi/sargam-icons/tree/main/Icons)
 
-[Download SVGs](https://github.com/planetabhi/sargam-icons/tree/main/Icons)
+- [NPM install; npm i sargam-icons](https://www.npmjs.com/package/sargam-icons)
 
-[NPM install; npm i sargam-icons](https://www.npmjs.com/package/sargam-icons)
-
-[Follow for updates; @SargamDesign](https://twitter.com/SargamDesign)
+- [Follow for updates; @SargamDesign](https://twitter.com/SargamDesign)
