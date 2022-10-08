@@ -17,8 +17,6 @@ Every single detail in each icon is tuned to present minimalism & elegance. Each
 
 - [Get a Figma copy](https://www.figma.com/community/file/1152296792728333709)
 
-- [Figma export and compression walkthrough](https://youtu.be/U8YUGdzhygE)
-
 - [Download SVGs](https://github.com/planetabhi/sargam-icons/tree/main/Icons)
 
 - [NPM install; npm i sargam-icons](https://www.npmjs.com/package/sargam-icons)

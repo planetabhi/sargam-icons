@@ -1,65 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 @font-face {
-  font-family: 'EB Garamond Initials Fill2';
-  src: url('../fonts/EBGaramondInitialsF2.woff2') format('woff2'),
-      url('../fonts/EBGaramondInitialsF2.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'EB Garamond Initials Fill1';
-  src: url('../fonts/EBGaramondInitialsF1.woff2') format('woff2'),
-      url('../fonts/EBGaramondInitialsF1.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'EB Garamond 08';
-  src: url('../fonts/EBGaramond08-Italic.woff2') format('woff2'),
-      url('../fonts/EBGaramond08-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'EB Garamond Initials';
-  src: url('../fonts/EBGaramondInitials.woff2') format('woff2'),
-      url('../fonts/EBGaramondInitials.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'EB Garamond 12 All SC';
-  src: url('../fonts/EBGaramond12-AllSC.woff2') format('woff2'),
-      url('../fonts/EBGaramond12-AllSC.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'EB Garamond 12';
   src: url('../fonts/EBGaramond12-Italic.woff2') format('woff2'),
       url('../fonts/EBGaramond12-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'EB Garamond SC 08';
-  src: url('../fonts/EBGaramondSC08-Regular.woff2') format('woff2'),
-      url('../fonts/EBGaramondSC08-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
 }
 
@@ -166,16 +112,13 @@ textarea {
   clear: both;
 }
 
-/* Custom starts. */
-/* svgo -f src/assets/line -o icons/line */
-/* svgo -f src/assets/fill -o icons/fill */
-
-
 body {
   background-color: #F8F7F6;
   color: #2C2B2A;
   font-weight: 400; font-family: 'EB Garamond', serif;
 }
+
+main {margin: 0 32px;}
 
 header {
   max-width: 570px;
@@ -191,7 +134,7 @@ header h1{
   line-height: 42px; 
   font-weight: 400; 
   font-family: 'EB Garamond SC 12', serif; 
-  letter-spacing: -0.8px;
+  letter-spacing: -1.2px;
 }
 
 header h1 span{ 
@@ -205,7 +148,6 @@ header h1 span{
   flex-wrap: wrap;
 }
 .flex-grid-item {
-  height: 64px;
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 33.3333%;
@@ -213,12 +155,22 @@ header h1 span{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(0deg, #FFFFFF 0%, rgba(248, 247, 246, 0) 100%);
+
+  position: relative;
+  overflow: hidden;
+
+  border-style: dashed;
+  margin: 4px;
+  width: 64px;
+  height: 152px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: 1px dashed #DBD9D2;
+  border-radius: 4px;
+
 }
 .flex-grid-item :hover {
-  height: 40px;
-  align-items: center;
-  justify-content: center;
 }
 
 .blank {
@@ -226,6 +178,37 @@ header h1 span{
 }
 
 .flex-grid-item:nth-child(1){}
+
+.flex-grid-item .si_line {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.flex-grid-item .si_line :hover{background: #E7E5E0;}
+
+.flex-grid-item .si_duotone {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  position: absolute;
+  top: 64px;
+  left: 20px;
+}
+.flex-grid-item .si_duotone :hover{background: #E7E5E0;}
+
+.flex-grid-item .si_fill {
+  width: 24px;
+  height: 24px;
+  opacity: 1;
+  position: absolute;
+  top: 108px;
+  left: 20px;
+}
+.flex-grid-item .si_fill :hover{background: #E7E5E0;}
+
 
 header .CTAs button{
   outline: none;
@@ -242,7 +225,7 @@ header .CTAs button{
   background: #FFFFFF;
   border: 1px solid #2C2B2A;
   margin-left: 4px;
-  border-radius: 3.2px;
+  border-radius: 4px;
   box-shadow: 0px 12px 32px rgba(44, 43, 42, 0.16);
 
 }
@@ -287,6 +270,8 @@ header .CTAs button:hover{
 }
 
 /* Custom ends. */
+
+
 
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
