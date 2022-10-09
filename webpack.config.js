@@ -53,9 +53,9 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: "icons/Line", to: "icons/Line" },
-        { from: "icons/Duotone", to: "icons/Duotone" },
-        { from: "icons/Fill", to: "icons/Fill" },
+        { from: "./Icons/Line", to: "icons/Line" },
+        { from: "./Icons/Duotone", to: "icons/Duotone" },
+        { from: "./Icons/Fill", to: "icons/Fill" },
       ],
     }),
     new HtmlWebpackPlugin({

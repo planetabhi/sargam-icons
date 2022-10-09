@@ -121,11 +121,11 @@ body {
 main {margin: 0 32px;}
 
 header {
-  max-width: 570px;
+  max-width: 620px;
   margin: 0 auto;
   padding-top: 32px;
   margin-bottom: 40px;
-  width: 94%;
+  width: 96%;
   text-align: center;
 }
 
@@ -134,7 +134,7 @@ header h1{
   line-height: 42px; 
   font-weight: 400; 
   font-family: 'EB Garamond SC 12', serif; 
-  letter-spacing: -1.2px;
+  letter-spacing: 1.2px;
 }
 
 header h1 span{ 
