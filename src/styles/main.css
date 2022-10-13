@@ -113,8 +113,8 @@ textarea {
 }
 
 body {
-  background-color: #F8F7F6;
-  color: #2C2B2A;
+  background-color: #fff;
+  color: #100F0F;
   font-weight: 400; font-family: 'EB Garamond', serif;
 }
 
@@ -160,18 +160,17 @@ header h1 span{
   overflow: hidden;
 
   border-style: dashed;
-  margin: 4px;
+  margin: 2px;
   width: 64px;
   height: 152px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  border: 1px dashed #DBD9D2;
+  border: 1px dashed #C1BFB9;
   border-radius: 4px;
 
 }
-.flex-grid-item :hover {
-}
+.flex-grid-item :hover{}
 
 .blank {
   height: 0;
@@ -187,7 +186,7 @@ header h1 span{
   top: 20px;
   left: 20px;
 }
-.flex-grid-item .si_line :hover{background: #E7E5E0;}
+.flex-grid-item .si_line :hover{background: #DBD9D2;}
 
 .flex-grid-item .si_duotone {
   width: 24px;
@@ -197,7 +196,7 @@ header h1 span{
   top: 64px;
   left: 20px;
 }
-.flex-grid-item .si_duotone :hover{background: #E7E5E0;}
+.flex-grid-item .si_duotone :hover{background: #DBD9D2;}
 
 .flex-grid-item .si_fill {
   width: 24px;
@@ -207,7 +206,7 @@ header h1 span{
   top: 108px;
   left: 20px;
 }
-.flex-grid-item .si_fill :hover{background: #E7E5E0;}
+.flex-grid-item .si_fill :hover{background: #DBD9D2;}
 
 
 header .CTAs button{
@@ -221,13 +220,12 @@ header .CTAs button{
   transition: .3s;
   letter-spacing: 0.4px;
 
-  color: #2C2B2A;
+  color: #100F0F;
   background: #FFFFFF;
-  border: 1px solid #2C2B2A;
+  border: 1px solid #100F0F;
   margin-left: 4px;
   border-radius: 4px;
-  box-shadow: 0px 12px 32px rgba(44, 43, 42, 0.16);
-
+  box-shadow: 0px 2px 4px rgba(16, 15, 15, 0.16);
 }
 header .CTAs button:hover{
   color: #09847E;
@@ -263,6 +261,7 @@ header .CTAs button:hover{
   color: #72716D;
   font-size: 13px;
   line-height: 18px;
+  background-color: #F8F7F6;
 }
 
 .footer a{
