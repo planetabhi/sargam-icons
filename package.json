@@ -1,6 +1,6 @@
 {
   "name": "sargam-icons",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A collection of 700+ open-source icons devoted to match your exquisite designs.",
   "scripts": {
     "build": "webpack",
