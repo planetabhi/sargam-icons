@@ -252,6 +252,24 @@ header .CTAs button:hover{
     font-style: italic;
 }
 
+a {
+  color: #09847E;
+  background-color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #075E5A;
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #77458E;
+  background-color: inherit;
+  text-decoration: none;
+}
+
  .footer {
   padding: 2rem;
   text-align: center;
