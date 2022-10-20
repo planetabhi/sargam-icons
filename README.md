@@ -22,6 +22,6 @@ Every single detail in each icon is tuned to present minimalism & elegance. Each
 
 - [Get a Figma copy](https://www.figma.com/community/file/1152296792728333709)
 
-- [Default + Compressed SVG assets](https://www.npmjs.com/package/sargam-icons) `npm i sargam-icons`
+- [SVG assets](https://www.npmjs.com/package/sargam-icons) `npm i sargam-icons`
 
 - [React](https://www.npmjs.com/package/@sargamdesign/icons-react) `npm i @sargamdesign/icons-react`
