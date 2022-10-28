@@ -62,6 +62,7 @@ module.exports = {
       title: 'Sargam Icons',
       filename: 'index.html',
       template: 'src/template.html',
+      favicon: 'src/favicon.ico',
     }),
   ],
 }

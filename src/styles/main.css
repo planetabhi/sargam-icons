@@ -134,7 +134,7 @@ header h1{
   line-height: 42px; 
   font-weight: 400; 
   font-family: 'EB Garamond SC 12', serif; 
-  letter-spacing: 1.2px;
+  letter-spacing: 0.4px;
 }
 
 header h1 span{ 
@@ -184,7 +184,7 @@ header h1 span{
   opacity: 1;
   position: absolute;
   top: 20px;
-  left: 20px;
+  cursor: context-menu;
 }
 .flex-grid-item .si_line :hover{background: #DBD9D2;}
 
@@ -194,7 +194,7 @@ header h1 span{
   opacity: 1;
   position: absolute;
   top: 64px;
-  left: 20px;
+  cursor: context-menu;
 }
 .flex-grid-item .si_duotone :hover{background: #DBD9D2;}
 
@@ -204,7 +204,7 @@ header h1 span{
   opacity: 1;
   position: absolute;
   top: 108px;
-  left: 20px;
+  cursor: context-menu;
 }
 .flex-grid-item .si_fill :hover{background: #DBD9D2;}
 
