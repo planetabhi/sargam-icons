@@ -42,64 +42,9 @@ html {
   text-shadow: none;
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-textarea {
-  resize: vertical;
-}
-
 .hidden,
 [hidden] {
   display: none !important;
-}
-
-.sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
-}
-
-.sr-only.focusable:active,
-.sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
-}
-.invisible {
-  visibility: hidden;
 }
 
 .clearfix::before,
@@ -113,28 +58,32 @@ textarea {
 }
 
 body {
-  background-color: #fff;
-  color: #100F0F;
-  font-weight: 400; font-family: 'EB Garamond', serif;
+  background-color: var(--background-subtle);
+  color: var(--text-primary);
+  font-weight: 400; 
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  padding: 0;
 }
 
-main {margin: 0 32px;}
+main {margin: 0 3.2rem;}
 
 header {
   max-width: 620px;
   margin: 0 auto;
-  padding-top: 32px;
-  margin-bottom: 40px;
+  padding-top: 3.2rem;
+  margin-bottom: 2.4rem;
   width: 96%;
   text-align: center;
 }
 
 header h1{ 
   font-size: 28px; 
-  line-height: 42px; 
+  line-height: 40px; 
   font-weight: 400; 
   font-family: 'EB Garamond SC 12', serif; 
-  letter-spacing: 0.4px;
+  letter-spacing: 0px;
+  color: var(--text-primary);
 }
 
 header h1 span{ 
@@ -155,10 +104,8 @@ header h1 span{
   display: flex;
   align-items: center;
   justify-content: center;
-
   position: relative;
   overflow: hidden;
-
   border-style: dashed;
   margin: 2px;
   width: 64px;
@@ -166,17 +113,13 @@ header h1 span{
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  border: 1px dashed #C1BFB9;
+  border: 1px dashed var(--border-default);
   border-radius: 4px;
-
 }
-.flex-grid-item :hover{}
 
 .blank {
   height: 0;
 }
-
-.flex-grid-item:nth-child(1){}
 
 .flex-grid-item .si_line {
   width: 24px;
@@ -186,7 +129,7 @@ header h1 span{
   top: 20px;
   cursor: context-menu;
 }
-.flex-grid-item .si_line :hover{background: #DBD9D2;}
+.flex-grid-item .si_line :hover{background: var(--background-selected);}
 
 .flex-grid-item .si_duotone {
   width: 24px;
@@ -196,7 +139,7 @@ header h1 span{
   top: 64px;
   cursor: context-menu;
 }
-.flex-grid-item .si_duotone :hover{background: #DBD9D2;}
+.flex-grid-item .si_duotone :hover{background: var(--background-selected);}
 
 .flex-grid-item .si_fill {
   width: 24px;
@@ -206,7 +149,7 @@ header h1 span{
   top: 108px;
   cursor: context-menu;
 }
-.flex-grid-item .si_fill :hover{background: #DBD9D2;}
+.flex-grid-item .si_fill :hover{background: var(--background-selected);}
 
 
 header .CTAs button{
@@ -217,33 +160,32 @@ header .CTAs button{
   font-weight: 400;
   padding: 6px 16px;
   cursor: pointer;
-  transition: .3s;
+  transition: .1s;
   letter-spacing: 0.4px;
-
-  color: #100F0F;
-  background: #FFFFFF;
-  border: 1px solid #100F0F;
+  color: var(--text-primary-alt);
+  background: var(--background);
+  border: 1px solid var(--silver5);
   margin-left: 4px;
   border-radius: 4px;
-  box-shadow: 0px 2px 4px rgba(16, 15, 15, 0.16);
+  box-shadow: 0px 1.2px 3px rgba(16, 15, 15, 0.12);
 }
 header .CTAs button:hover{
-  color: #09847E;
-  background: #F5FBFB;
+  color: var(--link);
+  border: 1px solid var(--silver7);
   box-shadow: none;
 }
 
 .details {
   margin: 0 auto;
-  padding-top: 32px;
-  margin-bottom: 40px;
-  max-width: 770px;
-  width: 94%;
-  font-family: 'EB Garamond 12';
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+  max-width: 630px;
+  width: 96%;
+  font-family: 'EB Garamond 12', serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 22px;
-  line-height: 34px;
+  font-size: 1.4rem;
+  line-height: 2rem;
 }
 
 .details span{
@@ -252,21 +194,23 @@ header .CTAs button:hover{
     font-style: italic;
 }
 
+.details li {
+  list-style-type: '∘';
+  padding-inline-start: 1ch;
+}
+
 a {
-  color: #09847E;
-  background-color: inherit;
+  color: var(--link);
   text-decoration: none;
 }
 
 a:hover {
-  color: #075E5A;
-  background-color: inherit;
+  color: var(--link-hover);
   text-decoration: underline;
 }
 
 a:visited {
-  color: #77458E;
-  background-color: inherit;
+  color: var(--link-visited);
   text-decoration: none;
 }
 
@@ -276,88 +220,12 @@ a:visited {
   font-family: 'Rubik', sans-serif;
   font-weight: normal;
   font-style: normal;
-  color: #72716D;
-  font-size: 13px;
-  line-height: 18px;
-  background-color: #F8F7F6;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  background-color: var(--background);
 }
 
 .footer a{
-  color: #09847E;
-}
-
-/* Custom ends. */
-
-
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+  color: var(--link-hover);
 }

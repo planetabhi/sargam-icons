@@ -1,2 +1,2 @@
 import './styles/main.css'
-import './styles/normalize.css'
+import './styles/light.css'
