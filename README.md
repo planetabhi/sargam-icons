@@ -1,16 +1,14 @@
 # Sargam Icons
 A collection of 250+ open-source icons devoted to match your exquisite designs.
 
-- [Sargam Icons](https://sargamicons.com/)
+- [www.sargamicons.com](https://sargamicons.com/)
 
-Every single detail in each icon is tuned to present minimalism & elegance. Each icon is designed on a 24 x 24 grid emphasising simplicity, consistency, & flexibility. With 700+ icons, Sargam covers the essential needs for your web, app and visual needs.
+Our collection of 250+ icons has been carefully crafted to exude minimalism and elegance. Each icon has been designed on a 24 x 24 grid with simplicity, consistency, and flexibility in mind, to meet your essential web, app, and visual needs.
 
-1. 250+ free, open-source icons available for any use.
+1. Over 250 free, open-source icons available for any use.
 2. Graceful design with emphasis on simplicity & consistency.
-3. Built using SVG stroke giving maximum flexibility on styling.
+3. Built using SVG stroke, providing maximum flexibility on styling.
 4. Optimized SVG assets for better web performance.
-5. Figma library and individual SVG files.
-6. New icons are added every day.
 
 
 ### Install
