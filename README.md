@@ -1,3 +1,5 @@
+![cover](src/readme_cover.png)
+
 # Sargam Icons
 A collection of 250+ open-source icons devoted to match your exquisite designs. Each icon has been designed on a 24 x 24 grid with simplicity, consistency, and flexibility in mind, to meet your essential web, app, and visual needs.
 
