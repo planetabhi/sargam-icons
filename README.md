@@ -11,5 +11,5 @@ A collection of 275+ open-source icons devoted to match your exquisite designs. 
 
 ### Install
 - [Get a Figma copy](https://www.figma.com/community/file/1152296792728333709)
-- `npm i sargam-icons`
-- `npm i @sargamdesign/icons-react`
+- `npm i sargam-icons` for compressed SVGs.
+- `npm i @sargamdesign/icons-react` for React components.
