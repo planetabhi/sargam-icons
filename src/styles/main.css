@@ -75,6 +75,7 @@ header {
   margin-bottom: 2.4rem;
   width: 96%;
   text-align: center;
+  max-inline-size: 520px;
 }
 
 header h1{ 
@@ -82,7 +83,7 @@ header h1{
   line-height: 40px; 
   font-weight: 400; 
   font-family: 'EB Garamond SC 12', serif; 
-  letter-spacing: 0px;
+  letter-spacing: -0.7px;
   color: var(--text-primary);
 }
 
