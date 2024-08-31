@@ -1,2 +1,1 @@
-import './styles/main.css'
-import './styles/light.css'
+import './styles/base.css'

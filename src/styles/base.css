@@ -1,0 +1,201 @@
+@import "@new-ui/reset";
+@import "@sargamdesign/colors";
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+@font-face {
+  font-family: 'EB Garamond 12';
+  src: url('../fonts/EBGaramond12-Italic.woff2') format('woff2'),
+      url('../fonts/EBGaramond12-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 12';
+  src: url('../fonts/EBGaramond12-Regular.woff2') format('woff2'),
+      url('../fonts/EBGaramond12-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond SC 12';
+  src: url('../fonts/EBGaramondSC12-Regular.woff2') format('woff2'),
+      url('../fonts/EBGaramondSC12-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-size: 16px;
+  --serif: "EB Garamond", serif;
+  --serif-sc: "EB Garamond SC 12", serif;
+  --sans: system-ui, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+::selection {
+  background: var(--yellow2);
+  text-shadow: none;
+}
+
+body {
+  background-color: var(--background-subtle);
+  color: var(--text-primary);
+  font: 400 1em/1.5 var(--serif);
+  margin: 0;
+  font-optical-sizing: auto;
+  font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
+  font-kerning: normal;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-wrap: break-word;
+}
+
+main {
+  margin: 0 1.5rem;
+}
+
+header {
+  max-width: 38.75rem;
+  margin: 6rem auto 4rem;
+  text-align: center;
+  max-inline-size: 32.5rem;
+}
+
+header h1 {
+  font: 400 1.75rem/2.25rem var(--serif-sc);
+  letter-spacing: -0.044rem;
+  color: var(--text-primary);
+}
+
+header h1 span {
+  font: italic normal 1em var(--serif);
+}
+
+header .CTAs {
+  margin-top: 0.75rem;
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-grid-item {
+  flex: 1 0 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0 0.125rem 0.25rem;
+  width: 4rem;
+  height: 9.5rem;
+  background: no-repeat center/cover;
+  border: 1px dashed var(--border-default);
+  border-radius: 0.25rem;
+}
+
+.blank {
+  height: 0;
+}
+
+.flex-grid-item .si_line,
+.flex-grid-item .si_duotone,
+.flex-grid-item .si_fill {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  cursor: context-menu;
+}
+
+.flex-grid-item .si_line {
+  top: 1.25rem;
+}
+.flex-grid-item .si_duotone {
+  top: 4rem;
+}
+.flex-grid-item .si_fill {
+  top: 6.75rem;
+}
+
+.flex-grid-item .si_line:hover,
+.flex-grid-item .si_duotone:hover,
+.flex-grid-item .si_fill:hover {
+  background: var(--background-selected);
+}
+
+header .CTAs button {
+  font: 500 0.875rem/1.563rem var(--sans);
+  padding: 0.375rem 1rem;
+  cursor: pointer;
+  transition: 0.1s;
+  letter-spacing: 0.025rem;
+  color: var(--text-primary-alt);
+  background: var(--background);
+  border: 1px solid var(--border-default);
+  margin-left: 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.075rem 0.188rem rgba(16, 15, 15, 0.06);
+}
+header .CTAs button:hover {
+  color: var(--link);
+  border: 1px solid var(--border-strong);
+  box-shadow: none;
+}
+
+.details {
+  margin: 3rem auto;
+  max-width: 38.75rem;
+  font: normal 1.4rem/2rem var(--serif);
+}
+
+.details li {
+  list-style-type: "∘";
+  padding-inline-start: 1ch;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--link-visited);
+}
+
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  font: normal 0.8rem/1.5 var(--sans);
+  color: var(--text-secondary);
+  border-top: 1px dotted var(--border-default);
+}
+
+.footer a {
+  color: var(--link-hover);
+}
+
+@media screen and (max-width: 639px) {
+  header {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .details {
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+}
