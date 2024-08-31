@@ -6,4 +6,4 @@
 - Built using SVG stroke, providing maximum flexibility on styling.
 - Request a new icon by creating an issue.
 
-[sargamicons.com](https://sargamicons.com/) ∠( ᐛ 」∠)_
+[[sargamicons.com]](https://sargamicons.com/) ∠( ᐛ 」∠)_

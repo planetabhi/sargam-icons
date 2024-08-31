@@ -30,8 +30,8 @@
 
 :root {
   font-size: 16px;
-  --serif: "EB Garamond", 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
-  --serif-sc: "EB Garamond SC 12", 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+  --serif: "EB Garamond", serif;
+  --serif-sc: "EB Garamond SC 12", serif;
   --sans: system-ui, sans-serif;
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
@@ -184,8 +184,8 @@ a:visited {
 
 @media screen and (max-width: 639px) {
   header {
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin: 4rem auto 2rem;
+    padding: 0 1.5rem;
   }
   
   .details {

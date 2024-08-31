@@ -23,9 +23,6 @@ importers:
       '@new-ui/reset':
         specifier: ^0.0.5
         version: 0.0.5
-      '@new-ui/spacings':
-        specifier: ^0.1.3
-        version: 0.1.3
       '@sargamdesign/colors':
         specifier: ^3.0.1
         version: 3.0.1
@@ -722,9 +719,6 @@ packages:
 
   '@new-ui/reset@0.0.5':
     resolution: {integrity: sha512-FIBkll6iko0QpJBs7d4jCDqSymF/KlW1sCgyFk/DoPEetae4cTv44Rx9uUncXtYheKmHqGWOMbZu+2Vp70ODqA==}
-
-  '@new-ui/spacings@0.1.3':
-    resolution: {integrity: sha512-P6qkRCpVxY8002CAIJ4BwbS7dHu74CZYCFXNKSuDXGzGM2xjjmR6N2dRFcKHcJLZjgO4d1Q+fkpi9jFt2/xl5A==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3912,8 +3906,6 @@ snapshots:
   '@leichtgewicht/ip-codec@2.0.5': {}
 
   '@new-ui/reset@0.0.5': {}
-
-  '@new-ui/spacings@0.1.3': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
