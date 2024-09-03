@@ -72,7 +72,7 @@ module.exports = {
     }),
     new PreloadWebpackPlugin({
       rel: 'preload',
-      include: 'allAssets',
+      include: 'initial',
       fileBlacklist: [/\.map$/, /hot-update\.js$/],
       types: { css: { as: 'style' } }
     }),
