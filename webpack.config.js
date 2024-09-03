@@ -2,6 +2,9 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -63,6 +66,15 @@ module.exports = {
       filename: 'index.html',
       template: 'src/template.html',
       favicon: 'src/favicon.ico',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    }),
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'allAssets',
+      fileBlacklist: [/\.map$/, /hot-update\.js$/],
+      types: { css: { as: 'style' } }
     }),
   ],
 }

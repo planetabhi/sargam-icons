@@ -2,12 +2,11 @@
 @import "@sargamdesign/colors";
 
 @font-face {
-  font-family: 'EB Garamond 12';
-  src: url('../fonts/EBGaramond12-Italic.woff2') format('woff2'),
-      url('../fonts/EBGaramond12-Italic.woff') format('woff');
+  font-family: 'EB Garamond SC 12';
+  src: url('../fonts/EBGaramondSC12-Regular.woff2') format('woff2'),
+      url('../fonts/EBGaramondSC12-Regular.woff') format('woff');
   font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+  font-style: normal;
 }
 
 @font-face {
@@ -16,21 +15,19 @@
       url('../fonts/EBGaramond12-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: 'EB Garamond SC 12';
-  src: url('../fonts/EBGaramondSC12-Regular.woff2') format('woff2'),
-      url('../fonts/EBGaramondSC12-Regular.woff') format('woff');
+  font-family: 'EB Garamond 12';
+  src: url('../fonts/EBGaramond12-Italic.woff2') format('woff2'),
+      url('../fonts/EBGaramond12-Italic.woff') format('woff');
   font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-style: italic;
 }
 
 :root {
   font-size: 16px;
-  --serif: "EB Garamond", serif;
+  --serif: "EB Garamond 12", serif;
   --serif-sc: "EB Garamond SC 12", serif;
   --sans: system-ui, sans-serif;
   scroll-behavior: smooth;
@@ -42,12 +39,14 @@
   text-shadow: none;
 }
 
-body {
+html, body {
   background-color: var(--background-subtle);
+}
+
+body {
   color: var(--text-primary);
   font: 400 1em/1.5 var(--serif);
   margin: 0;
-  font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
   font-kerning: normal;
   overflow-wrap: break-word;
 }
@@ -57,6 +56,7 @@ main {
 }
 
 header {
+  background-color: var(--background-subtle);
   max-width: 38.75rem;
   margin: 6rem auto 4rem;
   text-align: center;
@@ -75,6 +75,25 @@ header h1 span {
 
 header .CTAs {
   margin-top: 0.75rem;
+}
+
+header .CTAs button {
+  font: 400 0.875rem/1.563rem var(--sans);
+  padding: 0.375rem 1rem;
+  cursor: pointer;
+  transition: 0.1s;
+  letter-spacing: 0.025rem;
+  color: var(--text-primary-alt);
+  background: var(--background);
+  border: 1px solid var(--border-default);
+  margin-left: 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.075rem 0.188rem rgba(16, 15, 15, 0.06);
+}
+header .CTAs button:hover {
+  color: var(--link);
+  border: 1px solid var(--border-strong);
+  box-shadow: none;
 }
 
 .flex-grid {
@@ -101,48 +120,31 @@ header .CTAs {
   height: 0;
 }
 
-.flex-grid-item .si_line,
-.flex-grid-item .si_duotone,
-.flex-grid-item .si_fill {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  cursor: context-menu;
+.flex-grid-item img[data-type="line"],
+.flex-grid-item img[data-type="duotone"],
+.flex-grid-item img[data-type="fill"] {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    cursor: context-menu;
 }
 
-.flex-grid-item .si_line {
-  top: 1.25rem;
-}
-.flex-grid-item .si_duotone {
-  top: 4rem;
-}
-.flex-grid-item .si_fill {
-  top: 6.75rem;
+.flex-grid-item img[data-type="line"] {
+    top: 1.25rem;
 }
 
-.flex-grid-item .si_line:hover,
-.flex-grid-item .si_duotone:hover,
-.flex-grid-item .si_fill:hover {
-  background: var(--background-selected);
+.flex-grid-item img[data-type="duotone"] {
+    top: 4rem;
 }
 
-header .CTAs button {
-  font: 500 0.875rem/1.563rem var(--sans);
-  padding: 0.375rem 1rem;
-  cursor: pointer;
-  transition: 0.1s;
-  letter-spacing: 0.025rem;
-  color: var(--text-primary-alt);
-  background: var(--background);
-  border: 1px solid var(--border-default);
-  margin-left: 0.25rem;
-  border-radius: 0.25rem;
-  box-shadow: 0 0.075rem 0.188rem rgba(16, 15, 15, 0.06);
+.flex-grid-item img[data-type="fill"] {
+    top: 6.75rem;
 }
-header .CTAs button:hover {
-  color: var(--link);
-  border: 1px solid var(--border-strong);
-  box-shadow: none;
+
+.flex-grid-item img[data-type="line"]:hover,
+.flex-grid-item img[data-type="duotone"]:hover,
+.flex-grid-item img[data-type="fill"]:hover {
+    background: var(--background-selected);
 }
 
 .details {
@@ -170,7 +172,7 @@ a:visited {
   color: var(--link-visited);
 }
 
-.footer {
+footer {
   padding: 1.5rem;
   text-align: center;
   font: normal 0.8rem/1.5 var(--sans);
@@ -178,7 +180,7 @@ a:visited {
   border-top: 1px dotted var(--border-default);
 }
 
-.footer a {
+footer a {
   color: var(--link-hover);
 }
 
@@ -192,4 +194,10 @@ a:visited {
     margin: 2rem auto;
     padding: 0 1.5rem;
   }
+}
+
+[color-scheme="dark"] {
+    img[data-type="line"] {filter: invert(1) sepia(100%) hue-rotate(180deg);}
+    img[data-type="duotone"] {filter: invert(1) sepia(100%) hue-rotate(180deg);}
+    img[data-type="fill"] {filter: invert(1) sepia(100%) hue-rotate(180deg);}
 }
