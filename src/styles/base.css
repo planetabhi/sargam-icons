@@ -160,12 +160,13 @@ header .CTAs button:hover {
 
 a {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 a:hover {
   color: var(--link-hover);
-  text-decoration: underline;
 }
 
 a:visited {
