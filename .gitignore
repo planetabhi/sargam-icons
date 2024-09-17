@@ -1,4 +1,5 @@
 node_modules
 dist
 src/assets
+src/template.html
 .env
