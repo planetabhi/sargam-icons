@@ -9,7 +9,7 @@ function getIconNames(directory) {
 
 const iconNames = getIconNames(path.join(__dirname, 'Icons', 'Line'));
 
-const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.6/Icons/';
+const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.7/Icons/';
 
 let iconGridContent = '';
 iconNames.forEach(iconName => {
