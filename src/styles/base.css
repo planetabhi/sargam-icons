@@ -126,7 +126,7 @@ header .CTAs button:hover {
     width: 24px;
     height: 24px;
     position: absolute;
-    cursor: context-menu;
+    cursor:pointer;
 }
 
 .flex-grid-item img[data-type="line"] {

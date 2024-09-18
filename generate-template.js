@@ -3,21 +3,20 @@ const path = require('path');
 
 function getIconNames(directory) {
   return fs.readdirSync(directory)
-    .filter(file => file.endsWith('.svg'))
-    .map(file => path.basename(file, '.svg'));
+    .filter(function(file) { return file.endsWith('.svg'); })
+    .map(function(file) { return path.basename(file, '.svg'); });
 }
 
 const iconNames = getIconNames(path.join(__dirname, 'Icons', 'Line'));
-
 const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.7/Icons/';
 
 let iconGridContent = '';
-iconNames.forEach(iconName => {
+iconNames.forEach(function(iconName) {
   iconGridContent += `
     <div class="flex-grid-item">
-      <img data-type="line" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName}">
-      <img data-type="duotone" src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="${iconName}">
-      <img data-type="fill" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName}">
+      <img class="downloadable-icon" data-type="line" data-name="${iconName}" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName}">
+      <img class="downloadable-icon" data-type="duotone" data-name="${iconName}" src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="${iconName}">
+      <img class="downloadable-icon" data-type="fill" data-name="${iconName}" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName}">
     </div>`;
 });
 
@@ -65,9 +64,37 @@ const fullHtmlContent = `<!DOCTYPE html>
     </ul>
   </div>
   <footer>MIT License, Copyright (c) 2024 Method Black. <br /> Brought to you by <a href="https://planetabhi.com/">@planetabhi</a>. <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem;"></a></footer>
+
+   <script>
+    document.querySelector(".flex-grid").addEventListener("click", function(e) {
+      if (e.target.classList.contains("downloadable-icon")) {
+        const iconName = e.target.getAttribute("data-name");
+        const iconType = e.target.getAttribute("data-type");
+        const iconUrl = e.target.src;
+        
+        fetch(iconUrl)
+          .then(function(response) { return response.blob(); })
+          .then(function(blob) {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.style.display = "none";
+            a.href = url;
+            a.download = iconName + "-" + iconType + ".svg";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+          })
+          .catch(function(error) { 
+            console.error("Failed to download the icon:", error);
+            alert("Failed to download the icon. Please try again."); 
+          });
+      }
+    });
+  </script>
+
 </body>
 </html>`;
 
 fs.writeFileSync(path.join(__dirname, 'src', 'template.html'), fullHtmlContent);
-
-console.log('template.html has been generated successfully.');
+console.log('template.html generated successfully.');
