@@ -13,7 +13,7 @@ const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.7/Icons/';
 let iconGridContent = '';
 iconNames.forEach(function(iconName) {
   iconGridContent += `
-    <div class="flex-grid-item">
+    <div class="flex-grid-item" data-icon-name="${iconName}">
       <img class="downloadable-icon" data-type="line" data-name="${iconName}" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName}">
       <img class="downloadable-icon" data-type="duotone" data-name="${iconName}" src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="${iconName}">
       <img class="downloadable-icon" data-type="fill" data-name="${iconName}" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName}">
@@ -38,20 +38,26 @@ const fullHtmlContent = `<!DOCTYPE html>
   <link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
-  <div class="github-button" style="position: absolute; top: 24px; right: 24px;" aria-label="Star planetabhi/sargam-icons on GitHub">
-    <iframe src="https://ghbtns.com/github-btn.html?user=planetabhi&repo=sargam-icons&type=star&count=true" frameborder="0" scrolling="0" width="100" height="30" title="GitHub"></iframe>
+  <div class="github-button" style="position: absolute; top: 24px; right: 24px;" aria-label="Star planetabhi/sargam-icons on GitHub" tabindex="-1">
+    <iframe src="https://ghbtns.com/github-btn.html?user=planetabhi&repo=sargam-icons&type=star&count=true" frameborder="0" scrolling="0" width="100" height="30" title="GitHub" tabindex="-1"></iframe>
   </div>
   <header>
     <h1>A Collection <span>of</span> 300+ Open-source Icons <wbr> Devoted <span>to</span> Match Your Exquisite Designs</h1>
     <div class="CTAs">
-      <a href="https://www.figma.com/community/file/1152296792728333709"><button>Get a Figma Copy</button></a>
-      <a href="https://github.com/planetabhi/sargam-icons/archive/HEAD.zip" aria-label="Download Sargam Icons"><button>Download SVGs</button></a>
+      <a href="https://www.figma.com/community/file/1152296792728333709" tabindex="-1"><button>Get a Figma Copy</button></a>
+      <a href="https://github.com/planetabhi/sargam-icons/archive/HEAD.zip" aria-label="Download Sargam Icons" tabindex="-1"><button>Download SVGs</button></a>
     </div>
   </header>
   <main>
+
+    <div class="search-container">
+    <input type="search" id="icon-search" placeholder="Search sargam icons ...">
+    </div>
+
     <div class="flex-grid">
       ${iconGridContent}
     </div>
+
   </main>
   <div class="details">
     <p>With simplicity, consistency, and flexibility in mind, each icon has been designed on a 24 x 24 grid to meet your essential digital needs.</p>
@@ -91,6 +97,24 @@ const fullHtmlContent = `<!DOCTYPE html>
           });
       }
     });
+
+    const searchInput = document.getElementById('icon-search');
+    const iconGrid = document.querySelector('.flex-grid');
+    const icons = iconGrid.querySelectorAll('.flex-grid-item');
+
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      
+      icons.forEach(function(icon) {
+        const iconName = icon.getAttribute('data-icon-name').toLowerCase();
+        if (iconName.includes(searchTerm)) {
+          icon.style.display = 'flex';
+        } else {
+          icon.style.display = 'none';
+        }
+      });
+    });
+
   </script>
 
 </body>

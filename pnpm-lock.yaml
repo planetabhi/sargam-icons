@@ -56,6 +56,9 @@ importers:
       svgo:
         specifier: ^3.3.2
         version: 3.3.2
+      system-fonts-stack:
+        specifier: ^0.1.0
+        version: 0.1.0
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -2600,6 +2603,9 @@ packages:
     resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+
+  system-fonts-stack@0.1.0:
+    resolution: {integrity: sha512-Jp9lKrYOJYXD7wB6zjhJnKkbDuK7TsiqwF2D29suucej2Dk5jxGv4c7YUsEeK+FyFYaAOymMQ2Mq7aSaDBoMpw==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -5709,6 +5715,8 @@ snapshots:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.1.0
+
+  system-fonts-stack@0.1.0: {}
 
   tapable@2.2.1: {}
 
