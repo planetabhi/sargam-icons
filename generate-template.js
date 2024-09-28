@@ -45,7 +45,7 @@ const fullHtmlContent = `<!DOCTYPE html>
     <h1>A Collection <span>of</span> 300+ Open-source Icons <wbr> Devoted <span>to</span> Match Your Exquisite Designs</h1>
     <div class="CTAs">
       <a href="https://www.figma.com/community/file/1152296792728333709" tabindex="-1"><button>Get a Figma Copy</button></a>
-      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.7.tgz" aria-label="Download Sargam Icons" tabindex="-1"><button>Download SVGs</button></a>
+      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz" aria-label="Download Sargam Icons" tabindex="-1"><button>Download SVGs</button></a>
     </div>
   </header>
   <main>
