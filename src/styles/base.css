@@ -267,19 +267,14 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media screen and (max-width: 639px) {
-  header {
-    margin: 4rem auto 2rem;
-    padding: 0 1.5rem;
-  }
-  
-  .details {
+  header, .details {
     margin: 2rem auto;
     padding: 0 1.5rem;
   }
 }
 
-[color-scheme="dark"] {
-    img[data-type="line"] {filter: invert(1) sepia(100%) hue-rotate(180deg);}
-    img[data-type="duotone"] {filter: invert(1) sepia(100%) hue-rotate(180deg);}
-    img[data-type="fill"] {filter: invert(1) sepia(100%) hue-rotate(180deg);}
+[color-scheme="dark"] img[data-type="line"],
+[color-scheme="dark"] img[data-type="duotone"],
+[color-scheme="dark"] img[data-type="fill"] {
+  filter: invert(1) sepia(100%) hue-rotate(180deg);
 }
