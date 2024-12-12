@@ -1,1 +1,1 @@
-import(/* webpackPreload: true */ './styles/base.css');
+import('./styles/base.css');

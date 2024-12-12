@@ -44,8 +44,8 @@ const fullHtmlContent = `<!DOCTYPE html>
   <header>
     <h1>A Collection <span>of</span> 300+ Open-source Icons <wbr> Devoted <span>to</span> Match Your Exquisite Designs</h1>
     <div class="CTAs">
-      <a href="https://www.figma.com/community/file/1152296792728333709" tabindex="-1"><button>Get a Figma Copy</button></a>
-      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz" aria-label="Download Sargam Icons" tabindex="-1"><button>Download SVGs</button></a>
+      <a href="https://www.figma.com/community/file/1152296792728333709"><span>Get a Figma Copy</span></a>
+      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz" aria-label="Download Sargam Icons"><span>Download SVGs</span></a>
     </div>
   </header>
   <main>
@@ -66,7 +66,6 @@ const fullHtmlContent = `<!DOCTYPE html>
       <li>Optimized SVG exports for better web performance.</li>
       <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://github.com/planetabhi/sargam-icons">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
       <li>Request a new icon by creating <a href="https://github.com/planetabhi/sargam-icons/issues">an issue here</a>.</li>
-      <li>For more open-source design foundations, explore <a href="https://new-ui.com/docs/getting-started/installation">New UI</a>.</li>
     </ul>
   </div>
   <footer>MIT License, Copyright (c) 2024 Method Black. <br /> Brought to you by <a href="https://planetabhi.com/">@planetabhi</a>. <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem;"></a></footer>

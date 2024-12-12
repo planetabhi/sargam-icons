@@ -36,8 +36,8 @@
   },
   "homepage": "https://github.com/planetabhi/sargam-icons#readme",
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@babel/preset-env": "^7.25.4",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
     "@new-ui/reset": "^0.0.5",
     "@sargamdesign/colors": "^3.0.1",
     "@svgr/core": "^8.1.0",
@@ -45,18 +45,19 @@
     "babel-loader": "^9.2.1",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
-    "dotenv": "^16.4.5",
-    "html-webpack-plugin": "^5.6.0",
-    "mini-css-extract-plugin": "^2.9.1",
+    "dotenv": "^16.4.7",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
+    "spacings": "^0.1.0",
     "style-loader": "^4.0.0",
     "svgo": "^3.3.2",
     "system-fonts-stack": "^0.1.0",
-    "typescript": "^5.6.2",
-    "webpack": "^5.95.0",
+    "typescript": "^5.7.2",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "webpack-dev-server": "^5.2.0"
   },
   "main": "index.js"
 }
