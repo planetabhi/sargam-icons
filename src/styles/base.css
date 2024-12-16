@@ -34,15 +34,6 @@
   --sans: var(--system-ui);
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
-  --c-text:url(
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M12 5.333h2.667v1.334H12V5.333ZM16 8h-1.333V6.667H16V8Zm1.333 0H16v16h-1.333v1.333H12v1.334h2.667v-1.334H16V24h1.333v1.333h1.334v1.334h2.666v-1.334h-2.666V24h-1.334V8Zm1.334-1.333V8h-1.334V6.667h1.334Zm0 0V5.333h2.666v1.334h-2.666Z' clip-rule='evenodd'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M20 4h1.333v1.333h-2.666V4H20Zm-1.333 2.667V5.333h-1.334v1.334H16V5.333h-1.333V4H12v1.333h-1.333v1.334H12V8h2.667v16H12v1.333h-1.333v1.334H12V28h2.667v-1.333H16v-1.334h1.333v1.334h1.334V28h2.666v-1.333h1.334v-1.334h-1.334V24h-2.666V8h2.666V6.667h1.334V5.333h-1.334v1.334h-2.666ZM17.333 8V6.667h1.334V8h-1.334Zm0 16V8H16V6.667h-1.333V5.333H12v1.334h2.667V8H16v16h-1.333v1.333H12v1.334h2.667v-1.334H16V24h1.333Zm0 0v1.333h1.334v1.334h2.666v-1.334h-2.666V24h-1.334Z' clip-rule='evenodd'/%3E%3C/svg%3E"
-  ) 16 16, auto;
-  --c-pointer:url(
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M12 5.333h2.667v1.334H12V5.333Zm0 8V6.667h-1.333v6.666H8v1.334H6.667v2.666H8v1.334h1.333v2.666h1.334v1.334H12V24h1.333v2.667h5.334v-1.334h2.666v1.334h1.334v-1.334H24v-2.666h1.333V20h1.334v-6.667h-1.334V12h-2.666v-1.333h-4V9.333H16V6.667h-1.333v6.666H16v-2.666h2.667v2.666H20V12h2.667v2.667H24v-1.334h1.333V20H24v2.667h-1.333v-5.334h-1.334v5.334h1.334v2.666h-1.334V24h-2.666v1.333h-4V24h-1.334v-1.333H12v-1.334h-1.333v-4H8v-2.666h2.667V16H12v1.333h1.333v-4H12Zm0 0h-1.333v1.334H12v-1.334Zm6.667 4H20v5.334h-1.333v-5.334Zm-1.334 0H16v5.334h1.333v-5.334Z' clip-rule='evenodd'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M12 6.667h2.667v6.666H16v-2.666h2.667v2.666H20V12h2.667v2.667H24v-1.334h1.333V20H24v2.667h-1.333v-5.334h-1.334v5.334h1.334v2.666h-1.334V24h-2.666v1.333h-4V24h-1.334v-1.333H12v-1.334h-1.333v-4H8v-2.666h2.667V16H12v1.333h1.333v-4H12V6.667Zm4 10.666v5.334h1.333v-5.334H16Zm2.667 0v5.334H20v-5.334h-1.333Z' clip-rule='evenodd'/%3E%3C/svg%3E"
-    ) 13 7, auto;
-  --c-arrow:url(
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='none'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M12 6.667h-1.333v14.666H12V20h1.333v-1.333h1.334V20H16v2.667h1.333v2.666H20v-2.666h-1.333V20h-1.334v-2.667h4V16H20v-1.333h-1.333v-1.334h-1.334V12H16v-1.333h-1.333V9.333h-1.334V8H12V6.667Z' clip-rule='evenodd'/%3E%3Cpath fill='%23fff' fill-rule='evenodd' d='M10.667 5.333H12v1.334h-1.333V5.333Zm0 16H9.333V6.667h1.334v14.666Zm1.333 0v1.334h-1.333v-1.334H12ZM13.333 20v1.333H12V20h1.333Zm1.334 0h-1.334v-1.333h1.334V20ZM16 22.667h-1.333V20H16v2.667Zm1.333 2.666H16v-2.666h1.333v2.666Zm2.667 0v1.334h-2.667v-1.334H20Zm0-2.666h1.333v2.666H20v-2.666ZM18.667 20H20v2.667h-1.333V20Zm-1.334-1.333V20h1.334v-1.333h2.666v-1.334h1.334V16h-1.334v-1.333H20v-1.334h-1.333V12h-1.334v-1.333H16V9.333h-1.333V8h-1.334V6.667H12V8h1.333v1.333h1.334v1.334H16V12h1.333v1.333h1.334v1.334H20V16h1.333v1.333h-4v1.334Z' clip-rule='evenodd'/%3E%3C/svg%3E"
-    ) 11 7, auto;
 }
 
 :focus-visible {
@@ -58,7 +49,6 @@
 
 html, body {
   background-color: var(--background-subtle);
-  cursor: var(--c-arrow);
 }
 
 a,
@@ -67,17 +57,7 @@ img,
 .flex-grid-item img[data-type="line"],
 .flex-grid-item img[data-type="duotone"],
 .flex-grid-item img[data-type="fill"] {
-  cursor: var(--c-pointer);
   position: relative;
-}
-
-p,
-h1,
-h2,
-h3,
-input[type="search"],
-label {
-  cursor: var(--c-text);
 }
 
 body {
@@ -128,7 +108,7 @@ header .CTAs a {
   font: 400 0.875rem/1.563rem var(--sans);
   padding: var(--s-04) var(--s-12);
   text-decoration-line: none;
-  cursor: var(--c-pointer);
+  cursor: pointer;
   color: var(--text-primary-alt);
   background: var(--background);
   border: 1px solid var(--border-default);
@@ -173,6 +153,7 @@ header .CTAs a:hover {
     position: absolute;
     object-fit: contain;
     aspect-ratio: 1 / 1;
+    cursor: pointer;
 }
 
 .flex-grid-item img[data-type="line"] {
