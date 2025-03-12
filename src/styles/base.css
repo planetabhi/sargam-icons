@@ -201,7 +201,7 @@ a:visited {
 }
 
 footer {
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   font: normal 0.8rem/1.5 var(--sans);
   color: var(--text-secondary);

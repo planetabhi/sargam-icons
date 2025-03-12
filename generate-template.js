@@ -27,7 +27,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <title>Sargam Icons</title>
   <meta name="description" content="300+ open-source icons">
   <meta name="author" content="@planetabhi" />
   <meta property="og:title" content="Sargam Icons" />
@@ -65,10 +65,9 @@ const fullHtmlContent = `<!DOCTYPE html>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
       <li>Optimized SVG exports for better web performance.</li>
       <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://github.com/planetabhi/sargam-icons">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
-      <li>Request a new icon by creating <a href="https://github.com/planetabhi/sargam-icons/issues">an issue here</a>.</li>
     </ul>
   </div>
-  <footer>MIT License, Copyright (c) 2024 Method Black. <br /> Brought to you by <a href="https://planetabhi.com/">@planetabhi</a>. <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem;"></a></footer>
+  <footer>ABHIMANYU RANA 2025 © &middot; MIT License <br /> By <a href="https://planetabhi.com/">@planetabhi</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem;"></a></footer>
 
    <script>
     document.querySelector(".flex-grid").addEventListener("click", function(e) {
