@@ -1,9 +1,5 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyPlugin = require("copy-webpack-plugin");
-
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
+const path = require('path');
+const { rspack } = require('@rspack/core');
 
 module.exports = {
   mode: 'development',
@@ -34,6 +30,19 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass-embedded'),
+            },
+          },
+        ],
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -54,30 +63,21 @@ module.exports = {
     ],
   },
   plugins: [
-    new CopyPlugin({
+    new rspack.CopyRspackPlugin({
       patterns: [
-        { from: "./Icons/Line", to: "icons/Line" },
-        { from: "./Icons/Duotone", to: "icons/Duotone" },
-        { from: "./Icons/Fill", to: "icons/Fill" },
+        { from: path.resolve(__dirname, "./Icons/Line"), to: "icons/Line" },
+        { from: path.resolve(__dirname, "./Icons/Duotone"), to: "icons/Duotone" },
+        { from: path.resolve(__dirname, "./Icons/Fill"), to: "icons/Fill" },
       ],
     }),
-    new HtmlWebpackPlugin({
+    new rspack.HtmlRspackPlugin({
       title: 'Sargam Icons',
       filename: 'index.html',
-      template: 'src/template.html',
-      favicon: 'src/favicon.ico',
+      template: path.resolve(__dirname, 'src/template.html'),
+      favicon: path.resolve(__dirname, 'src/favicon.ico'),
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
-    }),
-    new PreloadWebpackPlugin({
-      rel: 'preload',
-      include: 'initial',
-      fileBlacklist: [/\.map$/, /hot-update\.js$/],
-      types: { css: { as: 'style' } }
-    }),
   ],
-}
+};
