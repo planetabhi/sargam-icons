@@ -38,9 +38,6 @@ const fullHtmlContent = `<!DOCTYPE html>
   <link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
-  <div class="github-button" style="position: absolute; top: 24px; right: 24px;" aria-label="Star planetabhi/sargam-icons on GitHub" tabindex="-1">
-    <iframe src="https://ghbtns.com/github-btn.html?user=planetabhi&repo=sargam-icons&type=star&count=true" frameborder="0" scrolling="0" width="100" height="30" title="GitHub" tabindex="-1"></iframe>
-  </div>
   <header>
     <h1>A Collection <span>of</span> 300+ Open-source Icons <wbr> Devoted <span>to</span> Match Your Exquisite Designs</h1>
     <div class="CTAs">
@@ -48,12 +45,12 @@ const fullHtmlContent = `<!DOCTYPE html>
       <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz" aria-label="Download Sargam Icons"><span>Download SVGs</span></a>
     </div>
   </header>
+
+  <div class="github-button" style="position: absolute; top: 24px; right: 24px;" aria-label="Star planetabhi/sargam-icons on GitHub" tabindex="-1">
+    <iframe src="https://ghbtns.com/github-btn.html?user=planetabhi&repo=sargam-icons&type=star&count=true" frameborder="0" scrolling="0" width="100" height="30" title="GitHub" tabindex="-1"></iframe>
+  </div>
+
   <main>
-
-    <div class="search-container">
-    <input type="search" id="icon-search" placeholder="Search sargam icons ...">
-    </div>
-
     <div class="flex-grid">
       ${iconGridContent}
     </div>
@@ -64,10 +61,10 @@ const fullHtmlContent = `<!DOCTYPE html>
     <ul>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
       <li>Optimized SVG exports for better web performance.</li>
-      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://github.com/planetabhi/sargam-icons">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
+      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
     </ul>
   </div>
-  <footer>ABHIMANYU RANA 2025 © &middot; MIT License <br /> By <a href="https://planetabhi.com/">@planetabhi</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem;"></a></footer>
+  <footer>ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/">@planetabhi</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem;"></a></footer>
 
    <script>
     document.querySelector(".flex-grid").addEventListener("click", function(e) {
@@ -96,27 +93,10 @@ const fullHtmlContent = `<!DOCTYPE html>
       }
     });
 
-    const searchInput = document.getElementById('icon-search');
-    const iconGrid = document.querySelector('.flex-grid');
-    const icons = iconGrid.querySelectorAll('.flex-grid-item');
-
-    searchInput.addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase();
-      
-      icons.forEach(function(icon) {
-        const iconName = icon.getAttribute('data-icon-name').toLowerCase();
-        if (iconName.includes(searchTerm)) {
-          icon.style.display = 'flex';
-        } else {
-          icon.style.display = 'none';
-        }
-      });
-    });
-
   </script>
 
 </body>
 </html>`;
 
 fs.writeFileSync(path.join(__dirname, 'src', 'template.html'), fullHtmlContent);
-console.log('template.html generated successfully.');
+console.log('template.html generated successfully');
