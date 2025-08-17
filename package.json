@@ -36,8 +36,8 @@
   },
   "homepage": "https://github.com/planetabhi/sargam-icons#readme",
   "devDependencies": {
-    "@babel/core": "^7.28.0",
-    "@babel/preset-env": "^7.28.0",
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
     "@new-ui/reset": "^0.0.9",
     "@rspack/cli": "^1.4.11",
     "@rspack/core": "^1.4.11",
