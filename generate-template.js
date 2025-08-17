@@ -64,7 +64,7 @@ const fullHtmlContent = `<!DOCTYPE html>
       <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
     </ul>
   </div>
-  <footer>ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/">@planetabhi</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem;"></a></footer>
+  <footer>ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/">@planetabhi</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a></footer>
 
    <script>
     document.querySelector(".flex-grid").addEventListener("click", function(e) {
