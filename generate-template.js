@@ -27,6 +27,9 @@ const fullHtmlContent = `<!DOCTYPE html>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" href="fonts/EBGaramondSC12-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/EBGaramond12-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/EBGaramond12-Italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Sargam Icons</title>
   <meta name="description" content="300+ open-source icons">
