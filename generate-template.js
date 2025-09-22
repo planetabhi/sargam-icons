@@ -8,7 +8,7 @@ function getIconNames(directory) {
 }
 
 const iconNames = getIconNames(path.join(__dirname, 'Icons', 'Line'));
-const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.8/Icons/';
+const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.9/Icons/';
 
 let iconGridContent = '';
 iconNames.forEach(function(iconName) {
@@ -46,7 +46,7 @@ const fullHtmlContent = `<!DOCTYPE html>
     <h1>A Collection <span>of</span> 300+ Open-source Icons <wbr> Devoted <span>to</span> Match Your Exquisite Designs</h1>
     <div class="CTAs">
       <a href="https://www.figma.com/community/file/1152296792728333709"><span>Get a Figma Copy</span></a>
-      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz" aria-label="Download Sargam Icons"><span>Download SVGs</span></a>
+      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.9.tgz" aria-label="Download Sargam Icons"><span>Download SVGs</span></a>
     </div>
   </header>
 
@@ -65,7 +65,7 @@ const fullHtmlContent = `<!DOCTYPE html>
     <ul>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
       <li>Optimized SVG exports for better web performance.</li>
-      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.8.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
+      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.9.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
     </ul>
   </div>
   <footer>ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/">@planetabhi</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a></footer>
