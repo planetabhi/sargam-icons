@@ -1,9 +1,9 @@
 const path = require('path');
 const { rspack } = require('@rspack/core');
 
-const isProd = process.env.NODE_ENV === 'production';
-
-module.exports = {
+module.exports = (env, argv) => {
+  const isProd = argv && argv.mode === 'production';
+  return {
   mode: isProd ? 'production' : 'development',
   entry: {
     bundle: path.resolve(__dirname, 'src/index.js'),
@@ -14,7 +14,7 @@ module.exports = {
     clean: true,
     assetModuleFilename: '[name][ext]',
   },
-  devtool: isProd ? 'source-map' : 'eval-source-map',
+  devtool: isProd ? 'hidden-source-map' : 'eval-source-map',
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist'),
@@ -83,4 +83,5 @@ module.exports = {
     }),
     ...(isProd ? [new rspack.CssExtractRspackPlugin({ filename: '[name][contenthash].css' })] : [])
   ],
+};
 };
