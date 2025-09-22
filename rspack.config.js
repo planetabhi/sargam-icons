@@ -1,8 +1,10 @@
 const path = require('path');
 const { rspack } = require('@rspack/core');
 
-module.exports = {
-  mode: 'development',
+module.exports = (env, argv) => {
+  const isProd = argv && argv.mode === 'production';
+  return {
+  mode: isProd ? 'production' : 'development',
   entry: {
     bundle: path.resolve(__dirname, 'src/index.js'),
   },
@@ -12,7 +14,7 @@ module.exports = {
     clean: true,
     assetModuleFilename: '[name][ext]',
   },
-  devtool: 'source-map',
+  devtool: isProd ? 'hidden-source-map' : 'eval-source-map',
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist'),
@@ -27,12 +29,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [isProd ? rspack.CssExtractRspackPlugin.loader : 'style-loader', 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          'style-loader',
+          isProd ? rspack.CssExtractRspackPlugin.loader : 'style-loader',
           'css-loader',
           {
             loader: 'sass-loader',
@@ -79,5 +81,7 @@ module.exports = {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
+    ...(isProd ? [new rspack.CssExtractRspackPlugin({ filename: '[name][contenthash].css' })] : [])
   ],
+};
 };

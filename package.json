@@ -5,12 +5,12 @@
   "scripts": {
     "clean": "rimraf package *.tgz",
     "compress": "svgo -f ./src/assets/Duotone -o ./icons/Duotone && svgo -f ./src/assets/Fill -o ./icons/Fill && svgo -f ./src/assets/Line -o ./icons/Line",
-    "generate-icons": "pnpm run clean && pnpm run compress",
+    "generate-icons": "bun run clean && bun run compress",
     "generate-template": "node generate-template.js",
-    "build": "pnpm run generate-template && rspack build",
-    "dev": "pnpm run generate-template && rspack serve",
-    "build:dev": "pnpm run generate-template && rspack build --mode development",
-    "preview": "pnpm run build && npx serve dist"
+    "build": "bun run generate-template && bunx rspack build",
+    "dev": "bun run generate-template && bunx rspack serve",
+    "build:dev": "bun run generate-template && bunx rspack build --mode development",
+    "preview": "bun run build && bunx serve dist"
   },
   "repository": {
     "type": "git",

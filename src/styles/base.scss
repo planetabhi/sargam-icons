@@ -5,26 +5,26 @@
 
 @font-face {
   font-family: 'EB Garamond SC 12';
-  src: url('../fonts/EBGaramondSC12-Regular.woff2') format('woff2'),
-      url('../fonts/EBGaramondSC12-Regular.woff') format('woff');
+  src: url('../fonts/EBGaramondSC12-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'EB Garamond 12';
-  src: url('../fonts/EBGaramond12-Regular.woff2') format('woff2'),
-      url('../fonts/EBGaramond12-Regular.woff') format('woff');
+  src: url('../fonts/EBGaramond12-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'EB Garamond 12';
-  src: url('../fonts/EBGaramond12-Italic.woff2') format('woff2'),
-      url('../fonts/EBGaramond12-Italic.woff') format('woff');
+  src: url('../fonts/EBGaramond12-Italic.woff2') format('woff2');
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 
 :root {
