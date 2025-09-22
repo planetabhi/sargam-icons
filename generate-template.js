@@ -14,9 +14,9 @@ let iconGridContent = '';
 iconNames.forEach(function(iconName) {
   iconGridContent += `
     <div class="flex-grid-item" data-icon-name="${iconName}">
-      <img class="downloadable-icon" data-type="line" data-name="${iconName}" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName}">
-      <img class="downloadable-icon" data-type="duotone" data-name="${iconName}" src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="${iconName}">
-      <img class="downloadable-icon" data-type="fill" data-name="${iconName}" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName}">
+      <img class="downloadable-icon" data-type="line" data-name="${iconName}" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName}" loading="lazy" decoding="async">
+      <img class="downloadable-icon" data-type="duotone" data-name="${iconName}" src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="${iconName}" loading="lazy" decoding="async">
+      <img class="downloadable-icon" data-type="fill" data-name="${iconName}" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName}" loading="lazy" decoding="async">
     </div>`;
 });
 
@@ -26,6 +26,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Sargam Icons</title>
   <meta name="description" content="300+ open-source icons">
