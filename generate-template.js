@@ -66,7 +66,7 @@ const fullHtmlContent = `<!DOCTYPE html>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
       <li>Optimized SVG exports for better web performance.</li>
       <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.10.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
-      <li>Also available in the <a href="https://www.framer.com/updates/icon-set-sargam" target="_blank">Framer</a> insert panel.</li>
+      <li>Also available in the <a href="https://www.framer.com/updates/icon-set-sargam" target="_blank" rel="noopener noreferrer">Framer</a> insert panel.</li>
     </ul>
   </div>
   <footer>ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/">@planetabhi</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a></footer>
