@@ -37,9 +37,51 @@
 }
 
 :focus-visible {
-  outline: var(--s-02) solid var(--teal2);
+  outline: var(--s-02) solid var(--teal3);
   outline-offset: var(--s-02);
   box-shadow: none;
+}
+
+// Enhanced focus indicators for accessibility
+.flex-grid-item:focus {
+  outline: 2px solid var(--teal3);
+  outline-offset: 2px;
+}
+
+.flex-grid-item:focus-visible {
+  outline: 2px solid var(--teal3);
+  outline-offset: 2px;
+}
+
+// Skip links
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--text-primary);
+  color: var(--background);
+  padding: var(--s-04);
+  text-decoration: none;
+  border-radius: var(--s-04);
+  z-index: 1000;
+  font-size: 0.875rem;
+  
+  &:focus {
+    top: 6px;
+  }
+}
+
+// Screen reader only content
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 ::selection {
@@ -66,6 +108,17 @@ body {
   margin: var(--s-00);
   font-kerning: normal;
   overflow-wrap: break-word;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  
+  // Font loading states
+  &.font-loading {
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  &.font-loaded {
+    font-family: var(--serif);
+  }
 }
 
 main {
@@ -88,6 +141,8 @@ header {
     letter-spacing: -0.044rem;
     color: var(--text-primary);
     margin-bottom: var(--s-12);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
 
     span {
       font: italic normal 1em var(--serif);
@@ -137,6 +192,8 @@ header {
     height: 9.5rem;
     border: 1px dotted var(--border-default);
     border-radius: var(--s-04);
+    content-visibility: auto;
+    contain-intrinsic-size: 0 9.5rem;
 
     img {
       &[data-type="line"],
