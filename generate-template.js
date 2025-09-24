@@ -8,7 +8,7 @@ function getIconNames(directory) {
 }
 
 const iconNames = getIconNames(path.join(__dirname, 'Icons', 'Line'));
-const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.10/Icons/';
+const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.4.11/Icons/';
 
 let iconGridContent = '';
 iconNames.forEach(function(iconName) {
@@ -46,7 +46,7 @@ const fullHtmlContent = `<!DOCTYPE html>
     <h1>A Collection <span>of</span> 300+ Open-source Icons <wbr> Devoted <span>to</span> Match Your Exquisite Designs</h1>
     <div class="CTAs">
       <a href="https://www.figma.com/community/file/1152296792728333709"><span>Get a Figma Copy</span></a>
-      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.10.tgz" aria-label="Download Sargam Icons"><span>Download SVGs</span></a>
+      <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.11.tgz" aria-label="Download Sargam Icons"><span>Download SVGs</span></a>
     </div>
   </header>
 
@@ -65,7 +65,7 @@ const fullHtmlContent = `<!DOCTYPE html>
     <ul>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
       <li>Optimized SVG exports for better web performance.</li>
-      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.10.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
+      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.11.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
       <li>Also available in the <a href="https://www.framer.com/updates/icon-set-sargam" target="_blank" rel="noopener noreferrer">Framer</a> insert panel.</li>
     </ul>
   </div>
