@@ -1,6 +1,6 @@
 {
   "name": "sargam-icons",
-  "version": "1.4.9",
+  "version": "1.4.10",
   "description": "300+ open-source icons.",
   "scripts": {
     "clean": "rimraf package *.tgz",
