@@ -29,12 +29,12 @@ module.exports = (env, argv) => {
     rules: [
       {
         test: /\.css$/,
-        use: [isProd ? rspack.CssExtractRspackPlugin.loader : 'style-loader', 'css-loader'],
+        use: [rspack.CssExtractRspackPlugin.loader, 'css-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          isProd ? rspack.CssExtractRspackPlugin.loader : 'style-loader',
+          rspack.CssExtractRspackPlugin.loader,
           'css-loader',
           {
             loader: 'sass-loader',
@@ -81,7 +81,9 @@ module.exports = (env, argv) => {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       }
     }),
-    ...(isProd ? [new rspack.CssExtractRspackPlugin({ filename: '[name][contenthash].css' })] : [])
+    new rspack.CssExtractRspackPlugin({ 
+      filename: isProd ? '[name][contenthash].css' : '[name].css'
+    })
   ],
 };
 };
