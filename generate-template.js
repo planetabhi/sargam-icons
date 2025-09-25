@@ -172,6 +172,15 @@ const fullHtmlContent = `<!DOCTYPE html>
   <meta property="og:site_name" content="Sargam Icons" />
   <link rel="apple-touch-icon" href="icon.png">
   <style>${criticalCSS}</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JWMS1KLBBB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JWMS1KLBBB');
+  </script>
 </head>
 <body>
   <!-- Skip Links for Accessibility -->
