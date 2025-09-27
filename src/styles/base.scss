@@ -379,8 +379,7 @@ header {
     caret-color: var(--content-primary);
 
     &::placeholder {
-      color: var(--content-secondary);
-      opacity: 0.7;
+      color: var(--content-placeholder);
     }
 
     &:focus {
@@ -456,6 +455,10 @@ footer {
 
   .details {
     margin: var(--s-64) 0;
+  }
+
+  .top-nav-inner {
+    max-width: 28rem;
   }
 }
 
