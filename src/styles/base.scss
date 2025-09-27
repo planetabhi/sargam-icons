@@ -82,7 +82,7 @@ img, svg {
 
 .flex-grid-item:focus,
 .flex-grid-item:focus-visible {
-  outline: 2px solid var(--teal3);
+  outline: 1.5px solid var(--teal3);
   outline-offset: 2px;
 }
 
@@ -116,7 +116,8 @@ img, svg {
 }
 
 ::selection {
-  background: var(--pink2);
+  background: var(--content-primary);
+  color: var(--background);
   text-shadow: none;
 }
 
@@ -137,7 +138,6 @@ a {
 }
 
 img,
-.github-button iframe,
 .flex-grid-item img[data-type="line"],
 .flex-grid-item img[data-type="duotone"],
 .flex-grid-item img[data-type="fill"] {
@@ -182,7 +182,7 @@ header {
     box-sizing: border-box;
 
     a {
-      font: 400 0.875rem/1.563rem var(--monospace);
+      font: 400 0.875rem/1.563rem var(--system-ui);
       padding: var(--s-04) var(--s-20);
       text-decoration-line: none;
       cursor: pointer;
@@ -230,7 +230,7 @@ header {
         cursor: pointer;
 
         &:hover {
-          background: var(--background-selected);
+          background: var(--content-placeholder);
         }
       }
 
@@ -348,6 +348,7 @@ header {
   padding-inline: var(--container-padding);
   box-sizing: border-box;
   font: normal 1rem/1.5 var(--serif);
+  color: var(--content-secondary);
 
   li {
     list-style-type: "∘";
