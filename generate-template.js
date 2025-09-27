@@ -201,8 +201,10 @@ const fullHtmlContent = `<!DOCTYPE html>
         <span class="version-pill" aria-label="Version">v1.4.12</span>
       </div>
       <div class="rhs">
-        <a href="LICENSE.txt">License</a>
+        <a href="https://www.figma.com/community/file/1152296792728333709/sargam-icons" target="_blank" rel="noopener noreferrer" aria-label="Figma">Figma</a>
+        <a href="https://github.com/SargamDesign/sargam-icons-react" target="_blank" rel="noopener noreferrer" aria-label="ReactJS">React</a>
         <a href="https://github.com/planetabhi/sargam-icons" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
         <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.41 13.28C7.332 10.205 6.716 5.693 8.357 2c-1.23.41-2.256 1.23-3.281 2.256a10.4 10.4 0 0 0 0 14.768c4.102 4.102 10.46 3.897 14.562-.205 1.026-1.026 1.846-2.051 2.256-3.282-3.896 1.436-8.409.82-11.486-2.256"/>
@@ -224,10 +226,9 @@ const fullHtmlContent = `<!DOCTYPE html>
   
   <header>
     <div class="header-content">
-      <h1>A Collection <span>of</span> 300+ Open-source Icons <wbr> Devoted <span>to</span> Match Your Exquisite Designs</h1>
+      <h1>It Takes a Pro to Know the Difference Between Sargam & Just Icons</h1>
       <div class="CTAs">
-        <a href="https://www.figma.com/community/file/1152296792728333709"><span>Get a Figma Copy</span></a>
-        <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.12.tgz" aria-label="Download Sargam Icons"><span>Download SVGs</span></a>
+        <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.12.tgz" aria-label="Download Sargam Icons"><span>Download All (1020)</span></a>
       </div>
     </div>
   </header>
@@ -257,7 +258,6 @@ const fullHtmlContent = `<!DOCTYPE html>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
       <li>Optimized SVG exports for better web performance.</li>
       <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.4.12.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
-      <li>Also available in the <a href="https://www.framer.com/updates/icon-set-sargam" target="_blank" rel="noopener noreferrer">Framer</a> insert panel.</li>
     </ul>
   </div>
   <footer>
