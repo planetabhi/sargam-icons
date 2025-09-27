@@ -188,12 +188,15 @@ header {
       cursor: pointer;
       color: var(--content-primary-alt);
       background: var(--background);
-      border: 1px solid var(--border-default);
       border-radius: var(--s-04);
+      --shadow-color: rgb(0 0 0 / .04);
+      box-shadow: 0 0 0 1px var(--background-selected), 
+                  0 1px 1px -0.5px var(--shadow-color), 
+                  0 3px 3px -1.5px var(--shadow-color), 
+                  0 12px 12px -6px var(--shadow-color);
 
       &:hover {
         color: var(--link);
-        border: 1px solid var(--border-strong);
         box-shadow: 0 0 0 2px var(--background-selected);
       }
     }
@@ -213,6 +216,7 @@ header {
     overflow: hidden;
     margin: 0 var(--s-02) var(--s-04);
     height: 9.5rem;
+    background: var(--background-subtle);
     border: 1px dotted var(--border-default);
     border-radius: var(--s-04);
     content-visibility: auto;
