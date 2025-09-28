@@ -301,10 +301,27 @@ header {
   }
 }
 
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  
+  svg {
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      animation: rotate 4s linear infinite;
+    }
+  }
+  
+  &:hover svg {
+    animation: rotate 4s linear infinite;
+  }
 }
 
 .version-pill {

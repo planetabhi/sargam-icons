@@ -1,9 +1,8 @@
-![cover](src/readme_cover.png)
-
 # Sargam Icons
-300+ open-source icons.
+A collection of open-source icons crafted to match your exquisite designs.
 
 - Built using SVG stroke, providing maximum flexibility on styling.
+- Optimized exports for better web performance.
 - Request a new icon by creating an issue.
 
 [[sargamicons.com]](https://sargamicons.com/) ∠( ᐛ 」∠)_

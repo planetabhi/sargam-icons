@@ -1,7 +1,7 @@
 {
   "name": "sargam-icons",
-  "version": "1.4.12",
-  "description": "300+ open-source icons.",
+  "version": "1.5.0",
+  "description": "A collection of open-source icons crafted to match your exquisite designs.",
   "scripts": {
     "clean": "rimraf package *.tgz",
     "compress": "svgo -f ./src/assets/Duotone -o ./icons/Duotone && svgo -f ./src/assets/Fill -o ./icons/Fill && svgo -f ./src/assets/Line -o ./icons/Line",
@@ -24,8 +24,9 @@
     "line-icons",
     "fill-icons",
     "duotone-icons",
-    "iconset",
+    "sargam-icons",
     "svg",
+    "react",
     "optimized",
     "figma"
   ],
@@ -34,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/planetabhi/sargam-icons/issues"
   },
-  "homepage": "https://github.com/planetabhi/sargam-icons#readme",
+  "homepage": "https://sargamicons.com/",
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
