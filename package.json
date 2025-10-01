@@ -1,6 +1,6 @@
 {
   "name": "sargam-icons",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A collection of open-source icons crafted to match your exquisite designs.",
   "scripts": {
     "clean": "rimraf package *.tgz",
@@ -40,13 +40,13 @@
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
     "@new-ui/reset": "^0.1.0",
-    "@rspack/cli": "^1.5.7",
-    "@rspack/core": "^1.5.7",
+    "@rspack/cli": "^1.5.8",
+    "@rspack/core": "^1.5.8",
     "@sargamdesign/colors": "^3.1.0",
     "@svgr/core": "^8.1.0",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
-    "dotenv": "^17.2.2",
+    "dotenv": "^17.2.3",
     "mini-css-extract-plugin": "^2.9.4",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
@@ -56,7 +56,7 @@
     "style-loader": "^4.0.0",
     "svgo": "^4.0.0",
     "system-fonts-stack": "^0.1.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "main": "index.js"
 }

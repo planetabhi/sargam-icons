@@ -233,6 +233,15 @@ const fullHtmlContent = `<!DOCTYPE html>
     </div>
   </header>
 
+  <div class="gradient-blur-top">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
   <main id="main-content">
     <div class="search-container">
       <label for="icon-search" class="sr-only">Search icons</label>

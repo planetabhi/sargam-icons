@@ -465,6 +465,76 @@ footer {
   }
 }
 
+.gradient-blur-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  height: 8rem;
+  pointer-events: none;
+
+  &::before,
+  &::after,
+  > div {
+    position: absolute;
+    inset: 0;
+  }
+
+  @mixin blur-layer($z-index, $blur, $mask-start, $mask-end, $opacity-start: 1, $opacity-mid: 0.8, $opacity-end: 0) {
+    z-index: $z-index;
+    backdrop-filter: blur($blur);
+    background: linear-gradient(
+      180deg,
+      var(--background-subtle) 0%,
+      transparent $mask-end
+    );
+    mask: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, $opacity-start) $mask-start,
+      rgba(0, 0, 0, $opacity-mid) calc($mask-start + ($mask-end - $mask-start) / 2),
+      rgba(0, 0, 0, $opacity-end) $mask-end
+    );
+  }
+
+  &::before {
+    content: "";
+    @include blur-layer(1, 0.5px, 0%, 37.5%, 1, 0.8, 0);
+  }
+
+  > div {
+    &:nth-of-type(1) {
+      @include blur-layer(2, 1px, 12.5%, 50%, 0, 0.8, 0);
+    }
+
+    &:nth-of-type(2) {
+      @include blur-layer(3, 2px, 25%, 62.5%, 0, 0.6, 0);
+    }
+
+    &:nth-of-type(3) {
+      @include blur-layer(4, 4px, 37.5%, 75%, 0, 0.4, 0);
+    }
+
+    &:nth-of-type(4) {
+      @include blur-layer(5, 8px, 50%, 87.5%, 0, 0.3, 0);
+    }
+
+    &:nth-of-type(5) {
+      @include blur-layer(6, 16px, 62.5%, 100%, 0, 0.2, 0);
+    }
+
+    &:nth-of-type(6) {
+      @include blur-layer(7, 32px, 75%, 100%, 0, 0.1, 0);
+    }
+  }
+
+  &::after {
+    content: "";
+    @include blur-layer(8, 64px, 87.5%, 100%, 0, 0.05, 0);
+  }
+}
+
+
 @media screen and (max-width: 639px) {
   :root {
     --container-padding: var(--container-padding-mobile);
@@ -480,6 +550,8 @@ footer {
 
   .top-nav-inner {
     max-width: 28rem;
+    margin: 0 auto 0;
+    border-radius: 0;
   }
 }
 
