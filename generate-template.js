@@ -12,8 +12,6 @@ function getCriticalCSS() {
   return `
 :root {
   font-size: 16px;
-  --serif: "Sargam", serif;
-  --system-ui: system-ui, sans-serif;
   --container-max-width: 100%;
   --container-padding: var(--s-24);
   --container-padding-mobile: 1.5rem;
@@ -26,7 +24,6 @@ html, body {
 
 body {
   color: var(--content-primary);
-  font: 400 1em/1.5 var(--system-ui);
   font-kerning: normal;
   overflow-wrap: break-word;
 }
@@ -62,7 +59,6 @@ header .header-content {
 }
 
 header h1 {
-  font: 400 1.75rem/2.25rem var(--serif);
   margin-bottom: var(--s-12);
 }
 
@@ -156,7 +152,7 @@ iconNames.forEach(function(iconName, index) {
       <div class="icon-placeholder" style="display:none; width:24px; height:24px; background:var(--border-muted); border-radius:2px; position:absolute; top:4rem; left:50%; transform:translateX(-50%);"></div>
       <img class="downloadable-icon" data-type="fill" data-name="${iconName}" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName} fill style" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
       <div class="icon-placeholder" style="display:none; width:24px; height:24px; background:var(--border-muted); border-radius:2px; position:absolute; top:6.75rem; left:50%; transform:translateX(-50%);"></div>
-      <div id="icon-${index}-desc" class="sr-only">Available in line, duotone, and fill styles. Press Enter or Space to download.</div>
+      <div id="icon-${index}-desc" class="sr-only"></div>
     </div>`;
 });
 
@@ -226,9 +222,9 @@ const fullHtmlContent = `<!DOCTYPE html>
   
   <header>
     <div class="header-content">
-      <h1>It Takes a Pro to Know the Difference Between Sargam & Just Icons</h1>
+      <h1>It Takes a Pro to Know the Difference <wbr> Between Sargam & Just Icons</h1>
       <div class="CTAs">
-        <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.5.1.tgz" aria-label="Download Sargam Icons"><span>Download All SVGs (1107)</span></a>
+        <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.5.1.tgz" aria-label="Download Sargam Icons"><span>Download All SVGs</span></a>
       </div>
     </div>
   </header>
@@ -255,8 +251,8 @@ const fullHtmlContent = `<!DOCTYPE html>
       </div>
     </div>
     <section id="icon-grid" aria-labelledby="icon-grid-heading">
-      <h2 id="icon-grid-heading" class="sr-only">Icon Collection</h2>
-      <div class="flex-grid" aria-label="Collection of 300+ icons">
+      <h2 id="icon-grid-heading" class="sr-only">Sargam Icons</h2>
+      <div class="flex-grid" aria-label="Collection of 1100+ icons">
         ${iconGridContent}
       </div>
     </section>
