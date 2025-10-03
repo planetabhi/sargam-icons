@@ -152,7 +152,6 @@ iconNames.forEach(function(iconName, index) {
       <div class="icon-placeholder" style="display:none; width:24px; height:24px; background:var(--border-muted); border-radius:2px; position:absolute; top:4rem; left:50%; transform:translateX(-50%);"></div>
       <img class="downloadable-icon" data-type="fill" data-name="${iconName}" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName} fill style" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
       <div class="icon-placeholder" style="display:none; width:24px; height:24px; background:var(--border-muted); border-radius:2px; position:absolute; top:6.75rem; left:50%; transform:translateX(-50%);"></div>
-      <div id="icon-${index}-desc" class="sr-only"></div>
     </div>`;
 });
 
