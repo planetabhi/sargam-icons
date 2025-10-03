@@ -80,7 +80,7 @@
   }
 
   :focus-visible {
-    outline: var(--s-02) solid var(--teal3);
+    outline: 1.5px solid var(--teal3);
     outline-offset: var(--s-02);
     box-shadow: none;
   }
@@ -347,7 +347,7 @@
 
     &:focus {
       outline: 0;
-      box-shadow: 0 0 0 2px var(--teal3);
+      box-shadow: 0 0 0 1.5px var(--teal3);
     }
 
     &:active { 
