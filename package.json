@@ -1,6 +1,6 @@
 {
   "name": "sargam-icons",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "A collection of open-source icons crafted to match your exquisite designs.",
   "scripts": {
     "clean": "rimraf package *.tgz",
