@@ -10,8 +10,17 @@ function getIconNames(directory) {
 
 function getCriticalCSS() {
   return `
+@font-face {
+  font-family: 'Alegreya';
+  src: url('fonts/sans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   font-size: 16px;
+  --sargam: "Alegreya", system-ui, sans-serif;
   --container-max-width: 100%;
   --container-padding: var(--s-24);
   --container-padding-mobile: 1.5rem;
@@ -23,6 +32,7 @@ html, body {
 }
 
 body {
+  font-family: var(--sargam);
   color: var(--content-primary);
   font-kerning: normal;
   overflow-wrap: break-word;
@@ -163,7 +173,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="preload" href="fonts/sargam.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>Sargam Icons</title>
   <meta name="description" content="A collection of open-source icons crafted to match your exquisite designs.">
@@ -258,10 +268,10 @@ const fullHtmlContent = `<!DOCTYPE html>
   <div class="details">
     <p>With simplicity, consistency, and flexibility in mind, each icon has been designed on a 24 x 24 grid to meet your essential digital needs.</p>
     <ul>
+      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://github.com/planetabhi/sargam-icons/tree/main/Icons">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
-      <li>Optimized for better web performance.</li>
-      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.6.4.tgz">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
-      <li>To request a new icon, please <a href="https://github.com/planetabhi/sargam-icons/issues">open a GitHub issue</a>.</li>
+      <li>Optimized vector points and SVGs for better performance.</li>
+      <li>[NEW] Introducing <a href="https://new-ui.com/templates?ref=sargamicons.com" target="_blank" rel="noopener noreferrer">New UI Templates</a> — Authentic, simple sites for founders tired of looking like everyone else. 👀</li>
       <li>Support us on <a href="https://buymeacoffee.com/planetabhi">Buy Me a Coffee</a>.</li>
     </ul>
   </div>
