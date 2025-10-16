@@ -195,8 +195,19 @@ const fullHtmlContent = `<!DOCTYPE html>
         <span class="version-pill" aria-label="Version">v1.6.4</span>
       </div>
       <div class="rhs">
-        <a href="https://www.figma.com/community/file/1152296792728333709/sargam-icons" target="_blank" rel="noopener noreferrer" aria-label="Figma">Get a Figma copy</a>
         <a href="https://github.com/planetabhi/sargam-icons" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+
+        <div class="zoom-separator" role="separator"></div>
+        
+        <button type="button" class="zoom-btn" id="zoom-out" aria-label="Zoom out" title="Zoom out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m21 21-4-4m-9-6h6m5 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></svg>
+        </button>
+        
+        <button type="button" class="zoom-btn" id="zoom-in" aria-label="Zoom in" title="Zoom in">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m21 21-4-4m-9-6h6m-3 3V8m8 3a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></svg>
+        </button>
+        
+        <div class="zoom-separator" role="separator"></div>
         
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
         <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
@@ -221,7 +232,8 @@ const fullHtmlContent = `<!DOCTYPE html>
     <div class="header-content">
       <h1>It Takes a Pro to Know the Difference <wbr> Between Sargam & Just Icons</h1>
       <div class="CTAs">
-        <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.6.4.tgz" aria-label="Download Sargam Icons"><span>Download All — 1,227</span></a>
+        <a href="https://www.figma.com/community/file/1152296792728333709/sargam-icons" aria-label="Get a Figma copy" rel="noopener noreferrer"><span>Get a Figma Copy</span></a>
+        <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.6.4.tgz" aria-label="Download Sargam icons"><span>Download All SVGs</span></a>
       </div>
     </div>
   </header>
@@ -439,10 +451,55 @@ const fullHtmlContent = `<!DOCTYPE html>
       }
     })();
 
+    (function initZoomControls() {
+      var ZOOM_LEVELS = [1, 1.5, 2, 2.5, 3];
+      var currentZoomIndex = 0;
+      var iconGrid = document.getElementById('icon-grid');
+      var zoomInBtn = document.getElementById('zoom-in');
+      var zoomOutBtn = document.getElementById('zoom-out');
+      
+      function applyZoom(zoomLevel) {
+        if (iconGrid) {
+          iconGrid.style.zoom = zoomLevel;
+        }
+      }
+      
+      function updateButtons() {
+        if (zoomOutBtn) {
+          zoomOutBtn.disabled = currentZoomIndex === 0;
+        }
+        if (zoomInBtn) {
+          zoomInBtn.disabled = currentZoomIndex === ZOOM_LEVELS.length - 1;
+        }
+      }
+      
+      if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', function() {
+          if (currentZoomIndex < ZOOM_LEVELS.length - 1) {
+            currentZoomIndex++;
+            applyZoom(ZOOM_LEVELS[currentZoomIndex]);
+            updateButtons();
+          }
+        });
+      }
+      
+      if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', function() {
+          if (currentZoomIndex > 0) {
+            currentZoomIndex--;
+            applyZoom(ZOOM_LEVELS[currentZoomIndex]);
+            updateButtons();
+          }
+        });
+      }
+      
+      updateButtons();
+    })();
+
   </script>
 
 </body>
 </html>`;
 
 fs.writeFileSync(path.join(__dirname, 'src', 'template.html'), fullHtmlContent);
-console.log('template.html generated successfully');
+console.log('generated successfully');
