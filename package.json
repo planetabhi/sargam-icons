@@ -1,6 +1,6 @@
 {
   "name": "sargam-icons",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "description": "A collection of open-source icons crafted to match your exquisite designs.",
   "scripts": {
     "clean": "rimraf package *.tgz",
@@ -28,7 +28,9 @@
     "svg",
     "react",
     "optimized",
-    "figma"
+    "figma",
+    "compressed",
+    "sargam"
   ],
   "author": "@planetabhi",
   "license": "MIT",
