@@ -28,7 +28,9 @@
     "svg",
     "react",
     "optimized",
-    "figma"
+    "figma",
+    "compressed",
+    "sargam"
   ],
   "author": "@planetabhi",
   "license": "MIT",
