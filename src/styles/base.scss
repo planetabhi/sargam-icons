@@ -1,7 +1,5 @@
 @use "@new-ui/reset";
 @use "@sargamdesign/colors";
-@use "system-fonts-stack";
-@use "spacings";
 
 @font-face {
   font-family: "Alegreya";
@@ -18,6 +16,10 @@
     "DejaVu Sans Mono", monospace;
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   --container-max-width: 100%;
   --container-padding: var(--s-16);
   --container-padding-mobile: 1.5rem;
@@ -25,6 +27,28 @@
   --elevated-shadow: 0 0 0 1px var(--background-selected),
     0 1px 1px -0.5px var(--shadow-color), 0 3px 3px -1.5px var(--shadow-color),
     0 12px 12px -6px var(--shadow-color);
+  --s-00: 0rem;
+  --s-01: .0625rem;
+  --s-02: .125rem;
+  --s-04: .25rem;
+  --s-06: .375rem;
+  --s-08: .5rem;
+  --s-12: .75rem;
+  --s-16: 1rem;
+  --s-20: 1.25rem;
+  --s-24: 1.5rem;
+  --s-32: 2rem;
+  --s-40: 2.5rem;
+  --s-48: 3rem;
+  --s-56: 3.5rem;
+  --s-64: 4rem;
+  --s-72: 4.5rem;
+  --s-80: 5rem;
+  --s-96: 6rem;
+  --s-112: 7rem;
+  --s-120: 7.5rem;
+  --s-128: 8rem;
+  --s-160: 10rem;
 }
 
 @mixin container-base {
@@ -178,13 +202,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: var(--s-08);
+    gap: var(--s-06);
     min-width: max-content;
     box-sizing: border-box;
 
     a {
       font: 400 0.875rem/1.563rem var(--sargam);
-      padding: var(--s-04) var(--s-20);
+      padding: var(--s-04) var(--s-16);
       text-decoration-line: none;
       cursor: default;
       color: var(--content-primary-alt);
@@ -267,7 +291,7 @@ header {
   &-inner {
     max-width: var(--container-max-width);
     width: 100%;
-    max-width: 48rem;
+    max-width: 40rem;
     margin: 1rem auto 0;
     padding: var(--s-08);
     box-sizing: border-box;
@@ -315,12 +339,13 @@ header {
   gap: 8px;
 
   svg {
-    transition: transform 0.3s ease;
+    animation: rotate 4s linear infinite;
+    animation-play-state: paused;
   }
 
   svg:hover,
   &:hover svg {
-    animation: rotate 4s linear infinite;
+    animation-play-state: running;
   }
 }
 
@@ -427,7 +452,8 @@ header {
   color: var(--content-primary-alt);
 
   li {
-    list-style-type: "∘";
+    /*list-style-type: "∘";*/
+    list-style-type: devanagari;
     padding-inline-start: 1ch;
   }
 }

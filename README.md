@@ -1,8 +1,8 @@
 # Sargam Icons
-A collection of open-source icons crafted to match your exquisite designs.
+A collection of 1200+ handcrafted open-source icons.
 
 - Built using SVG stroke, providing maximum flexibility on styling.
-- Optimized exports for better web performance.
+- Optimized vector paths and SVGs for better performance.
 - Request a new icon by creating an issue.
 
 [[sargamicons.com]](https://sargamicons.com/) ∠( ᐛ 」∠)_
