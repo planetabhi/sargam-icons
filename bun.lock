@@ -6,6 +6,7 @@
       "devDependencies": {
         "@babel/core": "^7.28.5",
         "@babel/preset-env": "^7.28.5",
+        "@new-ui/colors": "^2.2.0",
         "@new-ui/reset": "^0.1.0",
         "@rspack/cli": "^1.6.0",
         "@rspack/core": "^1.6.0",
@@ -259,6 +260,8 @@
     "@module-federation/webpack-bundler-runtime": ["@module-federation/webpack-bundler-runtime@0.21.2", "", { "dependencies": { "@module-federation/runtime": "0.21.2", "@module-federation/sdk": "0.21.2" } }, "sha512-06R/NDY6Uh5RBIaBOFwYWzJCf1dIiQd/DFHToBVhejUT3ZFG7GzHEPIIsAGqMzne/JSmVsvjlXiJu7UthQ6rFA=="],
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.0.7", "", { "dependencies": { "@emnapi/core": "^1.5.0", "@emnapi/runtime": "^1.5.0", "@tybys/wasm-util": "^0.10.1" } }, "sha512-SeDnOO0Tk7Okiq6DbXmmBODgOAb9dp9gjlphokTUxmt8U3liIP1ZsozBahH69j/RJv+Rfs6IwUKHTgQYJ/HBAw=="],
+
+    "@new-ui/colors": ["@new-ui/colors@2.2.0", "", {}, "sha512-ZxqB+fcmKet3mZVHV2RiH70pnB1n7Glh+p33ok81Sj44VSpyvG82rnt/xDtmbjbFjI1PdgZXKPh7zAbzV3iHtQ=="],
 
     "@new-ui/reset": ["@new-ui/reset@0.1.0", "", {}, "sha512-JXGA17uuq4IgOkh91OHOPYxGO+DT/EZcQkGCNi0z4KM7ICmN3SoTZDR6HxemNh34FcdHXFSkHt8BRcm2WjY1lg=="],
 
