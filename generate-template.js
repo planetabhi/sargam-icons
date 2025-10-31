@@ -132,7 +132,7 @@ footer .footer-content {
   header { margin: 2rem 0; }
 }
 
-[color-scheme="dark"] .flex-grid-item img {
+[data-new-ui-theme="dark--warm"] .flex-grid-item img {
   filter: invert(1) sepia(100%) hue-rotate(180deg);
 }
   `;
@@ -156,7 +156,7 @@ iconNames.forEach(function(iconName, index) {
 });
 
 const fullHtmlContent = `<!DOCTYPE html>
-<html lang="en" color-scheme="light">
+<html lang="en" data-new-ui-theme="dark--warm">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -405,25 +405,25 @@ const fullHtmlContent = `<!DOCTYPE html>
     });
 
     (function initThemeToggle() {
-      var KEY = 'color-scheme';
+      var KEY = 'data-new-ui-theme';
       var el = document.documentElement;
       var saved = localStorage.getItem(KEY);
       var media = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
       function apply(theme) {
-        el.setAttribute('color-scheme', theme);
+        el.setAttribute('data-new-ui-theme', theme);
       }
       function currentSystemTheme() {
-        return media && media.matches ? 'dark' : 'light';
+        return media && media.matches ? 'dark--warm' : 'light--warm';
       }
 
-      if (saved === 'dark' || saved === 'light') {
+      if (saved === 'dark--warm' || saved === 'light--warm') {
         apply(saved);
       } else {
-        apply('light');
+        apply('dark--warm');
       }
       var btn = document.getElementById('theme-toggle');
       function syncIcons() {
-        var isDark = (el.getAttribute('color-scheme') || 'light') === 'dark';
+        var isDark = (el.getAttribute('data-new-ui-theme') || 'dark--warm') === 'dark--warm';
         var sun = document.getElementById('icon-sun');
         var moon = document.getElementById('icon-moon');
         var btn = document.getElementById('theme-toggle');
@@ -441,8 +441,8 @@ const fullHtmlContent = `<!DOCTYPE html>
 
       if (btn) {
         btn.addEventListener('click', function() {
-          var current = el.getAttribute('color-scheme') || 'light';
-          var next = current === 'light' ? 'dark' : 'light';
+          var current = el.getAttribute('data-new-ui-theme') || 'dark--warm';
+          var next = current === 'light--warm' ? 'dark--warm' : 'light--warm';
           apply(next);
           try { localStorage.setItem(KEY, next); } catch (e) {}
           syncIcons();

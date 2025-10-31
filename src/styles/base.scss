@@ -1,5 +1,5 @@
 @use "@new-ui/reset";
-@use "@sargamdesign/colors";
+@use "@new-ui/colors";
 
 @font-face {
   font-family: "Alegreya";
@@ -24,7 +24,7 @@
   --container-padding: var(--s-16);
   --container-padding-mobile: 1.5rem;
   --shadow-color: rgb(0 0 0 / 0.04);
-  --elevated-shadow: 0 0 0 1px var(--background-selected),
+  --elevated-shadow: 0 0 0 1px var(--border-muted),
     0 1px 1px -0.5px var(--shadow-color), 0 3px 3px -1.5px var(--shadow-color),
     0 12px 12px -6px var(--shadow-color);
   --s-00: 0rem;
@@ -65,11 +65,11 @@
 
 html,
 body {
-  background-color: var(--background-subtle);
+  background-color: var(--background-secondary);
 }
 
 body {
-  color: var(--content-primary);
+  color: var(--text-primary);
   font: 400 1em/1.5 var(--sargam);
   margin: var(--s-00);
   font-kerning: normal;
@@ -105,14 +105,14 @@ svg {
 }
 
 :focus-visible {
-  outline: 1.5px solid var(--teal3);
+  outline: 1.5px solid var(--border-focus);
   outline-offset: var(--s-02);
   box-shadow: none;
 }
 
 .flex-grid-item:focus,
 .flex-grid-item:focus-visible {
-  outline: 1.5px solid var(--teal3);
+  outline: 1.5px solid var(--border-focus);
   outline-offset: 2px;
 }
 
@@ -120,8 +120,8 @@ svg {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--content-primary);
-  color: var(--background);
+  background: var(--background-primary);
+  color: var(--content-secondary);
   padding: var(--s-04);
   text-decoration: none;
   border-radius: var(--s-04);
@@ -146,7 +146,7 @@ svg {
 }
 
 ::selection {
-  background: var(--content-primary);
+  background: var(--content-inked);
   color: var(--background);
   text-shadow: none;
 }
@@ -211,7 +211,7 @@ header {
       padding: var(--s-04) var(--s-16);
       text-decoration-line: none;
       cursor: default;
-      color: var(--content-primary-alt);
+      color: var(--content-primary);
       background: var(--background);
       border-radius: var(--s-04);
       box-shadow: var(--elevated-shadow);
@@ -242,9 +242,8 @@ header {
     overflow: hidden;
     margin: 0 calc(var(--s-02) * var(--zoom, 1)) calc(var(--s-04) * var(--zoom, 1));
     height: calc(9.5rem * var(--zoom, 1));
-    background: var(--background-subtle);
-    border: 1px dotted var(--border-default);
-    border-radius: var(--s-04);
+    background: var(--background);
+    border-radius: var(--s-00);
     content-visibility: auto;
     contain-intrinsic-size: 0 calc(9.5rem * var(--zoom, 1));
 
@@ -260,7 +259,8 @@ header {
         cursor: default;
 
         &:hover {
-          background: var(--content-placeholder);
+          background: var(--content-secondary-alt);
+          color: var(--content-on-color);
         }
       }
 
@@ -295,7 +295,7 @@ header {
     gap: var(--s-08);
     backdrop-filter: blur(40px);
     border-radius: var(--s-96);
-    background: var(--background-subtle);
+    background: var(--background-secondary);
     box-shadow: var(--elevated-shadow);
   }
 
@@ -347,7 +347,7 @@ header {
   font: 400 12px/1 var(--monospace);
   padding: var(--s-04) var(--s-06);
   border-radius: var(--s-04);
-  color: var(--content-primary-alt);
+  color: var(--content-primary);
   background: var(--background-selected);
 }
 
@@ -373,12 +373,12 @@ header {
   transition: transform 0.1s ease;
 
   &:hover:not(:disabled) {
-    border: 1px solid var(--border-default);
+    border: 1px solid var(--border);
   }
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 1.5px var(--teal3);
+    box-shadow: 0 0 0 1.5px var(--border-focus);
   }
 
   &:active:not(:disabled) {
@@ -413,12 +413,12 @@ header {
   transition: transform 0.1s ease;
 
   &:hover {
-    border: 1px solid var(--border-default);
+    border: 1px solid var(--border);
   }
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 1.5px var(--teal3);
+    box-shadow: 0 0 0 1.5px var(--border-focus);
   }
 
   &:active {
@@ -443,10 +443,9 @@ header {
   padding-inline: var(--container-padding);
   box-sizing: border-box;
   font: normal 1rem/1.5 var(--sargam);
-  color: var(--content-primary-alt);
+  color: var(--content-secondary);
 
   li {
-    /*list-style-type: "∘";*/
     list-style-type: devanagari;
     padding-inline-start: 1ch;
   }
@@ -463,7 +462,7 @@ header {
   input[type="search"] {
     width: 100%;
     box-sizing: border-box;
-    background-color: var(--background-subtle);
+    background-color: var(--background-secondary);
     box-shadow: none;
     appearance: none;
     border: 1px solid var(--border-muted);
@@ -479,9 +478,9 @@ header {
     }
 
     &:focus {
-      border-color: var(--teal6);
+      border-color: var(--border-focus);
       outline: 0;
-      box-shadow: 0 0 0 1.5px var(--teal3);
+      box-shadow: 0 0 0 1.5px var(--border-focus);
     }
 
     &::-webkit-search-cancel-button {
@@ -502,14 +501,14 @@ header {
   padding: 0;
   margin: 0;
   cursor: default;
-  color: var(--icon-secondary);
+  color: var(--content-secondary-alt);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 1.5px var(--teal3);
+    box-shadow: 0 0 0 1.5px var(--border-focus);
     border-radius: var(--s-02);
   }
 
@@ -525,7 +524,7 @@ footer {
   text-align: center;
   font: normal 0.8rem/1.5 var(--sargam);
   color: var(--content-secondary);
-  border-top: 1px dotted var(--border-default);
+  border-top: 1px dotted var(--border-muted);
 
   .footer-content {
     @include container-base;
@@ -565,7 +564,7 @@ footer {
     backdrop-filter: blur($blur);
     background: linear-gradient(
       180deg,
-      var(--background-subtle) 0%,
+      var(--background) 0%,
       transparent $mask-end
     );
     mask: linear-gradient(
