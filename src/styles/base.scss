@@ -564,7 +564,7 @@ footer {
     backdrop-filter: blur($blur);
     background: linear-gradient(
       180deg,
-      var(--background) 0%,
+      var(--background-secondary) 0%,
       transparent $mask-end
     );
     mask: linear-gradient(
