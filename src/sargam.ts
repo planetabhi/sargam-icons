@@ -1,14 +1,19 @@
-const fs = require('fs');
-const path = require('path');
-const sass = require('sass');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-function getIconNames(directory) {
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function getIconNames(directory: string): string[] {
   return fs.readdirSync(directory)
-    .filter(function(file) { return file.endsWith('.svg'); })
-    .map(function(file) { return path.basename(file, '.svg'); });
+    .filter((file: string) => file.endsWith('.svg'))
+    .map((file: string) => path.basename(file, '.svg'))
+    .sort();
 }
 
-function getCriticalCSS() {
+function getCriticalCSS(): string {
   return `
 :root {
   font-size: 16px;
@@ -138,12 +143,12 @@ footer .footer-content {
   `;
 }
 
-const iconNames = getIconNames(path.join(__dirname, 'Icons', 'Line'));
+const iconNames = getIconNames(path.join(__dirname, '..', 'Icons', 'Line'));
 const CDN_BASE_URL = 'https://cdn.jsdelivr.net/npm/sargam-icons@1.6.6/Icons/';
 const criticalCSS = getCriticalCSS();
 
 let iconGridContent = '';
-iconNames.forEach(function(iconName, index) {
+iconNames.forEach((iconName: string, index: number) => {
   iconGridContent += `
     <div class="flex-grid-item" data-icon-name="${iconName}" tabindex="0" aria-label="${iconName} icon - click to download" aria-describedby="icon-${index}-desc">
       <img class="downloadable-icon" data-type="line" data-name="${iconName}" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName} line style" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -501,5 +506,6 @@ const fullHtmlContent = `<!DOCTYPE html>
 </body>
 </html>`;
 
-fs.writeFileSync(path.join(__dirname, 'src', 'template.html'), fullHtmlContent);
+fs.writeFileSync(path.join(__dirname, 'template.html'), fullHtmlContent);
 console.log('generated successfully');
+
