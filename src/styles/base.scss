@@ -66,10 +66,10 @@ html[data-new-ui-theme*="dark"] {
 
 /* Light theme link color */
 html[data-new-ui-theme*="light"] {
-  --link: #E08742;
-  --link-hover: #E08742;
-  --link-visited: #E08742;
-  --border-focus: #E08742;
+  --link: #C5773A;
+  --link-hover: #9EA556;
+  --link-visited: #C5773A;
+  --border-focus: #C5773A;
 }
 
 @mixin container-base {
@@ -658,7 +658,6 @@ footer {
   }
 
   .top-nav-inner {
-    max-width: 28rem;
     margin: 0 auto 0;
   }
 }
