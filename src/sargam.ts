@@ -235,7 +235,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   
   <header>
     <div class="header-content">
-      <h1>Beautiful, handcrafted open-source icons<br>for your exquisite designs</h1>
+      <h1>1200+ handcrafted open-source icons<br>for your exquisite designs</h1>
       <div class="CTAs">
         <a href="https://www.figma.com/community/file/1152296792728333709/sargam-icons" aria-label="Open in Figma" rel="noopener noreferrer"><span>Open in Figma</span></a>
         <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.6.6.tgz" aria-label="Download all icons"><span>Download all</span></a>
@@ -277,13 +277,12 @@ const fullHtmlContent = `<!DOCTYPE html>
       <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
       <li>Optimized vector paths and SVGs for better performance.</li>
       <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://github.com/planetabhi/sargam-icons/tree/main/Icons">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
-      <li>Support sargam icons on <a href="https://buymeacoffee.com/planetabhi">buy me a coffee</a>.</li>
-      <li>[NEW] Introducing <a href="https://new-ui.com/templates?ref=sargamicons.com" target="_blank" rel="noopener noreferrer">New UI Templates</a> — Authentic, simple templates for makers tired of looking like everyone else. ♪(*・ω・人)</li>
+      <li>[✨NEW] Introducing <a href="https://new-ui.com/templates?ref=sargamicons.com" target="_blank" rel="noopener noreferrer">New UI Templates</a> — Simple templates for makers tired of looking like everyone else.</li>
     </ul>
   </div>
   <footer>
     <div class="footer-content">
-      ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> (^０^)ノ <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
+      ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
     </div>
   </footer>
 
