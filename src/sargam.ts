@@ -421,7 +421,7 @@ const fullHtmlContent = `<!DOCTYPE html>
       }
 
       if (saved === 'dark--warm' || saved === 'light--warm') {
-        apply(saved);
+        apply('dark--warm');
       } else {
         apply('dark--warm');
       }
