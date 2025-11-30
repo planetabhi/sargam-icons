@@ -63,9 +63,9 @@ html[data-new-ui-theme*="dark"] {
 }
 
 html[data-new-ui-theme*="light"] {
-  --link: #C5773A;
-  --link-hover: #9EA556;
-  --link-visited: #C5773A;
+  --link: #2972FF;
+  --link-hover: var(--black);
+  --link-visited: #2972FF;
   --border-focus: var(--border);
 }
 
@@ -345,7 +345,7 @@ header {
   z-index: 999;
   position: fixed;
   inset: 0% 0% auto;
-  border-bottom: 1.5px solid var(--border-muted);
+  border-bottom: 1px solid var(--border-muted);
   background: var(--background);
 
   &-inner {
@@ -388,7 +388,7 @@ header {
       background-color: var(--background);
       box-shadow: none;
       appearance: none;
-      border: 1.5px solid var(--border-muted);
+      border: 1px solid var(--border-muted);
       text-align: left;
       font: 400 0.875rem/1.5 var(--sargam);
       padding: var(--s-02) var(--s-06);
@@ -396,6 +396,8 @@ header {
       caret-color: var(--content-primary);
       text-transform: uppercase;
       cursor: var(--c-text);
+      --input-shadow: 2px 2px 0px 0px var(--background-secondary);
+      box-shadow: var(--input-shadow) inset;
 
       &::placeholder {
         color: var(--content-placeholder);
@@ -496,11 +498,15 @@ header {
   justify-content: center;
   color: var(--content-secondary);
   background: none;
-  border: 1.5px solid var(--border-muted);
-  transition: transform 0.1s ease;
+
+  border-left-color: var(--border-muted);
+  border-top-color: var(--border-muted);
+  border-right-color: var(--border-strong);
+  border-bottom-color: var(--border-strong);
+  border-style: solid;
+  border-width: 1px;
 
   &:hover:not(:disabled) {
-    border: 1.5px solid var(--border);
     color: var(--content-primary);
     background: var(--background-high-contrast);
   }
@@ -511,7 +517,10 @@ header {
   }
 
   &:active:not(:disabled) {
-    transform: scale(0.97);
+    border-left-color: var(--border-strong);
+    border-top-color: var(--border-strong);
+    border-right-color: var(--border-muted);
+    border-bottom-color: var(--border-muted);
   }
 
   &:disabled {
@@ -537,11 +546,15 @@ header {
   justify-content: center;
   color: var(--content-secondary);
   background: none;
-  border: 1.5px solid var(--border-muted);
-  transition: transform 0.1s ease;
+
+  border-left-color: var(--border-muted);
+  border-top-color: var(--border-muted);
+  border-right-color: var(--border-strong);
+  border-bottom-color: var(--border-strong);
+  border-style: solid;
+  border-width: 1px;
 
   &:hover {
-    border: 1.5px solid var(--border);
     color: var(--content-primary);
     background: var(--background-high-contrast);
   }
@@ -552,7 +565,10 @@ header {
   }
 
   &:active {
-    transform: scale(0.97);
+    border-left-color: var(--border-strong);
+    border-top-color: var(--border-strong);
+    border-right-color: var(--border-muted);
+    border-bottom-color: var(--border-muted);
   }
 
   svg {
@@ -685,6 +701,10 @@ footer {
       display: block;
     }
   }
+}
+
+img.popover-icon {
+  box-shadow: 0 0 0 1px var(--link-hover);
 }
 
 .popover-preview {
