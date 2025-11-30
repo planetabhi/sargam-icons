@@ -501,8 +501,8 @@ header {
 
   border-left-color: var(--border-muted);
   border-top-color: var(--border-muted);
-  border-right-color: var(--border-strong);
-  border-bottom-color: var(--border-strong);
+  border-right-color: var(--border);
+  border-bottom-color: var(--border);
   border-style: solid;
   border-width: 1px;
 
@@ -513,12 +513,11 @@ header {
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 .5px var(--border-focus);
   }
 
   &:active:not(:disabled) {
-    border-left-color: var(--border-strong);
-    border-top-color: var(--border-strong);
+    border-left-color: var(--border);
+    border-top-color: var(--border);
     border-right-color: var(--border-muted);
     border-bottom-color: var(--border-muted);
   }
@@ -549,8 +548,8 @@ header {
 
   border-left-color: var(--border-muted);
   border-top-color: var(--border-muted);
-  border-right-color: var(--border-strong);
-  border-bottom-color: var(--border-strong);
+  border-right-color: var(--border);
+  border-bottom-color: var(--border);
   border-style: solid;
   border-width: 1px;
 
@@ -561,12 +560,11 @@ header {
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 .5px var(--border-focus);
   }
 
   &:active {
-    border-left-color: var(--border-strong);
-    border-top-color: var(--border-strong);
+    border-left-color: var(--border);
+    border-top-color: var(--border);
     border-right-color: var(--border-muted);
     border-bottom-color: var(--border-muted);
   }
@@ -726,7 +724,7 @@ img.popover-icon {
   position: absolute;
   inset: 0;
   z-index: 1000;
-  background: repeating-linear-gradient(0deg, var(--link) 0, var(--link) 2px, transparent 2px, transparent 4px);
+  background: repeating-linear-gradient(0deg, var(--background-secondary) 0, var(--background-secondary) 2px, transparent 2px, transparent 4px);
   animation: lines 3s ease-out infinite;
   opacity: .2;
   mix-blend-mode: color-burn;

@@ -243,7 +243,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   
   <header>
     <div class="header-content">
-      <h1>1200+ handcrafted open-source icons<br>for your exquisite designs</h1>
+      <h1>1200+ Handcrafted Open-source Icons<br>For Your Exquisite Designs</h1>
       <div class="CTAs">
         <a href="https://www.figma.com/community/file/1152296792728333709/sargam-icons" aria-label="Open in Figma" rel="noopener noreferrer"><span>Open in Figma</span></a>
         <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.6.6.tgz" aria-label="Download all icons"><span>Download all</span></a>
