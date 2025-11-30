@@ -251,15 +251,6 @@ const fullHtmlContent = `<!DOCTYPE html>
     </div>
   </header>
 
-  <div class="gradient-blur-top">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
   <main id="main-content">
     <section id="icon-grid" aria-labelledby="icon-grid-heading">
       <h2 id="icon-grid-heading" class="sr-only">Sargam Icons</h2>
@@ -268,18 +259,9 @@ const fullHtmlContent = `<!DOCTYPE html>
       </div>
     </section>
   </main>
-  <div class="details">
-    <p>With simplicity, consistency, and flexibility in mind, each icon has been designed on a 24 x 24 grid to meet your essential digital needs.</p>
-    <ul>
-      <li>Built using SVG stroke, providing maximum flexibility on styling.</li>
-      <li>Optimized vector paths and SVGs for better performance.</li>
-      <li>Install for <a href="https://www.figma.com/community/file/1152296792728333709">Figma</a>, <a href="https://github.com/planetabhi/sargam-icons/tree/main/Icons">optimized SVGs</a>, and <a href="https://github.com/SargamDesign/sargam-icons-react">React</a>.</li>
-      <li>[✨NEW] Introducing <a href="https://new-ui.com/templates?ref=sargamicons.com" target="_blank" rel="noopener noreferrer">New UI Templates</a> — Simple templates for makers tired of looking like everyone else.</li>
-    </ul>
-  </div>
   <footer>
     <div class="footer-content">
-      ABHIMANYU RANA 2025 ©<br /> MIT License &middot; By <a href="https://planetabhi.com/" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
+      ABHIMANYU RANA 2025 ©<br /> <a href="https://github.com/planetabhi/sargam-icons/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">MIT License</a> &middot; By <a href="https://planetabhi.com/" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
     </div>
   </footer>
 

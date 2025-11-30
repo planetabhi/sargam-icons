@@ -164,6 +164,10 @@ svg {
   aspect-ratio: 1 / 1;
 }
 
+#icon-grid {
+  margin-bottom: var(--s-24);
+}
+
 :focus-visible {
   outline: 1.5px solid var(--border-focus);
   outline-offset: var(--s-02);
@@ -581,21 +585,6 @@ header {
   height: 0;
 }
 
-.details {
-  max-width: 40rem;
-  width: 100%;
-  margin: 2.5rem auto;
-  padding-inline: var(--container-padding);
-  box-sizing: border-box;
-  font: normal 1rem/1.5 var(--sargam);
-  color: var(--content-secondary);
-
-  li {
-    list-style-type: decimal;
-    padding-inline-start: 1ch;
-  }
-}
-
 footer {
   width: 100%;
   padding: 1rem 0;
@@ -611,77 +600,6 @@ footer {
 
   a {
     color: var(--link-hover);
-  }
-}
-
-.gradient-blur-top {
-  position: fixed;
-  top: 2rem;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  height: 5.2rem;
-  pointer-events: none;
-
-  &::before,
-  &::after,
-  >div {
-    position: absolute;
-    inset: 0;
-  }
-
-  @mixin blur-layer($z-index,
-    $blur,
-    $mask-start,
-    $mask-end,
-    $opacity-start: 1,
-    $opacity-mid: 0.8,
-    $opacity-end: 0) {
-    z-index: $z-index;
-    backdrop-filter: blur($blur);
-    background: linear-gradient(180deg,
-        var(--background) 0%,
-        transparent $mask-end );
-    mask: linear-gradient(180deg,
-        rgba(0, 0, 0, $opacity-start) $mask-start,
-        rgba(0, 0, 0, $opacity-mid) calc($mask-start + ($mask-end - $mask-start) / 2),
-        rgba(0, 0, 0, $opacity-end) $mask-end );
-  }
-
-  &::before {
-    content: "";
-    @include blur-layer(1, 0.5px, 0%, 37.5%, 1, 0.96, 0);
-  }
-
-  >div {
-    &:nth-of-type(1) {
-      @include blur-layer(2, 1px, 12.5%, 50%, 0, 0.88, 0);
-    }
-
-    &:nth-of-type(2) {
-      @include blur-layer(3, 2px, 25%, 62.5%, 0, 0.72, 0);
-    }
-
-    &:nth-of-type(3) {
-      @include blur-layer(4, 4px, 37.5%, 75%, 0, 0.64, 0);
-    }
-
-    &:nth-of-type(4) {
-      @include blur-layer(5, 8px, 50%, 87.5%, 0, 0.32, 0);
-    }
-
-    &:nth-of-type(5) {
-      @include blur-layer(6, 16px, 62.5%, 100%, 0, 0.24, 0);
-    }
-
-    &:nth-of-type(6) {
-      @include blur-layer(7, 32px, 75%, 100%, 0, 0.12, 0);
-    }
-  }
-
-  &::after {
-    content: "";
-    @include blur-layer(8, 64px, 87.5%, 100%, 0, 0.05, 0);
   }
 }
 
@@ -723,7 +641,7 @@ footer {
   transition-delay: .2s;
   opacity: 1;
 
-  --popover-shadow: 6px 6px 0px 0px var(--border);
+  --popover-shadow: 4px 4px 0px 0px var(--border);
   box-shadow: var(--popover-shadow);
 }
 
