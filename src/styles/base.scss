@@ -647,6 +647,8 @@ footer {
   border-bottom: 2px solid var(--background-high-contrast);
   cursor: var(--c-grab);
   user-select: none;
+  position: relative;
+  z-index: 999;
 
   &:active {
     cursor: grabbing;
@@ -712,8 +714,8 @@ img.popover-icon {
   background: var(--background);
 
   .popover-icon {
-    width: 128px;
-    height: 128px;
+    width: 96px;
+    height: 96px;
     object-fit: contain;
   }
 }
@@ -722,7 +724,7 @@ img.popover-icon {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1000;
+  z-index: 998;
   background: repeating-linear-gradient(0deg, var(--background-secondary) 0, var(--background-secondary) 2px, transparent 2px, transparent 4px);
   animation: lines 3s ease-out infinite;
   opacity: .2;
@@ -742,6 +744,8 @@ img.popover-icon {
   gap: 0;
   border-top: .5px solid var(--border-muted);
   background: var(--background-high-contrast);
+  position: relative;
+  z-index: 999;
 }
 
 .popover-menu-item {
