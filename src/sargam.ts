@@ -270,9 +270,7 @@ const fullHtmlContent = `<!DOCTYPE html>
       <div class="popover-header">
         <h3 id="popover-title" class="popover-icon-name"></h3>
         <button type="button" class="popover-close" aria-label="Close popover">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m7.757 16.243 8.486-8.486m0 8.486L7.757 7.757M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m7.757 16.243 8.486-8.486m0 8.486L7.757 7.757"/></svg>
         </button>
       </div>
       <div class="popover-preview">
@@ -280,16 +278,10 @@ const fullHtmlContent = `<!DOCTYPE html>
       </div>
       <div class="popover-menu">
         <button type="button" class="popover-menu-item" id="copy-svg-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 16H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2m-6 12h8a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2"/>
-          </svg>
-          <span>Copy SVG</span>
+          <span>[ Copy SVG ]</span>
         </button>
         <button type="button" class="popover-menu-item" id="download-svg-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v13m0 0 4-4m-4 4-4-4m13 9v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2"/>
-          </svg>
-          <span>Download SVG</span>
+          <span>[ Download SVG ]</span>
         </button>
       </div>
     </div>
@@ -402,6 +394,8 @@ const fullHtmlContent = `<!DOCTYPE html>
         if (e.key !== 'Tab') return;
         
         const focusableElements = getFocusableElements();
+        if (focusableElements.length === 0) return; // Guard against empty
+        
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
         
@@ -422,6 +416,8 @@ const fullHtmlContent = `<!DOCTYPE html>
         popoverContent.style.left = '50%';
         popoverContent.style.top = '50%';
         popoverContent.style.transform = 'translate(-50%, -50%)';
+        currentPosX = 0;
+        currentPosY = 0;
         offsetX = 0;
         offsetY = 0;
         hasBeenPositioned = true;
@@ -434,7 +430,7 @@ const fullHtmlContent = `<!DOCTYPE html>
         
         currentIconData = { iconName, iconType, iconUrl };
         
-        popoverTitle.textContent = iconName + ' (' + iconType + ')';
+        popoverTitle.textContent = iconName;
         popoverIcon.src = iconUrl;
         popoverIcon.alt = iconName + ' ' + iconType + ' icon';
         
@@ -449,7 +445,8 @@ const fullHtmlContent = `<!DOCTYPE html>
         popover.hidden = false;
         popover.setAttribute('aria-hidden', 'false');
         
-        // Add focus trap
+        // Add focus trap (remove first to prevent duplicates)
+        document.removeEventListener('keydown', trapFocus);
         document.addEventListener('keydown', trapFocus);
         
         // Focus first focusable element
@@ -503,11 +500,14 @@ const fullHtmlContent = `<!DOCTYPE html>
           .then(function(svgText) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
               return navigator.clipboard.writeText(svgText).then(function() {
-                const originalText = copyBtn.querySelector('span').textContent;
-                copyBtn.querySelector('span').textContent = 'Copied!';
-                setTimeout(function() {
-                  copyBtn.querySelector('span').textContent = originalText;
-                }, 800);
+                const spanEl = copyBtn.querySelector('span');
+                if (spanEl) {
+                  const originalText = spanEl.textContent;
+                  spanEl.textContent = 'Copied';
+                  setTimeout(function() {
+                    spanEl.textContent = originalText;
+                  }, 800);
+                }
               });
             } else {
               const textarea = document.createElement('textarea');
@@ -519,11 +519,14 @@ const fullHtmlContent = `<!DOCTYPE html>
               document.execCommand('copy');
               document.body.removeChild(textarea);
               
-              const originalText = copyBtn.querySelector('span').textContent;
-              copyBtn.querySelector('span').textContent = 'Copied!';
-              setTimeout(function() {
-                copyBtn.querySelector('span').textContent = originalText;
-              }, 800);
+              const spanEl = copyBtn.querySelector('span');
+              if (spanEl) {
+                const originalText = spanEl.textContent;
+                spanEl.textContent = 'Copied';
+                setTimeout(function() {
+                  spanEl.textContent = originalText;
+                }, 800);
+              }
             }
           })
           .catch(function(error) {

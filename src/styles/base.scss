@@ -59,14 +59,14 @@ html[data-new-ui-theme*="dark"] {
   --link: #E08742;
   --link-hover: #E9F37E;
   --link-visited: #E08742;
-  --border-focus: #E08742;
+  --border-focus: var(--border);
 }
 
 html[data-new-ui-theme*="light"] {
   --link: #C5773A;
   --link-hover: #9EA556;
   --link-visited: #C5773A;
-  --border-focus: #C5773A;
+  --border-focus: var(--border);
 }
 
 @mixin container-base {
@@ -104,25 +104,6 @@ body {
 
   &.font-loaded {
     font-family: var(--sargam);
-  }
-}
-
-body:after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: repeating-linear-gradient(0deg, var(--link) 0, var(--link) 2px, transparent 2px, transparent 4px);
-  animation: lines 3s ease-out infinite;
-  opacity: .2;
-  mix-blend-mode: color-burn;
-  pointer-events: none;
-  display: none;
-}
-
-@keyframes lines {
-  to {
-    background-position: 0 25px
   }
 }
 
@@ -181,7 +162,7 @@ svg {
 
 .flex-grid-item:focus img,
 .flex-grid-item:focus-visible img {
-  outline: 1.5px solid var(--border-focus);
+  outline: .5px dotted var(--border-focus);
   outline-offset: 2px;
 }
 
@@ -664,6 +645,10 @@ footer {
     margin: 0;
     text-transform: uppercase;
     cursor: var(--c-grab);
+    max-width: 16ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .popover-close {
@@ -695,8 +680,8 @@ footer {
     }
 
     svg {
-      width: 16px;
-      height: 16px;
+      width: 24px;
+      height: 24px;
       display: block;
     }
   }
@@ -716,11 +701,30 @@ footer {
   }
 }
 
+.popover-preview:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  background: repeating-linear-gradient(0deg, var(--link) 0, var(--link) 2px, transparent 2px, transparent 4px);
+  animation: lines 3s ease-out infinite;
+  opacity: .2;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+}
+
+@keyframes lines {
+  to {
+    background-position: 0 25px
+  }
+}
+
 .popover-menu {
   display: flex;
   flex-direction: column;
   gap: 0;
   border-top: .5px solid var(--border-muted);
+  background: var(--background-high-contrast);
 }
 
 .popover-menu-item {
@@ -743,13 +747,12 @@ footer {
   }
 
   &:hover {
-    color: var(--content-primary);
-    background: var(--background);
+    color: var(--link-hover);
   }
 
   &:focus {
     outline: 0;
-    box-shadow: inset 0 0 0 1.5px var(--border-focus);
+    box-shadow: inset 0 0 0 .5px var(--border-focus);
   }
 
   &:active {
