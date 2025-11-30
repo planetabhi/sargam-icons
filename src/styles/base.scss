@@ -48,10 +48,11 @@
   --s-160: 10rem;
   --c-text: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' height='24' width='24'%3E%3Cpath fill='black' d='M9 4H11V5H9V4ZM12 6H11V5H12V6ZM13 6H12V18H11V19H9V20H11V19H12V18H13V19H14V20H16V19H14V18H13V6ZM14 5V6H13V5H14ZM14 5V4H16V5H14Z' clip-rule='evenodd' fill-rule='evenodd'/%3E%3Cpath fill='white' d='M15 3H16V4H15H14V3H15ZM14 5V4H13V5H12V4H11V3H10H9V4H8V5H9V6H10H11V18H10H9V19H8V20H9V21H10H11V20H12V19H13V20H14V21H15H16V20H17V19H16V18H15H14V6H15H16V5H17V4H16V5H15H14ZM13 6V5H14V6H13ZM13 18V6H12V5H11V4H10H9V5H10H11V6H12V18H11V19H10H9V20H10H11V19H12V18H13ZM13 18V19H14V20H15H16V19H15H14V18H13Z' clip-rule='evenodd' fill-rule='evenodd'/%3E%3C/svg%3E"
     ) 16 16, auto;
-  --c-pointer: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 4H11V5H9V4ZM9 10V8V5H8V8V10H6V11H5V13H6V14H7V16H8V17H9V18H10V20H11H12H13H14V19H15H16V20H17V19H18V17H19V15H20V10H19V9H18H17V8H15H14V7H12V5H11V8V10H12V8H14V10H15V9H17V11H18V10H19V15H18V17H17V13H16V17H17V19H16V18H15H14V19H13H12H11V18H10V17H9V16H8V13H7H6V11H8V12H9V13H10V10H9ZM9 10H8V11H9V10ZM14 13H15V17H14V13ZM13 13H12V17H13V13Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 5H11V8V10H12V8H14V10H15V9H17V10V11H18V10H19V15H18V17H17V13H16V17H17V18V19H16V18H14V19H13H12H11V18H10V17H9V16H8V13H6V11H8V12H9V13H10V12V10H9V8V5ZM12 13V17H13V13H12ZM14 13V17H15V13H14Z' fill='white'/%3E%3C/svg%3E"
+  --c-pointer: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 4H11V5H9V4ZM9 10V8V5H8V8V10H6V11H5V13H6V14H7V16H8V17H9V18H10V20H11H12H13H14V19H15H16V20H17V19H18V17H19V15H20V10H19V9H18H17V8H15H14V7H12V5H11V8V10H12V8H14V10H15V9H17V11H18V10H19V15H18V17H17V13H16V17H17V18V19H16V18H14V19H13H12H11V18H10V17H9V16H8V13H7H6V11H8V12H9V13H10V12V10H9ZM9 10H8V11H9V10ZM14 13H15V17H14V13ZM13 13H12V17H13V13Z' fill='black'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 5H11V8V10H12V8H14V10H15V9H17V10V11H18V10H19V15H18V17H17V13H16V17H17V18V19H16V18H14V19H13H12H11V18H10V17H9V16H8V13H6V11H8V12H9V13H10V12V10H9V8V5ZM12 13V17H13V13H12ZM14 13V17H15V13H14Z' fill='white'/%3E%3C/svg%3E"
     ) 10 5, pointer;
   --c-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' height='24' width='24'%3E%3Cpath fill='black' d='M9 5H8V16H9V15H10V14H11V15H12V17H13V19H14H15V17H14V15H13V13H14H15H16V12H15V11H14V10H13V9H12V8H11V7H10V6H9V5Z' clip-rule='evenodd' fill-rule='evenodd'/%3E%3Cpath fill='white' d='M8 4H9V5H8V4ZM8 16H7V5H8V16ZM9 16V17H8V16H9ZM10 15V16H9V15H10ZM11 15H10V14H11V15ZM12 17H11V16V15H12V16V17ZM13 19H12V18V17H13V18V19ZM15 19V20H14H13V19H14H15ZM15 17H16V18V19H15V18V17ZM14 15H15V16V17H14V16V15ZM13 14V15H14V14H16V13H17V12H16V11H15V10H14V9H13V8H12V7H11V6H10V5H9V6H10V7H11V8H12V9H13V10H14V11H15V12H16V13H13V14Z' clip-rule='evenodd' fill-rule='evenodd'/%3E%3C/svg%3E"
     ) 12 12, text;
+  --c-grab: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' height='24' width='24'%3E%3Cpath fill='black' d='M13 4H11V5H10V6H9V5H7V6H6V8H7V10H5V11H4V13H5V14H6V16H7V17H8V18H9V20H10H11H12H13V19H14H15V20H16V19H17V17H18V15H19V12H20V8H19V7H18V8H17V6H16V5H14H13V4ZM13 5V10H14V6H16V11H17V9H18V8H19V12H18V15H17V17H16V13H15V17H16V19H15V18H14H13V19H12H11H10V18H9V17H8V16H7V14H6V13H5V11H7V12H8V13H9V10H8V8H7V6H9V8H10V10H11V5H13ZM8 10V11H7V10H8ZM14 13H13V17H14V13ZM11 13H12V17H11V13Z' clip-rule='evenodd' fill-rule='evenodd'/%3E%3Cpath fill='white' d='M13 5H11V10H10V8H9V6H7V8H8V10H9V12V13H8V12H7V11H5V13H6V14H7V16H8V17H9V18H10V19H11H12H13V18H15V19H16V18V17H17V15H18V12H19V8H18V9H17V11H16V10V6H14V10H13V5ZM14 13H13V17H14V13ZM12 13H11V17H12V13ZM16 13H15V17H16V13Z' clip-rule='evenodd' fill-rule='evenodd'/%3E%3C/svg%3E") 12 12, grab;
 }
 
 html[data-new-ui-theme*="dark"] {
@@ -171,6 +172,11 @@ svg {
 
 .flex-grid-item:focus,
 .flex-grid-item:focus-visible {
+  outline: none;
+}
+
+.flex-grid-item:focus img,
+.flex-grid-item:focus-visible img {
   outline: 1.5px solid var(--border-focus);
   outline-offset: 2px;
 }
@@ -688,6 +694,13 @@ footer {
   &[hidden] {
     display: none;
   }
+
+  &[hidden] .popover-content {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition-delay: 0s;
+  }
 }
 
 .popover-content {
@@ -697,20 +710,30 @@ footer {
   transform: translate(-50%, -50%);
   z-index: 1;
   background: var(--background-high-contrast);
-  border: 1.5px solid var(--border);
-  box-shadow: var(--elevated-shadow);
-  min-width: 16rem;
-  max-width: 20rem;
+  width: 100%;
+  max-width: 16rem;
   pointer-events: auto;
+  border: 2px solid var(--black);
+  visibility: visible;
+
+  --ease-in: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity, visibility;
+  transition-duration: .2s;
+  transition-timing-function: var(--ease-in);
+  transition-delay: .2s;
+  opacity: 1;
+
+  --popover-shadow: 6px 6px 0px 0px var(--border);
+  box-shadow: var(--popover-shadow);
 }
 
 .popover-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--s-12) var(--s-16);
-  border-bottom: 1.5px dotted var(--border-muted);
-  cursor: grab;
+  padding-inline: var(--s-04);
+  padding-block: var(--s-02);
+  cursor: var(--c-grab);
   user-select: none;
 
   &:active {
@@ -722,8 +745,7 @@ footer {
     color: var(--content-primary);
     margin: 0;
     text-transform: uppercase;
-    flex: 1;
-    cursor: var(--c-text);
+    cursor: var(--c-grab);
   }
 
   .popover-close {
@@ -737,16 +759,15 @@ footer {
     justify-content: center;
     color: var(--content-secondary);
     background: none;
-    border: 1.5px solid var(--border-muted);
     transition: transform 0.1s ease;
+    border: none;
 
     &:hover {
-      border-color: var(--border);
       color: var(--content-primary);
       background: var(--background);
     }
 
-    &:focus {
+    &:focus-visible {
       outline: 0;
       box-shadow: 0 0 0 .5px var(--border-focus);
     }
@@ -771,8 +792,8 @@ footer {
   background: var(--background);
 
   .popover-icon {
-    width: 48px;
-    height: 48px;
+    width: 128px;
+    height: 128px;
     object-fit: contain;
   }
 }
@@ -781,19 +802,19 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0;
-  border-top: 1.5px dotted var(--border-muted);
+  border-top: .5px solid var(--border-muted);
 }
 
 .popover-menu-item {
   display: flex;
   align-items: center;
   gap: var(--s-08);
-  padding: var(--s-12) var(--s-16);
+  padding: var(--s-04);
   font: 400 0.875rem/1.5 var(--sargam);
   color: var(--content-secondary);
   background: none;
   border: none;
-  border-bottom: 1.5px dotted var(--border-muted);
+  border-bottom: .5px solid var(--border-muted);
   cursor: var(--c-pointer);
   text-align: left;
   text-transform: uppercase;
@@ -872,15 +893,13 @@ footer {
   }
 }
 
-[color-scheme="dark--warm"] {
+[data-new-ui-theme="dark--warm"] {
 
   img[data-type="line"],
   img[data-type="duotone"],
-  img[data-type="fill"] {
-    filter: invert(1) sepia(100%) hue-rotate(180deg);
-  }
-
+  img[data-type="fill"],
   .popover-icon {
     filter: invert(1) sepia(100%) hue-rotate(180deg);
   }
+
 }

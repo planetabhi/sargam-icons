@@ -407,6 +407,33 @@ const fullHtmlContent = `<!DOCTYPE html>
       let offsetX = 0;
       let offsetY = 0;
       let hasBeenPositioned = false;
+      let previouslyFocusedElement = null;
+      
+      function getFocusableElements() {
+        return popoverContent.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+      }
+      
+      function trapFocus(e) {
+        if (e.key !== 'Tab') return;
+        
+        const focusableElements = getFocusableElements();
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+        
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
       
       function centerPopover() {
         popoverContent.style.left = '50%';
@@ -428,6 +455,9 @@ const fullHtmlContent = `<!DOCTYPE html>
         popoverIcon.src = iconUrl;
         popoverIcon.alt = iconName + ' ' + iconType + ' icon';
         
+        // Save previously focused element
+        previouslyFocusedElement = document.activeElement;
+        
         // Only center on first open
         if (!hasBeenPositioned) {
           centerPopover();
@@ -436,9 +466,15 @@ const fullHtmlContent = `<!DOCTYPE html>
         popover.hidden = false;
         popover.setAttribute('aria-hidden', 'false');
         
-        // Focus trap
+        // Add focus trap
+        document.addEventListener('keydown', trapFocus);
+        
+        // Focus first focusable element
         setTimeout(function() {
-          popoverClose.focus();
+          const focusableElements = getFocusableElements();
+          if (focusableElements.length > 0) {
+            focusableElements[0].focus();
+          }
         }, 100);
       }
       
@@ -447,6 +483,15 @@ const fullHtmlContent = `<!DOCTYPE html>
         popover.setAttribute('aria-hidden', 'true');
         currentIconData = null;
         isDragging = false;
+        
+        // Remove focus trap
+        document.removeEventListener('keydown', trapFocus);
+        
+        // Restore focus to previously focused element
+        if (previouslyFocusedElement && previouslyFocusedElement.focus) {
+          previouslyFocusedElement.focus();
+        }
+        previouslyFocusedElement = null;
       }
       
       function downloadIcon(iconName, iconType, iconUrl) {
@@ -462,7 +507,6 @@ const fullHtmlContent = `<!DOCTYPE html>
             a.click();
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
-            hidePopover();
           })
           .catch(function(error) { 
             console.error('Failed to download the icon:', error);
@@ -480,7 +524,6 @@ const fullHtmlContent = `<!DOCTYPE html>
                 copyBtn.querySelector('span').textContent = 'Copied!';
                 setTimeout(function() {
                   copyBtn.querySelector('span').textContent = originalText;
-                  hidePopover();
                 }, 800);
               });
             } else {
@@ -497,7 +540,6 @@ const fullHtmlContent = `<!DOCTYPE html>
               copyBtn.querySelector('span').textContent = 'Copied!';
               setTimeout(function() {
                 copyBtn.querySelector('span').textContent = originalText;
-                hidePopover();
               }, 800);
             }
           })
