@@ -395,18 +395,18 @@ header {
 
   .nav-search-wrapper {
     position: relative;
-    margin-left: var(--s-12);
+    margin-left: var(--s-00);
 
     input[type="search"] {
-      width: 16rem;
+      width: 12rem;
       box-sizing: border-box;
       background-color: var(--background);
       box-shadow: none;
       appearance: none;
       border: 1.5px solid var(--border-muted);
       text-align: left;
-      font: 400 0.75rem/1.5 var(--sargam);
-      padding: var(--s-04) var(--s-08);
+      font: 400 0.875rem/1.5 var(--sargam);
+      padding: var(--s-02) var(--s-06);
       color: var(--content-primary);
       caret-color: var(--content-primary);
       text-transform: uppercase;
@@ -616,7 +616,7 @@ footer {
 
 .gradient-blur-top {
   position: fixed;
-  top: 0;
+  top: 2rem;
   left: 0;
   right: 0;
   z-index: 50;
@@ -731,8 +731,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: var(--s-04);
-  padding-block: var(--s-02);
+  padding: var(--s-00) var(--s-00) var(--s-00) var(--s-06);
+  border-bottom: 2px solid var(--background-high-contrast);
   cursor: var(--c-grab);
   user-select: none;
 
