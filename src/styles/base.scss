@@ -162,7 +162,6 @@ svg {
 
 .flex-grid-item:focus img,
 .flex-grid-item:focus-visible img {
-  outline: .5px dotted var(--border-focus);
   outline-offset: 2px;
 }
 

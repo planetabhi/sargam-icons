@@ -413,11 +413,26 @@ const fullHtmlContent = `<!DOCTYPE html>
       }
       
       function centerPopover() {
+        // Position at offset: 72px from top, 48px from right
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const popoverWidth = popoverContent.offsetWidth || 256;
+        const popoverHeight = popoverContent.offsetHeight || 400;
+        
+        // Calculate position from center
+        const offsetFromRight = 48;
+        const offsetFromTop = 72;
+        
+        // X: offset from right edge
+        currentPosX = (viewportWidth / 2) - popoverWidth / 2 - offsetFromRight;
+        // Y: position top edge at offsetFromTop
+        // Center of popover should be at: offsetFromTop + popoverHeight/2
+        // Current center is at: viewportHeight / 2
+        currentPosY = (offsetFromTop + popoverHeight / 2) - (viewportHeight / 2);
+        
         popoverContent.style.left = '50%';
         popoverContent.style.top = '50%';
-        popoverContent.style.transform = 'translate(-50%, -50%)';
-        currentPosX = 0;
-        currentPosY = 0;
+        popoverContent.style.transform = 'translate(calc(-50% + ' + currentPosX + 'px), calc(-50% + ' + currentPosY + 'px))';
         offsetX = 0;
         offsetY = 0;
         hasBeenPositioned = true;
@@ -649,6 +664,13 @@ const fullHtmlContent = `<!DOCTYPE html>
           hidePopover();
         }
       });
+      
+      // Show random icon on page load
+      const allIcons = document.querySelectorAll('.downloadable-icon');
+      if (allIcons.length > 0) {
+        const randomIcon = allIcons[Math.floor(Math.random() * allIcons.length)];
+        showPopover(randomIcon);
+      }
     }
     
     if (document.readyState === 'loading') {
