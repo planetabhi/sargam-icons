@@ -18,12 +18,12 @@ function getCriticalCSS(): string {
 :root {
   font-size: 16px;
   --container-max-width: 100%;
-  --container-padding: var(--s-24);
+  --container-padding: var(--s-16);
   --container-padding-mobile: 1.5rem;
 }
 
 html, body {
-  background-color: var(--background-subtle);
+  background-color: var(--background);
   margin: 0;
 }
 
@@ -50,7 +50,7 @@ main #icon-grid .flex-grid {
 
 header {
   width: 100%;
-  margin: var(--s-112) 0 var(--s-64);
+  margin: var(--s-112) 0 var(--s-56);
   padding: 0;
   text-align: center;
 }
@@ -64,7 +64,7 @@ header .header-content {
 }
 
 header h1 {
-  margin-bottom: var(--s-12);
+  margin-bottom: var(--s-20);
 }
 
 .flex-grid {
@@ -134,10 +134,13 @@ footer .footer-content {
     --container-padding: var(--container-padding-mobile);
   }
   
-  header { margin: 2rem 0; }
+  header { margin: var(--s-128) 0 var(--s-64); }
 }
 
-[data-new-ui-theme="dark--warm"] .flex-grid-item img {
+[data-new-ui-theme="dark--warm"] img[data-type="line"],
+[data-new-ui-theme="dark--warm"] img[data-type="duotone"],
+[data-new-ui-theme="dark--warm"] img[data-type="fill"],
+[data-new-ui-theme="dark--warm"] .popover-icon {
   filter: invert(1) sepia(100%) hue-rotate(180deg);
 }
   `;

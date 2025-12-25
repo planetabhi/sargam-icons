@@ -1,6 +1,6 @@
 {
   "name": "sargam-icons",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "description": "A collection of 1200+ open-source icons.",
   "scripts": {
     "clean": "rimraf package *.tgz",
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
     "@new-ui/colors": "^2.2.3",
     "@new-ui/reset": "^0.1.1",
     "@rspack/cli": "^1.6.8",
