@@ -97,6 +97,15 @@ export default (env: BuildEnv, argv: Argv): Configuration => {
                     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
                 },
             }),
+            new rspack.HtmlRspackPlugin({
+                title: 'Changelog - Sargam Icons',
+                filename: 'changelog.html',
+                template: path.resolve(__dirname, 'src/changelog.html'),
+                favicon: path.resolve(__dirname, 'src/favicon.ico'),
+                meta: {
+                    viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+                },
+            }),
             new rspack.CssExtractRspackPlugin({
                 filename: isProd ? '[name][contenthash].css' : '[name].css',
             }),
