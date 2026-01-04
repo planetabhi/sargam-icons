@@ -994,6 +994,11 @@ const changelogPageHtml = `<!DOCTYPE html>
       </div>
     </section>
   </main>
+  <footer>
+    <div class="footer-content">
+      <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; aspect-ratio: auto;"></a>
+    </div>
+  </footer>
 
   <div id="icon-popover" class="icon-popover" hidden role="dialog" aria-labelledby="popover-title" aria-modal="true">
     <div class="popover-content">
