@@ -1,10 +1,27 @@
 {
-  "generated": "2026-01-04T17:17:00.340Z",
+  "generated": "2026-01-04T17:29:45.714Z",
   "totalIcons": 433,
   "entries": [
     {
-      "version": "1.6.6",
-      "date": "2025-10-28",
+      "version": "1.6.7",
+      "date": "2025-12-24",
+      "newIcons": [
+        "Eye",
+        "Flow",
+        "Flow_branch",
+        "Flow_cascade",
+        "Flow_tree",
+        "Link",
+        "Nope",
+        "Server",
+        "Umbrella",
+        "Unlink"
+      ],
+      "highlights": []
+    },
+    {
+      "version": "1.6.5",
+      "date": "2025-10-23",
       "newIcons": [
         "AI_alt_2",
         "Activity",
@@ -17,8 +34,8 @@
       "highlights": []
     },
     {
-      "version": "1.6.5",
-      "date": "2025-10-23",
+      "version": "1.6.4",
+      "date": "2025-10-09",
       "newIcons": [
         "Bar_chart",
         "Barn",
@@ -31,8 +48,8 @@
       "highlights": []
     },
     {
-      "version": "1.6.4",
-      "date": "2025-10-09",
+      "version": "1.6.3",
+      "date": "2025-10-08",
       "newIcons": [
         "Crop",
         "Inflight",
@@ -47,7 +64,7 @@
       "highlights": []
     },
     {
-      "version": "1.6.2",
+      "version": "1.6.1",
       "date": "2025-10-06",
       "newIcons": [
         "AI_fact",
@@ -56,8 +73,8 @@
       "highlights": []
     },
     {
-      "version": "1.6.1",
-      "date": "2025-10-06",
+      "version": "1.6.0",
+      "date": "2025-10-03",
       "newIcons": [
         "Click",
         "Release_notes",
@@ -67,8 +84,8 @@
       "highlights": []
     },
     {
-      "version": "1.6.0",
-      "date": "2025-10-03",
+      "version": "1.5.1",
+      "date": "2025-10-02",
       "newIcons": [
         "AI",
         "AI_alt_1",
@@ -101,8 +118,8 @@
       "highlights": []
     },
     {
-      "version": "1.5.1",
-      "date": "2025-10-02",
+      "version": "1.5.0",
+      "date": "2025-09-29",
       "newIcons": [
         "Building",
         "Building_alt_1",
@@ -117,8 +134,8 @@
       "highlights": []
     },
     {
-      "version": "1.5.0",
-      "date": "2025-09-29",
+      "version": "1.4.12",
+      "date": "2025-09-26",
       "newIcons": [
         "Airplane",
         "Airplane_alt",
@@ -144,8 +161,8 @@
       "highlights": []
     },
     {
-      "version": "1.4.12",
-      "date": "2025-09-26",
+      "version": "1.4.11",
+      "date": "2025-09-25",
       "newIcons": [
         "Bin",
         "Map",
@@ -163,8 +180,8 @@
       "highlights": []
     },
     {
-      "version": "1.4.11",
-      "date": "2025-09-25",
+      "version": "1.3.0",
+      "date": "2022-12-20",
       "newIcons": [
         "Attachment",
         "Bluetooth",
@@ -231,8 +248,8 @@
       "highlights": []
     },
     {
-      "version": "1.3.0",
-      "date": "2022-12-20",
+      "version": "1.0.1",
+      "date": "2022-10-08",
       "newIcons": [
         "Actions",
         "Apple",
@@ -277,6 +294,12 @@
     {
       "version": "1.0.0",
       "date": "2022-10-08",
+      "newIcons": [],
+      "highlights": []
+    },
+    {
+      "version": "0.7.0",
+      "date": "2022-10-05",
       "newIcons": [
         "Home",
         "Home_detailed",
@@ -292,8 +315,8 @@
       "highlights": []
     },
     {
-      "version": "0.7.0",
-      "date": "2022-10-05",
+      "version": "0.6.1",
+      "date": "2022-10-02",
       "newIcons": [
         "Align_bottom_detailed",
         "Align_bottom_simple",
@@ -319,8 +342,8 @@
       "highlights": []
     },
     {
-      "version": "0.6.1",
-      "date": "2022-10-02",
+      "version": "0.6.0",
+      "date": "2022-10-01",
       "newIcons": [
         "Alert",
         "Bookmark",
@@ -337,8 +360,8 @@
       "highlights": []
     },
     {
-      "version": "0.6.0",
-      "date": "2022-10-01",
+      "version": "0.5.2",
+      "date": "2022-09-24",
       "newIcons": [
         "Add",
         "Add_alarm",

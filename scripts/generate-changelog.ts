@@ -124,11 +124,13 @@ function generateChangelog(): Changelog {
 
     for (let i = 0; i < versionsToProcess.length; i++) {
         const current = versionsToProcess[i];
-        const previous = versionsToProcess[i + 1];
+        // Look forward: from current version commit to next version commit (or HEAD for latest)
+        const next = i > 0 ? versionsToProcess[i - 1] : null;
 
+        // Get icons added AFTER this version commit up to the next version (or HEAD)
         const newIcons = getNewIconsBetweenCommits(
-            previous?.hash || '',
-            current.hash
+            current.hash,
+            next?.hash || 'HEAD'
         );
 
         console.log(`${current.version}: ${newIcons.length} new icons`);
