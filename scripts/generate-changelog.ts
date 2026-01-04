@@ -39,7 +39,9 @@ function getVersionCommits(): VersionCommit[] {
     const output = execGit('git log --all --format="%H|%s|%ad" --date=short');
     if (!output) return [];
 
-    const versionPattern = /(?:new:\s*)?v?(\d+\.\d+\.?\d*)/i;
+    // Pattern to detect and capture version from commits like "new:v1.6.7", "new v1.6.6", "new: v1.0.0", or just "v1.0.0"
+    // Uses optional colon (new:?) to match both "new:" and "new "
+    const versionPattern = /^(?:new:?\s*)?v?(\d+\.\d+\.?\d*)/i;
     const versions: VersionCommit[] = [];
     const seenVersions = new Set<string>();
 
@@ -47,21 +49,19 @@ function getVersionCommits(): VersionCommit[] {
         if (!line) continue;
         const [hash, subject, date] = line.split('|');
 
-        // Check if this is a version commit
-        if (subject.match(/^(?:new:?\s*)?v?\d+\.\d+/i)) {
-            const match = subject.match(versionPattern);
-            if (match) {
-                let version = match[1];
-                // Normalize version (add .0 if needed)
-                if (version.split('.').length === 2) {
-                    version += '.0';
-                }
+        // Use single regex for both check and capture
+        const match = subject.match(versionPattern);
+        if (match) {
+            let version = match[1];
+            // Normalize version (add .0 if needed)
+            if (version.split('.').length === 2) {
+                version += '.0';
+            }
 
-                // Only take the first (most recent) commit for each version
-                if (!seenVersions.has(version)) {
-                    seenVersions.add(version);
-                    versions.push({ hash, version, date });
-                }
+            // Only take the first (most recent) commit for each version
+            if (!seenVersions.has(version)) {
+                seenVersions.add(version);
+                versions.push({ hash, version, date });
             }
         }
     }
