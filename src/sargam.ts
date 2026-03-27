@@ -223,12 +223,12 @@ const fullHtmlContent = `<!DOCTYPE html>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>sargam icons</title>
-  <meta name="description" content="A collection of 1200+ handcrafted open-source icons.">
+  <meta name="description" content="A collection of 1,200+ handcrafted, and meticulously optimized open-source icons for your exquisite designs.">
   <meta name="author" content="@planetabhi" />
   <meta property="og:title" content="sargam icons" />
   <meta property="og:url" content="https://sargamicons.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="A collection of 1200+ handcrafted open-source icons." />
+  <meta property="og:description" content="A collection of 1,200+ handcrafted, and meticulously optimized open-source icons for your exquisite designs." />
   <meta property="og:site_name" content="sargam icons" />
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="canonical" href="https://sargamicons.com/">
@@ -238,7 +238,7 @@ const fullHtmlContent = `<!DOCTYPE html>
     "@type": "WebSite",
     "name": "Sargam Icons",
     "url": "https://sargamicons.com/",
-    "description": "A collection of 1200+ handcrafted open-source icons.",
+    "description": "A collection of 1,200+ handcrafted, and meticulously optimized open-source icons for your exquisite designs.",
     "author": {
       "@type": "Person",
       "name": "Abhimanyu Rana",
@@ -315,7 +315,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   
   <header>
     <div class="header-content">
-      <h1>1200+ Handcrafted Open-source Icons<br>For Your Exquisite Designs</h1>
+      <h1>Handcrafted. Optimized. Open-source.</h1>
       <div class="CTAs">
         <a href="https://www.figma.com/community/file/1152296792728333709/sargam-icons" aria-label="Open in Figma" rel="noopener noreferrer"><span>Open in Figma</span></a>
         <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-1.6.7.tgz" aria-label="Download all icons"><span>Download all</span></a>
@@ -333,7 +333,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   </main>
   <footer>
     <div class="footer-content">
-      <a href="/changelog.html">Changelog</a> &middot; <a href="https://github.com/SargamDesign/sargam-icons-react" target="_blank" rel="noopener noreferrer">React</a> &middot; <a href="https://github.com/planetabhi/sargam-icons/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License</a> <br /> By <a href="https://planetabhi.com/" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> <br /> ABHIMANYU RANA 2026 © <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
+      <a href="/changelog.html">Changelog</a> &middot; <a href="https://github.com/SargamDesign/sargam-icons-react" target="_blank" rel="noopener noreferrer">React</a> &middot; <a href="https://github.com/planetabhi/sargam-icons/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License</a> <br /> By <a href="https://x.com/planetabhi" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> &middot; ABHIMANYU RANA 2026 © <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
     </div>
   </footer>
 
