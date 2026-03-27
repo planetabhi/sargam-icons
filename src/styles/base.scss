@@ -77,6 +77,40 @@ html[data-new-ui-theme*="light"] {
   box-sizing: border-box;
 }
 
+// Shared styles for icon-style nav buttons (zoom-btn, theme-toggle)
+@mixin icon-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  cursor: var(--c-pointer);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--content-secondary);
+  background: none;
+  border-left-color: var(--border-muted);
+  border-top-color: var(--border-muted);
+  border-right-color: var(--border);
+  border-bottom-color: var(--border);
+  border-style: solid;
+  border-width: 1px;
+
+  &:hover:not(:disabled) {
+    color: var(--content-primary);
+    background: var(--background-high-contrast);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+}
+
 .container {
   @include container-base;
 }
@@ -488,31 +522,7 @@ header {
 }
 
 .zoom-btn {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  cursor: var(--c-pointer);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--content-secondary);
-  background: none;
-
-  border-left-color: var(--border-muted);
-  border-top-color: var(--border-muted);
-  border-right-color: var(--border);
-  border-bottom-color: var(--border);
-  border-style: solid;
-  border-width: 1px;
-
-  &:hover:not(:disabled) {
-    color: var(--content-primary);
-    background: var(--background-high-contrast);
-  }
-
-  &:focus {
-    outline: 0;
-  }
+  @include icon-btn;
 
   &:active:not(:disabled) {
     border-left-color: var(--border);
@@ -526,52 +536,16 @@ header {
     cursor: not-allowed;
     border: 1px solid transparent;
   }
-
-  svg {
-    width: 16px;
-    height: 16px;
-    display: block;
-  }
 }
 
 .theme-toggle {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  cursor: var(--c-pointer);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--content-secondary);
-  background: none;
-
-  border-left-color: var(--border-muted);
-  border-top-color: var(--border-muted);
-  border-right-color: var(--border);
-  border-bottom-color: var(--border);
-  border-style: solid;
-  border-width: 1px;
-
-  &:hover {
-    color: var(--content-primary);
-    background: var(--background-high-contrast);
-  }
-
-  &:focus {
-    outline: 0;
-  }
+  @include icon-btn;
 
   &:active {
     border-left-color: var(--border);
     border-top-color: var(--border);
     border-right-color: var(--border-muted);
     border-bottom-color: var(--border-muted);
-  }
-
-  svg {
-    width: 16px;
-    height: 16px;
-    display: block;
   }
 }
 
@@ -822,6 +796,9 @@ img.popover-icon {
   }
 }
 
+// ─────────────────────────────────────────────
+// Responsive overrides
+// ─────────────────────────────────────────────
 @media screen and (max-width: 639px) {
   :root {
     --container-padding: var(--container-padding-mobile);
@@ -831,9 +808,6 @@ img.popover-icon {
     margin: var(--s-128) 0 var(--s-64);
   }
 
-  .details {
-    margin: var(--s-64) 0;
-  }
 
   .top-nav-inner {
     margin: 0 auto 0;
@@ -862,6 +836,21 @@ img.popover-icon {
 
   .top-nav .lhs {
     gap: var(--s-04);
+  }
+
+  // Changelog responsive
+  .changelog-summary {
+    flex-wrap: wrap;
+    gap: var(--s-06);
+  }
+
+  .changelog-count {
+    width: 100%;
+  }
+
+  .changelog-icon-btn {
+    width: 32px;
+    height: 32px;
   }
 }
 
@@ -1049,21 +1038,7 @@ img.popover-icon {
   }
 }
 
-@media screen and (max-width: 639px) {
-  .changelog-summary {
-    flex-wrap: wrap;
-    gap: var(--s-06);
-  }
 
-  .changelog-count {
-    width: 100%;
-  }
-
-  .changelog-icon-btn {
-    width: 32px;
-    height: 32px;
-  }
-}
 
 [data-new-ui-theme="dark--warm"] {
 
