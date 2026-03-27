@@ -131,9 +131,8 @@ function generatePopoverScript(
   clickSelector: string,
   showRandomOnLoad: boolean,
 ): string {
+  // cdnBaseUrl is interpolated as string literals into the generated JS — no runtime const needed
   return `
-    const CDN_BASE_URL = '${cdnBaseUrl}';
-
     function initIconPopover() {
       const popover = document.getElementById('icon-popover');
       const popoverContent = document.querySelector('.popover-content');
@@ -202,7 +201,9 @@ function generatePopoverScript(
       function showPopover(iconElement) {
         const iconName = iconElement.getAttribute('data-name');
         const iconType = iconElement.getAttribute('data-type') || 'line';
-        const iconUrl = iconElement.src || (CDN_BASE_URL + iconType.charAt(0).toUpperCase() + iconType.slice(1) + '/' + iconName + '.svg');
+        // For <img> elements, use their already-resolved src; for <button> elements (changelog)
+        // .src is undefined so we fall back to constructing the URL from CDN + data attributes.
+        const iconUrl = iconElement.src || ('${cdnBaseUrl}' + iconType.charAt(0).toUpperCase() + iconType.slice(1) + '/' + iconName + '.svg');
 
         currentIconData = { iconName, iconType, iconUrl };
         popoverTitle.textContent = iconName;
@@ -393,7 +394,7 @@ function generatePopoverScript(
         btn.addEventListener('click', function() {
           if (!currentIconData) return;
           const variant = btn.getAttribute('data-variant');
-          const newUrl = CDN_BASE_URL + variant.charAt(0).toUpperCase() + variant.slice(1) + '/' + currentIconData.iconName + '.svg';
+          const newUrl = '${cdnBaseUrl}' + variant.charAt(0).toUpperCase() + variant.slice(1) + '/' + currentIconData.iconName + '.svg';
           currentIconData.iconType = variant;
           currentIconData.iconUrl = newUrl;
           popoverIcon.src = newUrl;
@@ -556,7 +557,7 @@ const criticalCSS = getCriticalCSS();
 let iconGridContent = '';
 iconNames.forEach((iconName: string, index: number) => {
   iconGridContent += `
-    <div class="flex-grid-item" data-icon-name="${iconName}" tabindex="0" aria-label="${iconName} icon - click to download" aria-describedby="icon-${index}-desc">
+    <div class="flex-grid-item" data-icon-name="${iconName}" tabindex="0" aria-label="${iconName} icon">
       <img class="downloadable-icon" data-type="line" data-name="${iconName}" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName} line style" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
       <div class="icon-placeholder" style="display:none; width:24px; height:24px; background:var(--border-muted); border-radius:2px; position:absolute; top:1.25rem; left:50%; transform:translateX(-50%);"></div>
       <img class="downloadable-icon" data-type="duotone" data-name="${iconName}" src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="${iconName} duotone style" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -613,6 +614,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   </script>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <nav class="top-nav" aria-label="Primary">
     <div class="top-nav-inner">
       <div class="lhs">
@@ -809,6 +811,7 @@ const changelogPageHtml = `<!DOCTYPE html>
   <style>${criticalCSS}</style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <nav class="top-nav" aria-label="Primary">
     <div class="top-nav-inner">
       <div class="lhs">
