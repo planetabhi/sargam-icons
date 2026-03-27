@@ -2,6 +2,8 @@ node_modules
 dist
 src/assets
 src/template.html
+src/changelog.html
+src/changelog.json
 .env
 .DS_Store
 **/.DS_Store

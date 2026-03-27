@@ -52,7 +52,8 @@ export default (env: BuildEnv, argv: Argv): Configuration => {
                         {
                             loader: 'sass-loader',
                             options: {
-                                implementation: require('sass-embedded'),
+                                // Use package name string — ESM-safe, avoids require() in ESM context
+                                implementation: 'sass-embedded',
                             },
                         },
                     ],
