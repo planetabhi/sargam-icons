@@ -87,6 +87,10 @@ export default (env: BuildEnv, argv: Argv): Configuration => {
                     { from: path.resolve(__dirname, './Icons/Line'), to: 'icons/Line' },
                     { from: path.resolve(__dirname, './Icons/Duotone'), to: 'icons/Duotone' },
                     { from: path.resolve(__dirname, './Icons/Fill'), to: 'icons/Fill' },
+                    { from: path.resolve(__dirname, './public/robots.txt'), to: 'robots.txt' },
+                    { from: path.resolve(__dirname, './public/sitemap.xml'), to: 'sitemap.xml' },
+                    { from: path.resolve(__dirname, './public/_headers'), to: '_headers' },
+                    { from: path.resolve(__dirname, './public/.well-known'), to: '.well-known' },
                 ],
             }),
             new rspack.HtmlRspackPlugin({

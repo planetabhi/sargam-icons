@@ -1,0 +1,60 @@
+# robots.txt for sargam-icons
+# https://www.rfc-editor.org/rfc/rfc9309
+# Content Signals: https://contentsignals.org/
+
+# Allow all crawlers full access
+User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Allow: /
+Disallow: /icons/
+
+# AI / LLM crawlers — allow indexing of public pages
+User-agent: GPTBot
+Allow: /
+Disallow: /icons/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /icons/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /icons/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /icons/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /icons/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /icons/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /icons/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /icons/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /icons/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /icons/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /icons/
+
+User-agent: CCBot
+Allow: /
+Disallow: /icons/
+
+Sitemap: https://sargamicons.com/sitemap.xml

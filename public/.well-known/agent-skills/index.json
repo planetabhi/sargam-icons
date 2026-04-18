@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "sargam-icons",
+      "type": "skill-md",
+      "description": "Discover and browse 1,200+ open-source icons in Line, Fill, and Duotone styles.",
+      "url": "https://sargamicons.com/.well-known/agent-skills/sargam-icons/SKILL.md",
+      "digest": "sha256:6d28bf89e3cfc983abf201ccb656f73efd4557046200c12c5a7896828db70d1d"
+    }
+  ]
+}

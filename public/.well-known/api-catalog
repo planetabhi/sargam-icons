@@ -1,0 +1,24 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://sargamicons.com/",
+      "service-doc": [
+        {
+          "href": "https://github.com/planetabhi/sargam-icons",
+          "type": "text/html"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://github.com/planetabhi/sargam-icons/blob/main/README.md",
+          "type": "text/markdown"
+        }
+      ],
+      "describes": [
+        {
+          "href": "https://sargamicons.com/"
+        }
+      ]
+    }
+  ]
+}

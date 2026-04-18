@@ -1,0 +1,18 @@
+# Link response headers for agent discovery (RFC 8288, RFC 9727)
+/
+  Link: </sitemap.xml>; rel="sitemap"; type="application/xml"
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
+  Link: <https://github.com/planetabhi/sargam-icons>; rel="service-doc"
+  Vary: Accept
+
+# Serve api-catalog with correct Content-Type (RFC 9727)
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+
+# MCP Server Card (SEP-1649)
+/.well-known/mcp/server-card.json
+  Content-Type: application/json
+
+# Agent Skills Discovery index
+/.well-known/agent-skills/index.json
+  Content-Type: application/json
