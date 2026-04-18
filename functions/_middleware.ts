@@ -26,6 +26,24 @@ function acceptsMarkdown(request: Request): boolean {
   return accept.includes("text/markdown");
 }
 
+/** Decode common HTML entities. */
+function decodeEntities(text: string): string {
+  return text
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
+}
+
+/** Decode entities, collapse whitespace, and JSON-quote for safe front-matter. */
+function sanitizeMeta(raw: string): string {
+  const cleaned = decodeEntities(raw).replace(/\s+/g, " ").trim();
+  return JSON.stringify(cleaned);
+}
+
 /** Very small HTML-to-Markdown converter for static content pages. */
 function htmlToMarkdown(html: string): string {
   let md = html;
@@ -76,13 +94,7 @@ function htmlToMarkdown(html: string): string {
   md = md.replace(/<[^>]+>/g, "");
 
   // Decode common HTML entities
-  md = md
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, " ");
+  md = decodeEntities(md);
 
   // Collapse excessive blank lines
   md = md.replace(/\n{3,}/g, "\n\n").trim();
@@ -90,8 +102,8 @@ function htmlToMarkdown(html: string): string {
   // Prepend front-matter-style header
   const header = [
     "---",
-    title ? `title: ${title}` : null,
-    description ? `description: ${description}` : null,
+    title ? `title: ${sanitizeMeta(title)}` : null,
+    description ? `description: ${sanitizeMeta(description)}` : null,
     "---",
   ]
     .filter(Boolean)
@@ -122,12 +134,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   const markdown = htmlToMarkdown(html);
   const tokens = estimateTokens(markdown);
 
-  const headers = new Headers();
-  // Preserve cacheable headers from origin
-  for (const key of ["Cache-Control", "ETag", "Last-Modified"]) {
-    const val = response.headers.get(key);
-    if (val) headers.set(key, val);
-  }
+  const headers = new Headers(response.headers);
+  headers.delete("Content-Length"); // body size changes
   headers.set("Content-Type", "text/markdown; charset=utf-8");
   headers.set("Vary", "Accept");
   headers.set("x-markdown-tokens", String(tokens));

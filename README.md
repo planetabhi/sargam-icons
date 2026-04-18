@@ -19,4 +19,4 @@ A collection of 1200+ handcrafted open-source icons for your exquisite designs.
 - Request a new icon by creating an issue.
 
 
-[![](https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge)](https://www.jsdelivr.com/package/npm/sargam-icons)
+[![jsDelivr downloads badge](https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge)](https://www.jsdelivr.com/package/npm/sargam-icons)
