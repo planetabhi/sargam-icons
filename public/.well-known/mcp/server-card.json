@@ -1,0 +1,29 @@
+{
+  "serverInfo": {
+    "name": "sargam-icons",
+    "version": "1.6.7",
+    "description": "A collection of 1,200+ open-source icons in Line, Fill, and Duotone styles."
+  },
+  "capabilities": {
+    "resources": true,
+    "tools": false,
+    "prompts": false
+  },
+  "resources": [
+    {
+      "name": "icons-line",
+      "description": "Line-style SVG icons",
+      "uri": "https://sargamicons.com/icons/Line/"
+    },
+    {
+      "name": "icons-fill",
+      "description": "Fill-style SVG icons",
+      "uri": "https://sargamicons.com/icons/Fill/"
+    },
+    {
+      "name": "icons-duotone",
+      "description": "Duotone-style SVG icons",
+      "uri": "https://sargamicons.com/icons/Duotone/"
+    }
+  ]
+}
