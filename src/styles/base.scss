@@ -257,66 +257,43 @@ img,
   position: relative;
 }
 
-header {
-  width: 100%;
-  margin: var(--s-112) 0 var(--s-56);
-  text-align: center;
-  padding: 0;
+// Top-nav CTAs (Figma / Download all)
+.top-nav .CTAs {
+  display: flex;
+  align-items: center;
+  gap: var(--s-06);
+  min-width: 0;
 
-  .header-content {
-    @include container-base;
-    text-align: center;
-    max-inline-size: 40rem;
-  }
+  a {
+    font: 400 0.8125rem/1.4 var(--sargam);
+    padding: var(--s-02) var(--s-08);
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: var(--c-pointer);
+    color: var(--link);
+    background: var(--background-high-contrast);
+    white-space: nowrap;
 
-  h1 {
-    font: 400 1.75rem/2.25rem var(--sargam);
-    color: var(--content-primary);
-    margin-bottom: var(--s-20);
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
+    border-left-color: var(--border-muted);
+    border-top-color: var(--border-muted);
+    border-right-color: var(--border-strong);
+    border-bottom-color: var(--border-strong);
+    border-style: solid;
+    border-width: 1px;
 
-    span {
-      font: italic normal 1em var(--sargam);
+    &:hover { color: var(--link-hover); }
+
+    &:active {
+      border-left-color: var(--border-strong);
+      border-top-color: var(--border-strong);
+      border-right-color: var(--border-muted);
+      border-bottom-color: var(--border-muted);
     }
   }
+}
 
-  .CTAs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--s-08);
-    min-width: max-content;
-    box-sizing: border-box;
-
-    a {
-      font: 400 0.875rem/1.563rem var(--sargam);
-      padding: var(--s-02) var(--s-12);
-      text-transform: uppercase;
-      text-decoration-line: none;
-      cursor: var(--c-pointer);
-      color: var(--link);
-      background: var(--background-high-contrast);
-
-      border-left-color: var(--border-muted);
-      border-top-color: var(--border-muted);
-      border-right-color: var(--border-strong);
-      border-bottom-color: var(--border-strong);
-      border-style: solid;
-      border-width: 1px;
-
-      &:hover {
-        color: var(--link-hover);
-      }
-
-      &:active {
-        border-left-color: var(--border-strong);
-        border-top-color: var(--border-strong);
-        border-right-color: var(--border-muted);
-        border-bottom-color: var(--border-muted);
-      }
-    }
-  }
+main#main-content {
+  padding-top: var(--s-64);
 }
 
 .flex-grid {
@@ -804,13 +781,9 @@ img.popover-icon {
     --container-padding: var(--container-padding-mobile);
   }
 
-  header {
-    margin: var(--s-128) 0 var(--s-64);
-  }
-
-
   .top-nav-inner {
     margin: 0 auto 0;
+    gap: var(--s-04);
   }
 
   .popover-content {
@@ -838,6 +811,25 @@ img.popover-icon {
     gap: var(--s-04);
   }
 
+  .top-nav .rhs {
+    gap: var(--s-04);
+  }
+
+  .top-nav .CTAs {
+    gap: var(--s-04);
+
+    a {
+      font-size: 0.75rem;
+      padding: var(--s-02) var(--s-06);
+    }
+  }
+
+  // Hide desktop-only zoom controls on touch screens — pinch-zoom is native.
+  .top-nav .zoom-btn,
+  .top-nav .zoom-separator {
+    display: none;
+  }
+
   // Changelog responsive
   .changelog-summary {
     flex-wrap: wrap;
@@ -860,10 +852,6 @@ img.popover-icon {
   margin: var(--s-64) 0;
   border-top: 1px dotted var(--border-muted);
   padding-top: var(--s-48);
-}
-
-.changelog-page {
-  padding-top: var(--s-64);
 }
 
 .changelog-page .changelog-section {
@@ -895,11 +883,6 @@ img.popover-icon {
   color: var(--content-secondary-alt);
   margin: 0;
   padding: var(--s-08);
-}
-
-.top-nav a.active {
-  color: var(--link);
-  text-decoration: underline;
 }
 
 .changelog-container {
