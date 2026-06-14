@@ -257,66 +257,47 @@ img,
   position: relative;
 }
 
-header {
-  width: 100%;
-  margin: var(--s-112) 0 var(--s-56);
-  text-align: center;
-  padding: 0;
+// Top-nav CTAs (Figma / Download)
+.top-nav .CTAs {
+  display: flex;
+  align-items: center;
+  gap: var(--s-06);
+  min-width: 0;
 
-  .header-content {
-    @include container-base;
-    text-align: center;
-    max-inline-size: 40rem;
-  }
-
-  h1 {
-    font: 400 1.75rem/2.25rem var(--sargam);
-    color: var(--content-primary);
-    margin-bottom: var(--s-20);
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-
-    span {
-      font: italic normal 1em var(--sargam);
-    }
-  }
-
-  .CTAs {
-    display: flex;
-    justify-content: center;
+  a {
+    font: 400 0.8125rem/1 var(--sargam);
+    height: 2rem;
+    padding: 0 var(--s-08);
+    display: inline-flex;
     align-items: center;
-    gap: var(--s-08);
-    min-width: max-content;
     box-sizing: border-box;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: var(--c-pointer);
+    color: var(--link);
+    background: var(--background-high-contrast);
+    white-space: nowrap;
 
-    a {
-      font: 400 0.875rem/1.563rem var(--sargam);
-      padding: var(--s-02) var(--s-12);
-      text-transform: uppercase;
-      text-decoration-line: none;
-      cursor: var(--c-pointer);
-      color: var(--link);
-      background: var(--background-high-contrast);
+    border-left-color: var(--border-muted);
+    border-top-color: var(--border-muted);
+    border-right-color: var(--border-strong);
+    border-bottom-color: var(--border-strong);
+    border-style: solid;
+    border-width: 1px;
 
-      border-left-color: var(--border-muted);
-      border-top-color: var(--border-muted);
-      border-right-color: var(--border-strong);
-      border-bottom-color: var(--border-strong);
-      border-style: solid;
-      border-width: 1px;
+    &:hover { color: var(--link-hover); }
 
-      &:hover {
-        color: var(--link-hover);
-      }
-
-      &:active {
-        border-left-color: var(--border-strong);
-        border-top-color: var(--border-strong);
-        border-right-color: var(--border-muted);
-        border-bottom-color: var(--border-muted);
-      }
+    &:active {
+      border-left-color: var(--border-strong);
+      border-top-color: var(--border-strong);
+      border-right-color: var(--border-muted);
+      border-bottom-color: var(--border-muted);
     }
   }
+}
+
+main#main-content {
+  padding-top: var(--s-64);
 }
 
 .flex-grid {
@@ -417,14 +398,15 @@ header {
 
     input[type="search"] {
       width: 12rem;
+      height: 2rem;
       box-sizing: border-box;
       background-color: var(--background);
       box-shadow: none;
       appearance: none;
       border: 1px solid var(--border-muted);
       text-align: left;
-      font: 400 0.875rem/1.5 var(--sargam);
-      padding: var(--s-02) var(--s-06);
+      font: 400 0.875rem/1 var(--sargam);
+      padding: 0 var(--s-06);
       color: var(--content-primary);
       caret-color: var(--content-primary);
       text-transform: uppercase;
@@ -804,13 +786,9 @@ img.popover-icon {
     --container-padding: var(--container-padding-mobile);
   }
 
-  header {
-    margin: var(--s-128) 0 var(--s-64);
-  }
-
-
   .top-nav-inner {
     margin: 0 auto 0;
+    gap: var(--s-04);
   }
 
   .popover-content {
@@ -838,6 +816,25 @@ img.popover-icon {
     gap: var(--s-04);
   }
 
+  .top-nav .rhs {
+    gap: var(--s-04);
+  }
+
+  .top-nav .CTAs {
+    gap: var(--s-04);
+
+    a {
+      font-size: 0.75rem;
+      padding: 0 var(--s-06);
+    }
+  }
+
+  // Hide desktop-only zoom controls on touch screens — pinch-zoom is native.
+  .top-nav .zoom-btn,
+  .top-nav .zoom-separator {
+    display: none;
+  }
+
   // Changelog responsive
   .changelog-summary {
     flex-wrap: wrap;
@@ -860,10 +857,6 @@ img.popover-icon {
   margin: var(--s-64) 0;
   border-top: 1px dotted var(--border-muted);
   padding-top: var(--s-48);
-}
-
-.changelog-page {
-  padding-top: var(--s-64);
 }
 
 .changelog-page .changelog-section {
@@ -895,11 +888,6 @@ img.popover-icon {
   color: var(--content-secondary-alt);
   margin: 0;
   padding: var(--s-08);
-}
-
-.top-nav a.active {
-  color: var(--link);
-  text-decoration: underline;
 }
 
 .changelog-container {

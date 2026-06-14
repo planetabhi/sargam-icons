@@ -2,6 +2,7 @@
 /
   Link: </sitemap.xml>; rel="sitemap"; type="application/xml"
   Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
+  Link: </.well-known/sargam-icons.json>; rel="describedby"; type="application/json"
   Link: <https://github.com/planetabhi/sargam-icons>; rel="service-doc"
   Vary: Accept
 
@@ -16,3 +17,20 @@
 # Agent Skills Discovery index
 /.well-known/agent-skills/index.json
   Content-Type: application/json
+
+# Machine-readable icon manifest (consumed by tooling, LLMs, and the PWA)
+/.well-known/sargam-icons.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=300, must-revalidate
+  Access-Control-Allow-Origin: *
+
+# PWA web app manifest
+/manifest.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+# Service worker — must never be stuck in a CDN/browser cache
+/sw.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: no-cache, no-store, must-revalidate
+  Service-Worker-Allowed: /

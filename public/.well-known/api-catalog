@@ -14,6 +14,12 @@
           "type": "text/markdown"
         }
       ],
+      "describedby": [
+        {
+          "href": "https://sargamicons.com/.well-known/sargam-icons.json",
+          "type": "application/json"
+        }
+      ],
       "describes": [
         {
           "href": "https://sargamicons.com/"

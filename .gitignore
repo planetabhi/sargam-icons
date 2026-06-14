@@ -4,6 +4,9 @@ src/assets
 src/template.html
 src/changelog.html
 src/changelog.json
+public/sw.js
+icons.json
+Icons.d.ts
 .env
 .DS_Store
 **/.DS_Store
