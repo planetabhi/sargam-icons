@@ -257,7 +257,7 @@ img,
   position: relative;
 }
 
-// Top-nav CTAs (Figma / Download all)
+// Top-nav CTAs (Figma / Download)
 .top-nav .CTAs {
   display: flex;
   align-items: center;
@@ -265,8 +265,12 @@ img,
   min-width: 0;
 
   a {
-    font: 400 0.8125rem/1.4 var(--sargam);
-    padding: var(--s-02) var(--s-08);
+    font: 400 0.8125rem/1 var(--sargam);
+    height: 2rem;
+    padding: 0 var(--s-08);
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
     text-transform: uppercase;
     text-decoration: none;
     cursor: var(--c-pointer);
@@ -394,14 +398,15 @@ main#main-content {
 
     input[type="search"] {
       width: 12rem;
+      height: 2rem;
       box-sizing: border-box;
       background-color: var(--background);
       box-shadow: none;
       appearance: none;
       border: 1px solid var(--border-muted);
       text-align: left;
-      font: 400 0.875rem/1.5 var(--sargam);
-      padding: var(--s-02) var(--s-06);
+      font: 400 0.875rem/1 var(--sargam);
+      padding: 0 var(--s-06);
       color: var(--content-primary);
       caret-color: var(--content-primary);
       text-transform: uppercase;
@@ -820,7 +825,7 @@ img.popover-icon {
 
     a {
       font-size: 0.75rem;
-      padding: var(--s-02) var(--s-06);
+      padding: 0 var(--s-06);
     }
   }
 

@@ -822,7 +822,7 @@ const fullHtmlContent = `<!DOCTYPE html>
       <div class="rhs">
         <div class="CTAs">
           <a href="https://www.figma.com/community/file/1152296792728333709/sargam-icons" target="_blank" rel="noopener noreferrer" aria-label="Open in Figma"><span>Figma</span></a>
-          <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-${VERSION}.tgz" aria-label="Download all icons"><span>Download all</span></a>
+          <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-${VERSION}.tgz" aria-label="Download icons"><span>Download</span></a>
         </div>
 
         <div class="zoom-separator" role="separator"></div>
