@@ -757,7 +757,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/brand.svg" type="image/svg+xml">
   <title>sargam icons</title>
   <meta name="description" content="A collection of 1,200+ handcrafted, and meticulously optimized open-source icons for your exquisite designs.">
   <meta name="author" content="@planetabhi" />
@@ -766,7 +766,7 @@ const fullHtmlContent = `<!DOCTYPE html>
   <meta property="og:type" content="website" />
   <meta property="og:description" content="A collection of 1,200+ handcrafted, and meticulously optimized open-source icons for your exquisite designs." />
   <meta property="og:site_name" content="sargam icons" />
-  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="canonical" href="https://sargamicons.com/">
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#ffffff">
@@ -969,7 +969,7 @@ const changelogPageHtml = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/brand.svg" type="image/svg+xml">
   <title>Changelog - Sargam Icons</title>
   <meta name="description" content="Version history and new icons for Sargam Icons.">
   <meta name="author" content="@planetabhi" />
@@ -978,7 +978,7 @@ const changelogPageHtml = `<!DOCTYPE html>
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Version history and new icons for Sargam Icons." />
   <meta property="og:site_name" content="sargam icons" />
-  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="canonical" href="https://sargamicons.com/changelog.html">
   <link rel="manifest" href="/manifest.webmanifest">
   <meta name="theme-color" content="#ffffff">

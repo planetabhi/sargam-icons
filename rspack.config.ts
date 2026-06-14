@@ -96,6 +96,8 @@ export default (env: BuildEnv, argv: Argv): Configuration => {
                     { from: path.resolve(__dirname, './public/icon-192.png'), to: 'icon-192.png' },
                     { from: path.resolve(__dirname, './public/icon-512.png'), to: 'icon-512.png' },
                     { from: path.resolve(__dirname, './public/icon-512-maskable.png'), to: 'icon-512-maskable.png' },
+                    { from: path.resolve(__dirname, './public/apple-touch-icon.png'), to: 'apple-touch-icon.png' },
+                    { from: path.resolve(__dirname, './public/brand.svg'), to: 'brand.svg' },
                     { from: path.resolve(__dirname, './icons.json'), to: '.well-known/sargam-icons.json' },
                 ],
             }),
