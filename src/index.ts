@@ -13,9 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return (text || '').toLowerCase();
     }
 
-    function getItemName(item: HTMLElement): string {
-        const name = item.getAttribute('data-icon-name');
-        return name || '';
+    function getSearchText(item: HTMLElement): string {
+
+        const search = item.getAttribute('data-icon-search');
+        if (search) return search;
+        return item.getAttribute('data-icon-name') || '';
     }
 
     function filter(query: string): void {
@@ -28,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         items.forEach((el) => {
-            const name = normalize(getItemName(el));
-            el.style.display = name.includes(q) ? '' : 'none';
+            const haystack = normalize(getSearchText(el));
+            el.style.display = haystack.includes(q) ? '' : 'none';
         });
     }
 
@@ -73,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Cmd/Ctrl+K focuses the search input
     document.addEventListener('keydown', (e: KeyboardEvent) => {
         const isK = e.key === 'k' || e.key === 'K';
         if (isK && (e.metaKey || e.ctrlKey)) {
