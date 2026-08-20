@@ -2,13 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// ─────────────────────────────────────────────
-// Types
-// ─────────────────────────────────────────────
 
 interface ChangelogEntry {
   version: string;
@@ -22,10 +17,6 @@ interface Changelog {
   totalIcons: number;
   entries: ChangelogEntry[];
 }
-
-// ─────────────────────────────────────────────
-// Helpers
-// ─────────────────────────────────────────────
 
 function getVersion(): string {
   try {
@@ -64,14 +55,12 @@ function getIconNames(directory: string): string[] {
     .sort();
 }
 
-// ─────────────────────────────────────────────
-// Manifest + TypeScript declarations
-// ─────────────────────────────────────────────
-
 interface IconManifestEntry {
   name: string;
   category: string;
   addedIn: string;
+  tags: string[];
+  aliases: string[];
 }
 
 interface IconManifest {
@@ -84,15 +73,210 @@ interface IconManifest {
   icons: IconManifestEntry[];
 }
 
-/**
- * Derive a category from an icon file name.
- * Examples:
- *   si_AI               -> "AI"
- *   si_AI_alt_2         -> "AI"
- *   si_Arrow_upward     -> "Arrow"
- *   si_North_east       -> "North"
- *   si_Add              -> "Add"
- */
+interface TagsSourceEntry {
+  tags?: string[];
+  aliases?: string[];
+}
+type TagsSource = Record<string, TagsSourceEntry>;
+
+const TAG_CHARSET = /^[a-z0-9 -]+$/;
+const ALIAS_CHARSET = /^[A-Za-z0-9_]+$/;
+const MAX_TAG_LENGTH = 32;
+const MAX_ALIAS_LENGTH = 64;
+const MAX_TAGS_PER_ICON = 10;
+
+function stripSiPrefix(s: string): string {
+  return s.replace(/^si_/, '');
+}
+
+function loadTags(): TagsSource {
+  const p = path.join(__dirname, 'tags.json');
+  if (!fs.existsSync(p)) return {};
+  const raw = fs.readFileSync(p, 'utf-8');
+  let parsed: unknown;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (e) {
+    throw new Error(`src/tags.json is not valid JSON: ${(e as Error).message}`);
+  }
+  if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+    throw new Error('src/tags.json must be a JSON object at the top level.');
+  }
+  const out: TagsSource = {};
+  for (const [rawKey, val] of Object.entries(parsed as Record<string, unknown>)) {
+    const key = stripSiPrefix(rawKey);
+    if (!key) throw new Error('src/tags.json: empty key.');
+    if (out[key]) throw new Error(`src/tags.json: duplicate key "${key}".`);
+    if (typeof val !== 'object' || val === null || Array.isArray(val)) {
+      throw new Error(`src/tags.json: entry for "${key}" must be an object.`);
+    }
+    const entry = val as Record<string, unknown>;
+    if (entry.tags !== undefined && !Array.isArray(entry.tags)) {
+      throw new Error(`src/tags.json: "${key}".tags must be an array.`);
+    }
+    if (entry.aliases !== undefined && !Array.isArray(entry.aliases)) {
+      throw new Error(`src/tags.json: "${key}".aliases must be an array.`);
+    }
+    out[key] = {
+      tags: entry.tags as string[] | undefined,
+      aliases: entry.aliases as string[] | undefined,
+    };
+  }
+  return out;
+}
+
+function deriveBaseForAlt(iconName: string): string | null {
+  const m = iconName.match(/^(.+?)_alt(?:_\d+)?$/);
+  return m ? m[1] : null;
+}
+
+function normalizeTag(raw: string, ctx: string): string | null {
+  const collapsed = raw.replace(/\s+/g, ' ').trim().toLowerCase();
+  if (!collapsed) return null;
+  if (collapsed.length > MAX_TAG_LENGTH) {
+    throw new Error(`${ctx}: tag "${raw}" exceeds ${MAX_TAG_LENGTH} chars.`);
+  }
+  if (!TAG_CHARSET.test(collapsed)) {
+    throw new Error(`${ctx}: tag "${raw}" contains disallowed characters (allowed: a-z 0-9 space -).`);
+  }
+  return collapsed;
+}
+
+function normalizeAlias(raw: string, ctx: string): string | null {
+  const stripped = stripSiPrefix(raw).trim();
+  if (!stripped) return null;
+  if (stripped.length > MAX_ALIAS_LENGTH) {
+    throw new Error(`${ctx}: alias "${raw}" exceeds ${MAX_ALIAS_LENGTH} chars.`);
+  }
+  if (!ALIAS_CHARSET.test(stripped)) {
+    throw new Error(`${ctx}: alias "${raw}" contains disallowed characters (allowed: A-Z a-z 0-9 _).`);
+  }
+  return stripped;
+}
+
+function validateTagsSource(source: TagsSource, iconSet: Set<string>): void {
+  const realNamesLower = new Set(
+    Array.from(iconSet).map((n) => stripSiPrefix(n).toLowerCase()),
+  );
+  const aliasOwner = new Map<string, string>();
+
+  for (const [key, entry] of Object.entries(source)) {
+    if (!iconSet.has(`si_${key}`)) {
+      throw new Error(`src/tags.json: "${key}" does not correspond to an icon in Icons/Line.`);
+    }
+    const ctx = `src/tags.json[${key}]`;
+
+    const normTags: string[] = [];
+    for (const t of entry.tags ?? []) {
+      if (typeof t !== 'string') throw new Error(`${ctx}: tags must be strings.`);
+      const n = normalizeTag(t, ctx);
+      if (n && !normTags.includes(n)) normTags.push(n);
+    }
+    if (normTags.length > MAX_TAGS_PER_ICON) {
+      throw new Error(`${ctx}: more than ${MAX_TAGS_PER_ICON} tags.`);
+    }
+
+    const normAliases: string[] = [];
+    const seenAliasLower = new Set<string>();
+    for (const a of entry.aliases ?? []) {
+      if (typeof a !== 'string') throw new Error(`${ctx}: aliases must be strings.`);
+      const n = normalizeAlias(a, ctx);
+      if (!n) continue;
+      const lower = n.toLowerCase();
+      if (lower === key.toLowerCase()) {
+        throw new Error(`${ctx}: alias "${n}" equals its own icon name.`);
+      }
+      if (realNamesLower.has(lower)) {
+        throw new Error(`${ctx}: alias "${n}" collides with real icon name "si_${n}".`);
+      }
+      const prevOwner = aliasOwner.get(lower);
+      if (prevOwner && prevOwner !== key) {
+        throw new Error(`${ctx}: alias "${n}" also declared under "${prevOwner}".`);
+      }
+      aliasOwner.set(lower, key);
+      if (!seenAliasLower.has(lower)) {
+        seenAliasLower.add(lower);
+        normAliases.push(n);
+      }
+    }
+
+    if (normTags.length === 0 && normAliases.length === 0) {
+      throw new Error(`${ctx}: entry must contain at least one tag or alias.`);
+    }
+  }
+}
+
+function resolveIconEntry(
+  iconName: string,
+  source: TagsSource,
+  iconSet: Set<string>,
+): { tags: string[]; aliases: string[] } {
+  const key = stripSiPrefix(iconName);
+  const direct = source[key];
+
+  let tagsIn: string[] = [];
+  let aliasesIn: string[] = [];
+  if (direct) {
+    tagsIn = direct.tags ?? [];
+    aliasesIn = direct.aliases ?? [];
+  } else {
+
+    const base = deriveBaseForAlt(iconName);
+    if (base && iconSet.has(base)) {
+      const baseEntry = source[stripSiPrefix(base)];
+      if (baseEntry) tagsIn = baseEntry.tags ?? [];
+    }
+  }
+
+  const ctx = `resolveIconEntry(${iconName})`;
+  const tags: string[] = [];
+  for (const t of tagsIn) {
+    const n = normalizeTag(t, ctx);
+    if (n && !tags.includes(n)) tags.push(n);
+  }
+
+  const seenAliasLower = new Set<string>();
+  const aliases: string[] = [];
+  for (const a of aliasesIn) {
+    const n = normalizeAlias(a, ctx);
+    if (!n) continue;
+    const lower = n.toLowerCase();
+    if (seenAliasLower.has(lower)) continue;
+    seenAliasLower.add(lower);
+    aliases.push(n);
+  }
+
+  tags.sort();
+  aliases.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  return { tags, aliases };
+}
+
+function buildSearchHaystack(
+  iconName: string,
+  category: string,
+  entry: { tags: string[]; aliases: string[] },
+): string {
+  const parts = [
+    stripSiPrefix(iconName).replace(/_/g, ' ').toLowerCase(),
+    category.toLowerCase(),
+    ...entry.tags,
+    ...entry.aliases.map((a) => a.toLowerCase()),
+  ]
+    .join(' ')
+    .split(/\s+/)
+    .filter((t) => t && !/^\d+$/.test(t));
+
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const p of parts) {
+    if (!seen.has(p)) {
+      seen.add(p);
+      out.push(p);
+    }
+  }
+  return out.join(' ');
+}
+
 function deriveCategory(iconName: string): string {
   const stripped = iconName.replace(/^si_/, '');
   const noAlt = stripped.replace(/_alt(?:_\d+)?$/, '');
@@ -100,18 +284,13 @@ function deriveCategory(iconName: string): string {
   return first || stripped;
 }
 
-/**
- * Walk the changelog newest -> oldest and return the version where this icon
- * was first introduced. Changelog entries store names without the "si_" prefix.
- * Falls back to the oldest version present, so legacy icons get a stable value.
- */
 function deriveAddedIn(
   iconName: string,
   entries: ChangelogEntry[],
   fallback: string,
 ): string {
   const bare = iconName.replace(/^si_/, '');
-  // entries are listed newest first; the *last* match is the introduction.
+
   let introduced: string | null = null;
   for (const entry of entries) {
     if (entry.newIcons.includes(bare)) {
@@ -126,17 +305,26 @@ function buildManifest(
   changelogData: Changelog,
   version: string,
   cdnBase: string,
+  tagsSource: TagsSource,
 ): IconManifest {
+  const iconSet = new Set(iconNamesList);
+  validateTagsSource(tagsSource, iconSet);
+
   const oldestVersion =
     changelogData.entries.length > 0
       ? changelogData.entries[changelogData.entries.length - 1].version
       : version;
 
-  const icons: IconManifestEntry[] = iconNamesList.map((name) => ({
-    name,
-    category: deriveCategory(name),
-    addedIn: deriveAddedIn(name, changelogData.entries, oldestVersion),
-  }));
+  const icons: IconManifestEntry[] = iconNamesList.map((name) => {
+    const { tags, aliases } = resolveIconEntry(name, tagsSource, iconSet);
+    return {
+      name,
+      category: deriveCategory(name),
+      addedIn: deriveAddedIn(name, changelogData.entries, oldestVersion),
+      tags,
+      aliases,
+    };
+  });
 
   const categories = Array.from(new Set(icons.map((i) => i.category))).sort();
 
@@ -151,15 +339,6 @@ function buildManifest(
   };
 }
 
-/**
- * Generate the contents of Icons.d.ts.
- *
- * Pure types only — this file is intended to be loaded via the
- * "sargam-icons/types" subpath, which has no runtime JS. For runtime access
- * to per-icon metadata, import the JSON catalog instead:
- *
- *   import manifest from "sargam-icons/icons.json" with { type: "json" };
- */
 function buildTypesFile(manifest: IconManifest): string {
   const nameUnion = manifest.icons
     .map((i) => `  | ${JSON.stringify(i.name)}`)
@@ -169,13 +348,7 @@ function buildTypesFile(manifest: IconManifest): string {
     .map((c) => `  | ${JSON.stringify(c)}`)
     .join('\n');
 
-  return `// AUTO-GENERATED by src/sargam.ts — do not edit by hand.
-// Regenerate via: bun run generate-template
-//
-// Runtime metadata (category, addedIn, cdnBase, etc.) lives in the JSON
-// catalog and is available via:
-//   import manifest from "sargam-icons/icons.json" with { type: "json" };
-//   const url = manifest.cdnBase + "Line/" + iconName + ".svg";
+  return `
 
 export type SargamIconVariant = "line" | "duotone" | "fill";
 
@@ -190,6 +363,8 @@ export interface SargamIconMeta {
   readonly category: SargamIconCategory;
   readonly variants: readonly SargamIconVariant[];
   readonly addedIn: string;
+  readonly tags: readonly string[];
+  readonly aliases: readonly string[];
 }
 
 export interface SargamIconManifest {
@@ -204,178 +379,185 @@ export interface SargamIconManifest {
 `;
 }
 
-// ─────────────────────────────────────────────
-// Shared HTML generators
-// ─────────────────────────────────────────────
-
-/** The brand logo SVG — shared between both pages. */
 const BRAND_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none"><g fill="var(--content-primary)" clip-path="url(#a)"><path fill-rule="evenodd" d="M29.163 16.038a5.965 5.965 0 0 0-3.234-3.972 4.934 4.934 0 0 0-2.13-.429.134.134 0 0 1-.12-.206c.38-.625.614-1.329.686-2.057a5.97 5.97 0 0 0-1.821-4.802 5.487 5.487 0 0 0-2.247-1.348c-1.474-.443-2.637-.216-3.268.635-.35.504-.543 1.1-.552 1.714a2.86 2.86 0 0 0 .453 1.846 2.174 2.174 0 0 0 1.509.881 2.134 2.134 0 0 0 1.642-.531 2.077 2.077 0 0 0 .687-1.499.593.593 0 0 0-.498-.607.566.566 0 0 0-.635.562.932.932 0 0 1-.318.686.99.99 0 0 1-.762.25 1.027 1.027 0 0 1-.71-.414 1.77 1.77 0 0 1-.246-1.129c.004-.393.123-.775.342-1.1.443-.594 1.465-.399 2.034-.227a4.36 4.36 0 0 1 1.78 1.073 4.886 4.886 0 0 1 1.486 3.865 4.189 4.189 0 0 1-2.172 3.156l-.027.02-.147.086a.343.343 0 0 1-.447-.089 5.691 5.691 0 0 0-8.917 0 .343.343 0 0 1-.442.09l-.148-.087-.027-.02A4.194 4.194 0 0 1 8.743 9.23a4.908 4.908 0 0 1 1.484-3.865 4.37 4.37 0 0 1 1.784-1.073c.57-.172 1.592-.371 2.034.226.22.325.34.708.343 1.101.046.393-.04.79-.243 1.129a1.03 1.03 0 0 1-.71.414.98.98 0 0 1-.765-.25.933.933 0 0 1-.32-.686.565.565 0 0 0-.634-.562.593.593 0 0 0-.497.606 2.081 2.081 0 0 0 1.451 1.94 2.168 2.168 0 0 0 2.397-.773c.358-.544.52-1.194.456-1.842a3.13 3.13 0 0 0-.552-1.715c-.634-.85-1.794-1.077-3.268-.634a5.466 5.466 0 0 0-2.247 1.348 5.96 5.96 0 0 0-1.821 4.801c.071.729.306 1.432.686 2.058a.134.134 0 0 1-.12.206 4.929 4.929 0 0 0-2.127.429 5.978 5.978 0 0 0-3.237 3.971 5.519 5.519 0 0 0-.045 2.62c.343 1.5 1.132 2.401 2.185 2.511.092.007.185.007.278 0 .52-.012 1.03-.149 1.488-.398a2.83 2.83 0 0 0 1.372-1.313 2.164 2.164 0 0 0 0-1.746 2.123 2.123 0 0 0-2.12-1.254 2.093 2.093 0 0 0-.806.242.593.593 0 0 0-.278.738.566.566 0 0 0 .803.267.929.929 0 0 1 .765-.075.988.988 0 0 1 .682.948c0 .141-.029.28-.085.41-.19.347-.49.62-.854.775-.338.198-.728.291-1.119.267-.737-.085-1.076-1.07-1.213-1.65a4.36 4.36 0 0 1 .04-2.077 4.877 4.877 0 0 1 2.607-3.221 4.191 4.191 0 0 1 3.814.302l.178.103a.343.343 0 0 1 .144.428 5.703 5.703 0 0 0 4.761 7.752v.398a.517.517 0 0 0 0 .102 4.181 4.181 0 0 1-1.647 3.458 4.901 4.901 0 0 1-4.094.655 4.384 4.384 0 0 1-1.828-1.03c-.436-.407-1.118-1.196-.824-1.875.175-.351.45-.642.789-.837a1.773 1.773 0 0 1 1.098-.343 1.028 1.028 0 0 1 .717.404.993.993 0 0 1 .008 1.147.944.944 0 0 1-.29.267.562.562 0 0 0-.144.86.593.593 0 0 0 .752.094 2.077 2.077 0 0 0 .946-1.349 2.122 2.122 0 0 0-.36-1.687 2.178 2.178 0 0 0-1.52-.864 2.822 2.822 0 0 0-1.82.528c-.53.313-.954.78-1.215 1.337-.422.974-.034 2.093 1.084 3.149a5.463 5.463 0 0 0 2.291 1.269 6.198 6.198 0 0 0 1.687.233 5.785 5.785 0 0 0 3.372-1.05 4.859 4.859 0 0 0 1.433-1.632.14.14 0 0 1 .193-.052c.021.012.04.03.051.052a4.87 4.87 0 0 0 1.437 1.633 5.769 5.769 0 0 0 3.369 1.049c.57 0 1.138-.078 1.686-.234a5.463 5.463 0 0 0 2.292-1.268c1.122-1.056 1.506-2.175 1.084-3.149a3.086 3.086 0 0 0-1.211-1.337 2.84 2.84 0 0 0-1.825-.528 2.163 2.163 0 0 0-1.516.864 2.11 2.11 0 0 0-.36 1.687 2.059 2.059 0 0 0 .947 1.348.593.593 0 0 0 .751-.093.568.568 0 0 0-.144-.86.92.92 0 0 1-.446-.628.982.982 0 0 1 .165-.786 1.027 1.027 0 0 1 .713-.404c.394-.012.78.109 1.098.343.34.195.616.486.792.837.292.686-.391 1.468-.823 1.876a4.396 4.396 0 0 1-1.821 1.005 4.902 4.902 0 0 1-4.092-.649 4.198 4.198 0 0 1-1.647-3.453v-.207a.343.343 0 0 1 .299-.342 5.713 5.713 0 0 0 4.85-5.615 5.652 5.652 0 0 0-.392-2.057.344.344 0 0 1 .145-.429l.181-.107a4.199 4.199 0 0 1 3.818-.302 4.892 4.892 0 0 1 2.603 3.221c.178.679.19 1.39.035 2.075-.138.58-.478 1.564-1.212 1.65a1.979 1.979 0 0 1-1.121-.268 1.755 1.755 0 0 1-.853-.775 1.029 1.029 0 0 1 0-.82.987.987 0 0 1 .596-.538.944.944 0 0 1 .717.048.617.617 0 0 0 .761-.096.562.562 0 0 0-.148-.857 2.084 2.084 0 0 0-1.68-.172 2.115 2.115 0 0 0-1.28 1.142 2.164 2.164 0 0 0 0 1.746 2.84 2.84 0 0 0 1.372 1.313 3.06 3.06 0 0 0 1.767.381c1.05-.12 1.828-1.029 2.181-2.51a5.487 5.487 0 0 0-.038-2.617ZM16 11.421a4.57 4.57 0 0 1 3.379 1.496.342.342 0 0 1-.086.531l-2.95 1.715a.685.685 0 0 1-.686 0l-2.95-1.715a.342.342 0 0 1-.082-.531A4.562 4.562 0 0 1 16 11.42Zm-4.579 4.589c.002-.465.074-.928.213-1.371a.342.342 0 0 1 .5-.192l2.957 1.714a.686.686 0 0 1 .343.594v3.409a.342.342 0 0 1-.419.343 4.585 4.585 0 0 1-3.594-4.497Zm9.158 0a4.582 4.582 0 0 1-3.591 4.459.343.343 0 0 1-.415-.343V16.72a.686.686 0 0 1 .343-.593l2.953-1.715a.344.344 0 0 1 .5.195c.143.454.214.928.21 1.403Z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0ZM1.132 16C1.132 7.789 7.789 1.132 16 1.132S30.868 7.789 30.868 16 24.211 30.868 16 30.868 1.132 24.211 1.132 16Z" clip-rule="evenodd"/><path d="M4.727 8.981a1.029 1.029 0 1 1 1.144 1.711 1.029 1.029 0 0 1-1.144-1.71Zm21.974-.173a1.029 1.029 0 1 0 0 2.057 1.029 1.029 0 0 0 0-2.057ZM16 27.328a1.029 1.029 0 1 0 0 2.059 1.029 1.029 0 0 0 0-2.058Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h32v32H0z"/></clipPath></defs></svg>`;
 
-/** Theme-toggle button SVGs — shared between both pages. */
 const THEME_TOGGLE_SVGS = `
-  <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.41 13.28C7.332 10.205 6.716 5.693 8.357 2c-1.23.41-2.256 1.23-3.281 2.256a10.4 10.4 0 0 0 0 14.768c4.102 4.102 10.46 3.897 14.562-.205 1.026-1.026 1.846-2.051 2.256-3.282-3.896 1.436-8.409.82-11.486-2.256"/>
-  </svg>
-  <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" style="display:none">
-    <g clip-path="url(#sun-clip)">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M5 12H1m22 0h-4M7.05 7.05 4.222 4.222m15.556 15.556L16.95 16.95m-9.9 0-2.828 2.828M19.778 4.222 16.95 7.05M12 19v4m0-22v4m4 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/>
-    </g>
-    <defs>
-      <clipPath id="sun-clip"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath>
-    </defs>
-  </svg>`;
+  <span class="t-icon-swap" data-state="dark">
+    <span class="t-icon" data-icon="dark">
+      <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.41 13.28C7.332 10.205 6.716 5.693 8.357 2c-1.23.41-2.256 1.23-3.281 2.256a10.4 10.4 0 0 0 0 14.768c4.102 4.102 10.46 3.897 14.562-.205 1.026-1.026 1.846-2.051 2.256-3.282-3.896 1.436-8.409.82-11.486-2.256"/>
+      </svg>
+    </span>
+    <span class="t-icon" data-icon="light">
+      <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+        <g clip-path="url(#sun-clip)">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="M5 12H1m22 0h-4M7.05 7.05 4.222 4.222m15.556 15.556L16.95 16.95m-9.9 0-2.828 2.828M19.778 4.222 16.95 7.05M12 19v4m0-22v4m4 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0"/>
+        </g>
+        <defs>
+          <clipPath id="sun-clip"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath>
+        </defs>
+      </svg>
+    </span>
+  </span>`;
 
-/** The icon-popover dialog HTML — identical on both pages. */
 function generatePopoverHtml(): string {
   return `
-  <div id="icon-popover" class="icon-popover" hidden role="dialog" aria-labelledby="popover-title" aria-modal="true">
-    <div class="popover-content">
-      <div class="popover-header">
-        <h3 id="popover-title" class="popover-icon-name"></h3>
-        <button type="button" class="popover-close" aria-label="Close popover">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m7.757 16.243 8.486-8.486m0 8.486L7.757 7.757"/></svg>
-        </button>
-      </div>
-      <div class="popover-variants">
-        <button type="button" class="popover-variant active" data-variant="line">Line</button>
-        <button type="button" class="popover-variant" data-variant="duotone">Duotone</button>
-        <button type="button" class="popover-variant" data-variant="fill">Fill</button>
-      </div>
-      <div class="popover-preview">
-        <img class="popover-icon" src="" alt="" width="48" height="48">
-      </div>
-      <div class="popover-menu">
-        <button type="button" class="popover-menu-item" id="copy-svg-btn">
-          <span>[ Copy SVG ]</span>
-        </button>
-        <button type="button" class="popover-menu-item" id="copy-cdn-btn">
-          <span>[ Copy CDN ]</span>
-        </button>
-        <button type="button" class="popover-menu-item" id="download-svg-btn">
-          <span>[ Download ]</span>
-        </button>
-      </div>
+  <aside id="icon-panel" class="icon-panel" role="complementary" aria-label="Icon details" inert>
+    <div class="panel-header">
+      <h3 id="panel-title" class="panel-icon-name"></h3>
+      <button type="button" class="panel-close" aria-label="Close panel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m7.757 16.243 8.486-8.486m0 8.486L7.757 7.757"/></svg>
+      </button>
     </div>
-  </div>`;
+    <div class="panel-variants" role="tablist" aria-label="Icon variant">
+      <span class="panel-variants-pill" aria-hidden="true"></span>
+      <button type="button" class="panel-variant" role="tab" data-variant="line" aria-selected="true">Line</button>
+      <button type="button" class="panel-variant" role="tab" data-variant="duotone" aria-selected="false">Duotone</button>
+      <button type="button" class="panel-variant" role="tab" data-variant="fill" aria-selected="false">Fill</button>
+    </div>
+    <div class="panel-preview">
+      <img class="panel-icon" src="" alt="" width="48" height="48">
+    </div>
+    <ul class="panel-tags" hidden aria-label="Related tags"></ul>
+    <div class="panel-code-wrap" aria-label="SVG source">
+      <pre class="panel-code" aria-busy="false"><code></code></pre>
+    </div>
+    <footer class="panel-menu">
+      <button type="button" class="panel-menu-item" id="copy-svg-btn">
+        <span class="t-text-swap">[ Copy SVG ]</span>
+      </button>
+      <button type="button" class="panel-menu-item" id="copy-cdn-btn">
+        <span class="t-text-swap">[ Copy CDN ]</span>
+      </button>
+      <button type="button" class="panel-menu-item" id="download-svg-btn">
+        <span class="t-text-swap">[ Download ]</span>
+      </button>
+    </footer>
+  </aside>`;
 }
 
-/**
- * The shared initIconPopover() script block.
- *
- * @param cdnBaseUrl - The CDN base URL injected at build time.
- * @param clickSelector - CSS selector for clickable icon elements.
- * @param showRandomOnLoad - Whether to open a random icon popover on page load.
- */
 function generatePopoverScript(
   cdnBaseUrl: string,
   clickSelector: string,
   showRandomOnLoad: boolean,
 ): string {
-  // cdnBaseUrl is interpolated as string literals into the generated JS — no runtime const needed
+
   return `
-    function initIconPopover() {
-      const popover = document.getElementById('icon-popover');
-      const popoverContent = document.querySelector('.popover-content');
-      const popoverHeader = document.querySelector('.popover-header');
-      const popoverTitle = document.querySelector('.popover-icon-name');
-      const popoverIcon = document.querySelector('.popover-icon');
-      const popoverClose = document.querySelector('.popover-close');
+    function initIconPanel() {
+      const panel = document.getElementById('icon-panel');
+      const panelTitle = document.querySelector('.panel-icon-name');
+      const panelIcon = document.querySelector('.panel-icon');
+      const panelClose = document.querySelector('.panel-close');
+      const panelTags = document.querySelector('.panel-tags');
+      const panelCode = document.querySelector('.panel-code code');
       const copyBtn = document.getElementById('copy-svg-btn');
       const downloadBtn = document.getElementById('download-svg-btn');
       const copyCdnBtn = document.getElementById('copy-cdn-btn');
-      const variantBtns = document.querySelectorAll('.popover-variant');
+      const variantBtns = document.querySelectorAll('.panel-variant');
 
-      /** @type {{ iconName: string, iconType: string, iconUrl: string } | null} */
       let currentIconData = null;
-      let isDragging = false;
-      let offsetX = 0;
-      let offsetY = 0;
-      let currentPosX = 0;
-      let currentPosY = 0;
-      let hasBeenPositioned = false;
-      /** @type {Element | null} */
+
       let previouslyFocusedElement = null;
 
-      function getFocusableElements() {
-        return popoverContent.querySelectorAll(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        );
+      const svgTextByUrl = new Map();
+
+      function loadSvgText(url) {
+        if (svgTextByUrl.has(url)) return Promise.resolve(svgTextByUrl.get(url));
+        return fetch(url).then(function(r) { return r.text(); }).then(function(txt) {
+          svgTextByUrl.set(url, txt);
+          return txt;
+        });
       }
 
-      function trapFocus(e) {
-        if (e.key !== 'Tab') return;
-        const focusableElements = getFocusableElements();
-        if (focusableElements.length === 0) return;
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-        if (e.shiftKey) {
-          if (document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
-          }
-        } else {
-          if (document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
+      var updateCodeToken = 0;
+
+      function updateCodeBlock(url) {
+        if (!panelCode) return;
+        var myToken = ++updateCodeToken;
+        var placeholder = 'Loading SVG source\u2026';
+        panelCode.textContent = placeholder;
+        panelCode.setAttribute('data-text', placeholder);
+        panelCode.classList.add('t-shimmer');
+        panelCode.parentElement.setAttribute('aria-busy', 'true');
+        loadSvgText(url).then(function(svg) {
+          if (myToken !== updateCodeToken) return;
+          panelCode.textContent = svg;
+          panelCode.removeAttribute('data-text');
+          panelCode.classList.remove('t-shimmer');
+          panelCode.parentElement.setAttribute('aria-busy', 'false');
+        }).catch(function(err) {
+          if (myToken !== updateCodeToken) return;
+          console.error('Failed to load SVG:', err);
+          panelCode.textContent = '/* Failed to load SVG */';
+          panelCode.removeAttribute('data-text');
+          panelCode.classList.remove('t-shimmer');
+          panelCode.parentElement.setAttribute('aria-busy', 'false');
+        });
+      }
+
+      function isPanelOpen() {
+        return document.documentElement.getAttribute('data-panel-open') === 'true';
+      }
+
+      function renderTags(tags) {
+        if (!panelTags) return;
+        panelTags.innerHTML = '';
+        if (!tags || tags.length === 0) {
+          panelTags.hidden = true;
+          return;
         }
+        panelTags.hidden = false;
+        tags.forEach(function(tag) {
+          var li = document.createElement('li');
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'panel-tag';
+          btn.textContent = tag;
+          btn.setAttribute('data-tag', tag);
+          btn.setAttribute('aria-label', 'Filter by tag: ' + tag);
+          li.appendChild(btn);
+          panelTags.appendChild(li);
+        });
       }
 
-      function centerPopover() {
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const popoverWidth = popoverContent.offsetWidth || 256;
-        const popoverHeight = popoverContent.offsetHeight || 400;
-        const offsetFromRight = 48;
-        const offsetFromTop = 72;
-        currentPosX = (viewportWidth / 2) - popoverWidth / 2 - offsetFromRight;
-        currentPosY = (offsetFromTop + popoverHeight / 2) - (viewportHeight / 2);
-        popoverContent.style.left = '50%';
-        popoverContent.style.top = '50%';
-        popoverContent.style.transform = 'translate(calc(-50% + ' + currentPosX + 'px), calc(-50% + ' + currentPosY + 'px))';
-        offsetX = 0;
-        offsetY = 0;
-        hasBeenPositioned = true;
-      }
-
-      function showPopover(iconElement) {
+      function showPanel(iconElement) {
         const iconName = iconElement.getAttribute('data-name');
         const iconType = iconElement.getAttribute('data-type') || 'line';
-        // For <img> elements, use their already-resolved src; for <button> elements (changelog)
-        // .src is undefined so we fall back to constructing the URL from CDN + data attributes.
+
         const iconUrl = iconElement.src || ('${cdnBaseUrl}' + iconType.charAt(0).toUpperCase() + iconType.slice(1) + '/' + iconName + '.svg');
 
         currentIconData = { iconName, iconType, iconUrl };
-        popoverTitle.textContent = iconName;
-        popoverIcon.src = iconUrl;
-        popoverIcon.alt = iconName + ' ' + iconType + ' icon';
+        panelTitle.textContent = iconName;
+        panelIcon.src = iconUrl;
+        panelIcon.alt = iconName + ' ' + iconType + ' icon';
+        updateCodeBlock(iconUrl);
 
         variantBtns.forEach(function(btn) {
-          btn.classList.toggle('active', btn.getAttribute('data-variant') === iconType);
+          btn.setAttribute('aria-selected', btn.getAttribute('data-variant') === iconType ? 'true' : 'false');
         });
+        var activeVariant = document.querySelector('.panel-variant[aria-selected="true"]');
 
-        previouslyFocusedElement = document.activeElement;
+        moveVariantPill(activeVariant, isPanelOpen());
 
-        if (!hasBeenPositioned) {
-          centerPopover();
+        var tagSource = (iconElement.closest && iconElement.closest('.flex-grid-item')) || iconElement;
+        var tagsAttr = tagSource.getAttribute('data-icon-tags') || '';
+        renderTags(tagsAttr ? tagsAttr.split(',').filter(function(t){return t;}) : []);
+
+        if (!isPanelOpen()) {
+          previouslyFocusedElement = document.activeElement;
+          panel.removeAttribute('inert');
+          document.documentElement.setAttribute('data-panel-open', 'true');
+          requestAnimationFrame(function() {
+            if (panelClose) panelClose.focus();
+          });
         }
-
-        popover.hidden = false;
-
-        document.removeEventListener('keydown', trapFocus);
-        document.addEventListener('keydown', trapFocus);
-
-        requestAnimationFrame(function() {
-          const focusable = getFocusableElements();
-          if (focusable.length > 0) focusable[0].focus();
-        });
       }
 
-      function hidePopover() {
-        popover.hidden = true;
+      function hidePanel() {
+        if (!isPanelOpen()) return;
+        document.documentElement.removeAttribute('data-panel-open');
+        panel.setAttribute('inert', '');
         currentIconData = null;
-        isDragging = false;
-        document.removeEventListener('keydown', trapFocus);
         if (previouslyFocusedElement && previouslyFocusedElement.focus) {
           previouslyFocusedElement.focus();
         }
@@ -402,14 +584,37 @@ function generatePopoverScript(
           });
       }
 
+      function textSwapTo(el, next) {
+        if (!el || !el.classList) return;
+        var dur = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--text-swap-dur')) || 150;
+        el.classList.add('is-exit');
+        setTimeout(function() {
+          el.textContent = next;
+          el.classList.remove('is-exit');
+          el.classList.add('is-enter-start');
+          void el.offsetHeight;
+          el.classList.remove('is-enter-start');
+        }, dur);
+      }
+
+      var pendingRestore = new Map();
+
       function copyTextToClipboard(text, btn) {
         const spanEl = btn ? btn.querySelector('span') : null;
-        const originalText = spanEl ? spanEl.textContent : '';
+        if (!spanEl) return;
+        if (!spanEl.dataset.originalText) {
+          spanEl.dataset.originalText = spanEl.textContent;
+        }
+        const originalText = spanEl.dataset.originalText;
         function showCopied() {
-          if (spanEl) {
-            spanEl.textContent = '[ Copied ]';
-            setTimeout(function() { spanEl.textContent = originalText; }, 800);
-          }
+          const prevTimer = pendingRestore.get(spanEl);
+          if (prevTimer) clearTimeout(prevTimer);
+          textSwapTo(spanEl, '[ Copied ]');
+          const t = setTimeout(function() {
+            textSwapTo(spanEl, originalText);
+            pendingRestore.delete(spanEl);
+          }, 800);
+          pendingRestore.set(spanEl, t);
         }
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(showCopied).catch(function(err) {
@@ -429,8 +634,7 @@ function generatePopoverScript(
       }
 
       function copyIconToClipboard(iconUrl) {
-        fetch(iconUrl)
-          .then(function(response) { return response.text(); })
+        loadSvgText(iconUrl)
           .then(function(svgText) { copyTextToClipboard(svgText, copyBtn); })
           .catch(function(error) {
             console.error('Failed to copy SVG:', error);
@@ -438,49 +642,6 @@ function generatePopoverScript(
           });
       }
 
-      // Drag
-      function dragStart(e) {
-        if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
-        isDragging = true;
-        popoverHeader.style.cursor = 'grabbing';
-        if (e.type === 'touchstart') {
-          offsetX = e.touches[0].clientX - currentPosX;
-          offsetY = e.touches[0].clientY - currentPosY;
-        } else {
-          offsetX = e.clientX - currentPosX;
-          offsetY = e.clientY - currentPosY;
-        }
-        e.preventDefault();
-      }
-
-      function drag(e) {
-        if (!isDragging) return;
-        e.preventDefault();
-        const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-        const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
-        currentPosX = clientX - offsetX;
-        currentPosY = clientY - offsetY;
-        popoverContent.style.left = '50%';
-        popoverContent.style.top = '50%';
-        popoverContent.style.transform = 'translate(calc(-50% + ' + currentPosX + 'px), calc(-50% + ' + currentPosY + 'px))';
-      }
-
-      function dragEnd() {
-        if (isDragging) {
-          isDragging = false;
-          popoverHeader.style.cursor = '';
-        }
-      }
-
-      popoverHeader.addEventListener('mousedown', dragStart);
-      document.addEventListener('mousemove', drag);
-      document.addEventListener('mouseup', dragEnd);
-      popoverHeader.addEventListener('touchstart', dragStart, { passive: false });
-      document.addEventListener('touchmove', drag, { passive: false });
-      document.addEventListener('touchend', dragEnd);
-
-      // Click handler — single delegated listener on the icon grid (or whatever
-      // ancestor contains the click targets) so we don't bind per-icon (×1299).
       var clickRoot = document.getElementById('icon-grid')
         || document.getElementById('changelog')
         || document.querySelector('.changelog-container');
@@ -490,7 +651,7 @@ function generatePopoverScript(
           while (target && target !== clickRoot) {
             if (target.matches && target.matches('${clickSelector}')) {
               e.stopPropagation();
-              showPopover(target);
+              showPanel(target);
               return;
             }
             target = target.parentNode;
@@ -499,27 +660,13 @@ function generatePopoverScript(
       }
 
       ${showRandomOnLoad ? `
-      // Show random icon on page load
+
       const allIcons = document.querySelectorAll('.downloadable-icon');
       if (allIcons.length > 0) {
         const randomIcon = allIcons[Math.floor(Math.random() * allIcons.length)];
-        showPopover(randomIcon);
+        showPanel(randomIcon);
       }
       ` : ''}
-
-      // Keyboard: open icon on grid item Enter/Space
-      const flexGrid = document.querySelector('.flex-grid');
-      if (flexGrid) {
-        flexGrid.addEventListener('keydown', function(e) {
-          if (e.target.classList.contains('flex-grid-item')) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              const firstIcon = e.target.querySelector('.downloadable-icon');
-              if (firstIcon) showPopover(firstIcon);
-            }
-          }
-        });
-      }
 
       if (copyBtn) {
         copyBtn.addEventListener('click', function() {
@@ -533,11 +680,47 @@ function generatePopoverScript(
         });
       }
 
-      if (popoverClose) popoverClose.addEventListener('click', hidePopover);
+      if (panelClose) panelClose.addEventListener('click', hidePanel);
+
+      if (panelTags) {
+        panelTags.addEventListener('click', function(e) {
+          var t = e.target;
+          if (!t || !t.classList || !t.classList.contains('panel-tag')) return;
+          var tag = t.getAttribute('data-tag') || '';
+          if (!tag) return;
+          var searchInput = document.getElementById('icon-search');
+          if (searchInput) {
+            searchInput.value = tag;
+            searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+            var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+          } else {
+            window.location.href = '/';
+          }
+        });
+      }
 
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !popover.hidden) hidePopover();
+        if (e.key === 'Escape' && isPanelOpen()) hidePanel();
       });
+
+      var variantsBar = document.querySelector('.panel-variants');
+      var variantsPill = variantsBar ? variantsBar.querySelector('.panel-variants-pill') : null;
+
+      function moveVariantPill(tab, animate) {
+        if (!variantsPill || !tab) return;
+        if (!animate) {
+          var prev = variantsPill.style.transition;
+          variantsPill.style.transition = 'none';
+          variantsPill.style.transform = 'translateX(' + tab.offsetLeft + 'px)';
+          variantsPill.style.width = tab.offsetWidth + 'px';
+          void variantsPill.offsetWidth;
+          variantsPill.style.transition = prev;
+        } else {
+          variantsPill.style.transform = 'translateX(' + tab.offsetLeft + 'px)';
+          variantsPill.style.width = tab.offsetWidth + 'px';
+        }
+      }
 
       variantBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -546,11 +729,17 @@ function generatePopoverScript(
           const newUrl = '${cdnBaseUrl}' + variant.charAt(0).toUpperCase() + variant.slice(1) + '/' + currentIconData.iconName + '.svg';
           currentIconData.iconType = variant;
           currentIconData.iconUrl = newUrl;
-          popoverIcon.src = newUrl;
-          popoverIcon.alt = currentIconData.iconName + ' ' + variant + ' icon';
-          variantBtns.forEach(function(b) { b.classList.remove('active'); });
-          btn.classList.add('active');
+          panelIcon.src = newUrl;
+          panelIcon.alt = currentIconData.iconName + ' ' + variant + ' icon';
+          updateCodeBlock(newUrl);
+          variantBtns.forEach(function(b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+          moveVariantPill(btn, true);
         });
+      });
+
+      window.addEventListener('resize', function() {
+        var active = document.querySelector('.panel-variant[aria-selected="true"]');
+        if (active) moveVariantPill(active, false);
       });
 
       if (copyCdnBtn) {
@@ -561,13 +750,12 @@ function generatePopoverScript(
     }
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initIconPopover);
+      document.addEventListener('DOMContentLoaded', initIconPanel);
     } else {
-      initIconPopover();
+      initIconPanel();
     }`;
 }
 
-/** Shared theme-toggle IIFE — used on both pages. */
 function generateThemeToggleScript(): string {
   return `
     (function initThemeToggle() {
@@ -582,30 +770,25 @@ function generateThemeToggleScript(): string {
       if (saved === 'dark--warm' || saved === 'light--warm') {
         apply(saved);
       } else {
-        apply('light--warm');
+        apply('dark--warm');
       }
 
       var btn = document.getElementById('theme-toggle');
 
       function syncIcons() {
-        var isDark = (el.getAttribute('data-new-ui-theme') || 'light--warm') === 'dark--warm';
-        var sun = document.getElementById('icon-sun');
-        var moon = document.getElementById('icon-moon');
-        if (sun && moon) {
-          sun.style.display = isDark ? '' : 'none';
-          moon.style.display = isDark ? 'none' : '';
-        }
+        var isDark = (el.getAttribute('data-new-ui-theme') || 'dark--warm') === 'dark--warm';
+        var swap = document.querySelector('#theme-toggle .t-icon-swap');
+        if (swap) swap.setAttribute('data-state', isDark ? 'dark' : 'light');
         if (btn) {
           btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
           btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
-          btn.title = isDark ? 'Switch to light theme' : 'Switch to dark theme';
         }
       }
       syncIcons();
 
       if (btn) {
         btn.addEventListener('click', function() {
-          var current = el.getAttribute('data-new-ui-theme') || 'light--warm';
+          var current = el.getAttribute('data-new-ui-theme') || 'dark--warm';
           var next = current === 'light--warm' ? 'dark--warm' : 'light--warm';
           apply(next);
           try { localStorage.setItem(KEY, next); } catch (e) {}
@@ -615,8 +798,6 @@ function generateThemeToggleScript(): string {
     })();`;
 }
 
-/** Progressive image loading with IntersectionObserver. */
-/** Font-loading class management. */
 function generateFontLoadingScript(): string {
   return `
     function initFontLoading() {
@@ -636,7 +817,6 @@ function generateFontLoadingScript(): string {
     }`;
 }
 
-/** Service worker registration + idle-time icon cache warm-up. */
 function generateServiceWorkerScript(cdnBaseUrl: string): string {
   return `
     (function registerSargamSW() {
@@ -644,9 +824,7 @@ function generateServiceWorkerScript(cdnBaseUrl: string): string {
       var path = '/sw.js';
       window.addEventListener('load', function() {
         navigator.serviceWorker.register(path, { scope: '/' }).then(function(reg) {
-          // Warm the icon cache once the page is idle so install is instant
-          // but offline browsing still works for all icons. Skip on Save-Data
-          // and on slow connections so we don't burn metered bandwidth.
+
           var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
           if (conn) {
             if (conn.saveData) return;
@@ -668,19 +846,18 @@ function generateServiceWorkerScript(cdnBaseUrl: string): string {
                 var target = navigator.serviceWorker.controller || reg.active;
                 if (target) target.postMessage({ type: 'WARM_ICONS', urls: urls });
               })
-              .catch(function() { /* offline; warming will retry next visit */ });
+              .catch(function() {  });
           }
           if ('requestIdleCallback' in window) {
             requestIdleCallback(warm, { timeout: 5000 });
           } else {
             setTimeout(warm, 3000);
           }
-        }).catch(function() { /* SW unsupported or blocked; site still works */ });
+        }).catch(function() {  });
       });
     })();`;
 }
 
-/** Minimal critical CSS inlined in <head> to prevent FOUC before bundle loads. */
 function getCriticalCSS(): string {
   return `
 html, body { background-color: var(--background); margin: 0; }
@@ -692,22 +869,15 @@ main#main-content { padding-top: var(--s-64, 4rem); }
 .flex-grid-item { flex: 1 0 4rem; display: flex; align-items: center; justify-content: center; position: relative; height: 9.5rem; }`;
 }
 
-// ─────────────────────────────────────────────
-// Build data
-// ─────────────────────────────────────────────
-
 const VERSION = getVersion();
 const CDN_BASE_URL = `https://cdn.jsdelivr.net/npm/sargam-icons@${VERSION}/Icons/`;
 const changelog = loadChangelog();
 const iconNames = getIconNames(path.join(__dirname, '..', 'Icons', 'Line'));
 const criticalCSS = getCriticalCSS();
 
-// ─────────────────────────────────────────────
-// Emit icons.json + Icons.d.ts (consumed by npm + the site)
-// ─────────────────────────────────────────────
-
 const REPO_ROOT = path.join(__dirname, '..');
-const manifest = buildManifest(iconNames, changelog, VERSION, CDN_BASE_URL);
+const tagsSource = loadTags();
+const manifest = buildManifest(iconNames, changelog, VERSION, CDN_BASE_URL, tagsSource);
 
 fs.writeFileSync(
   path.join(REPO_ROOT, 'icons.json'),
@@ -719,38 +889,41 @@ fs.writeFileSync(
   buildTypesFile(manifest),
 );
 
-// ─────────────────────────────────────────────
-// Emit public/sw.js from src/sw.template.js with VERSION substituted
-// ─────────────────────────────────────────────
-
 const swTemplatePath = path.join(__dirname, 'sw.template.js');
 if (fs.existsSync(swTemplatePath)) {
   const swSource = fs.readFileSync(swTemplatePath, 'utf-8');
-  // Only substitute the literal version token in code, not in comments.
+
   const swOutput = swSource.replace(/'\{\{VERSION\}\}'/g, JSON.stringify(VERSION));
   fs.writeFileSync(path.join(REPO_ROOT, 'public', 'sw.js'), swOutput);
 }
 
-// ─────────────────────────────────────────────
-// Icon grid HTML
-// ─────────────────────────────────────────────
-
 let iconGridContent = '';
 iconNames.forEach((iconName: string, index: number) => {
+  const entry = manifest.icons[index];
+  const search = buildSearchHaystack(iconName, entry.category, entry);
+
+  const tagsAttr = entry.tags.join(',');
   iconGridContent += `
-    <div class="flex-grid-item" data-icon-name="${iconName}" tabindex="0" aria-label="${iconName} icon">
-      <img class="downloadable-icon" data-type="line" data-name="${iconName}" src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="${iconName} line style" loading="lazy" decoding="async">
-      <img class="downloadable-icon" data-type="duotone" data-name="${iconName}" src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="${iconName} duotone style" loading="lazy" decoding="async">
-      <img class="downloadable-icon" data-type="fill" data-name="${iconName}" src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="${iconName} fill style" loading="lazy" decoding="async">
-    </div>`;
+    <li class="flex-grid-item" data-icon-name="${iconName}" data-icon-search="${search}" data-icon-tags="${tagsAttr}">
+      <button type="button" class="downloadable-icon" data-type="line" data-name="${iconName}" aria-label="${iconName} — line variant">
+        <img src="${CDN_BASE_URL}Line/${iconName}.svg" width="24" height="24" alt="" loading="lazy" decoding="async">
+      </button>
+      <button type="button" class="downloadable-icon" data-type="duotone" data-name="${iconName}" aria-label="${iconName} — duotone variant">
+        <img src="${CDN_BASE_URL}Duotone/${iconName}.svg" width="24" height="24" alt="" loading="lazy" decoding="async">
+      </button>
+      <button type="button" class="downloadable-icon" data-type="fill" data-name="${iconName}" aria-label="${iconName} — fill variant">
+        <img src="${CDN_BASE_URL}Fill/${iconName}.svg" width="24" height="24" alt="" loading="lazy" decoding="async">
+      </button>
+    </li>`;
 });
 
-// ─────────────────────────────────────────────
-// Main page (index / template.html)
-// ─────────────────────────────────────────────
+const tagsByBareName: Record<string, string[]> = {};
+for (const entry of manifest.icons) {
+  tagsByBareName[entry.name.replace(/^si_/, '')] = entry.tags;
+}
 
 const fullHtmlContent = `<!DOCTYPE html>
-<html lang="en" data-new-ui-theme="light--warm">
+<html lang="en" data-new-ui-theme="dark--warm">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -807,17 +980,17 @@ const fullHtmlContent = `<!DOCTYPE html>
           ${BRAND_SVG}
         </a>
         <span class="version-pill" aria-label="Version">v${VERSION}</span>
-        <div class="zoom-separator" role="separator"></div>
+        <hr class="zoom-separator">
 
         <label for="icon-search" class="sr-only">Search icons</label>
-        <div class="nav-search-wrapper">
+        <search class="nav-search-wrapper">
           <input id="icon-search" type="search" placeholder="Search sargam icons..." aria-label="Search icons" autocomplete="off" inputmode="search" />
           <button id="icon-search-clear" type="button" class="clear-search" aria-label="Clear search" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m7.757 16.243 8.486-8.486m0 8.486L7.757 7.757M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10"/>
             </svg>
           </button>
-        </div>
+        </search>
       </div>
       <div class="rhs">
         <div class="CTAs">
@@ -825,21 +998,30 @@ const fullHtmlContent = `<!DOCTYPE html>
           <a href="https://registry.npmjs.org/sargam-icons/-/sargam-icons-${VERSION}.tgz" aria-label="Download icons"><span>Download</span></a>
         </div>
 
-        <div class="zoom-separator" role="separator"></div>
+        <hr class="zoom-separator">
 
-        <button type="button" class="zoom-btn" id="zoom-out" aria-label="Zoom out" title="Zoom out">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m21 21-4-4m-9-6h6m5 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></svg>
-        </button>
+        <span class="t-tt-wrap">
+          <button type="button" class="zoom-btn" id="zoom-out" aria-label="Zoom out">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m21 21-4-4m-9-6h6m5 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></svg>
+          </button>
+          <span class="t-tt" role="tooltip">Zoom out</span>
+        </span>
 
-        <button type="button" class="zoom-btn" id="zoom-in" aria-label="Zoom in" title="Zoom in">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m21 21-4-4m-9-6h6m-3 3V8m8 3a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></svg>
-        </button>
+        <span class="t-tt-wrap">
+          <button type="button" class="zoom-btn" id="zoom-in" aria-label="Zoom in">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5" d="m21 21-4-4m-9-6h6m-3 3V8m8 3a8 8 0 1 1-16 0 8 8 0 0 1 16 0"/></svg>
+          </button>
+          <span class="t-tt" role="tooltip">Zoom in</span>
+        </span>
 
-        <div class="zoom-separator" role="separator"></div>
+        <hr class="zoom-separator">
 
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
-          ${THEME_TOGGLE_SVGS}
-        </button>
+        <span class="t-tt-wrap">
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+            ${THEME_TOGGLE_SVGS}
+          </button>
+          <span class="t-tt" role="tooltip">Toggle theme</span>
+        </span>
       </div>
     </div>
   </nav>
@@ -847,15 +1029,19 @@ const fullHtmlContent = `<!DOCTYPE html>
   <main id="main-content">
     <section id="icon-grid" aria-labelledby="icon-grid-heading">
       <h1 id="icon-grid-heading" class="sr-only">Sargam Icons</h1>
-      <div class="flex-grid" aria-label="Collection of ${iconNames.length} icons">
+      <ul class="flex-grid" aria-label="Collection of ${iconNames.length} icons">
         ${iconGridContent}
-      </div>
+      </ul>
     </section>
   </main>
 
   <footer>
     <div class="footer-content">
-      <a href="/changelog.html">Changelog</a> &middot; <a href="https://github.com/planetabhi/sargam-icons" target="_blank" rel="noopener noreferrer">GitHub</a> &middot; <a href="https://github.com/SargamDesign/sargam-icons-react" target="_blank" rel="noopener noreferrer">React</a> &middot; <a href="https://github.com/planetabhi/sargam-icons/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License</a> <br /> By <a href="https://x.com/planetabhi" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> &middot; ABHIMANYU RANA 2026 &copy; <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
+      <nav aria-label="Footer">
+        <a href="/changelog.html">Changelog</a> &middot; <a href="https://github.com/planetabhi/sargam-icons" target="_blank" rel="noopener noreferrer">GitHub</a> &middot; <a href="https://github.com/SargamDesign/sargam-icons-react" target="_blank" rel="noopener noreferrer">React</a> &middot; <a href="https://github.com/planetabhi/sargam-icons/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License</a>
+      </nav>
+      <address>By <a href="https://x.com/planetabhi" target="_blank" rel="author noopener noreferrer">@PLANETABHI</a> &middot; ABHIMANYU RANA <time datetime="2026">2026</time> &copy;</address>
+      <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
     </div>
   </footer>
 
@@ -880,7 +1066,7 @@ const fullHtmlContent = `<!DOCTYPE html>
 
     (function initZoomControls() {
       var ZOOM_LEVELS = [1, 1.5, 2, 2.5, 3];
-      var currentZoomIndex = 0;
+      var currentZoomIndex = 1;
       var iconGrid = document.getElementById('icon-grid');
       var zoomInBtn = document.getElementById('zoom-in');
       var zoomOutBtn = document.getElementById('zoom-out');
@@ -896,6 +1082,8 @@ const fullHtmlContent = `<!DOCTYPE html>
         if (zoomOutBtn) zoomOutBtn.disabled = currentZoomIndex === 0;
         if (zoomInBtn) zoomInBtn.disabled = currentZoomIndex === ZOOM_LEVELS.length - 1;
       }
+
+      applyZoom(ZOOM_LEVELS[currentZoomIndex]);
 
       if (zoomInBtn) {
         zoomInBtn.addEventListener('click', function() {
@@ -926,10 +1114,6 @@ const fullHtmlContent = `<!DOCTYPE html>
 
 fs.writeFileSync(path.join(__dirname, 'template.html'), fullHtmlContent);
 
-// ─────────────────────────────────────────────
-// Changelog page (changelog.html)
-// ─────────────────────────────────────────────
-
 const changelogEntriesHtml = changelog.entries
   .map((entry: ChangelogEntry, index: number) => {
     const isFirst = index === 0;
@@ -937,10 +1121,13 @@ const changelogEntriesHtml = changelog.entries
 
     const iconsHtml = entry.newIcons
       .map(
-        (iconName: string) => `
-            <button type="button" class="changelog-icon-btn downloadable-icon" data-icon-name="si_${iconName}" data-name="si_${iconName}" data-type="line" title="${iconName}" aria-label="${iconName} icon">
+        (iconName: string) => {
+          const tagsAttr = (tagsByBareName[iconName] || []).join(',');
+          return `
+            <button type="button" class="changelog-icon-btn downloadable-icon" data-icon-name="si_${iconName}" data-name="si_${iconName}" data-type="line" data-icon-tags="${tagsAttr}" title="${iconName}" aria-label="${iconName} icon">
               <img src="${CDN_BASE_URL}Line/si_${iconName}.svg" width="20" height="20" alt="" loading="lazy" onerror="this.parentElement.style.display='none'" />
-            </button>`,
+            </button>`;
+        },
       )
       .join('');
 
@@ -948,7 +1135,7 @@ const changelogEntriesHtml = changelog.entries
             <details class="changelog-entry" ${isFirst ? 'open' : ''}>
               <summary class="changelog-summary" aria-label="Version ${entry.version} — ${iconCount} new icons">
                 <span class="changelog-version">v${entry.version}</span>
-                <span class="changelog-date">${formatDate(entry.date)}</span>
+                <time class="changelog-date" datetime="${entry.date}">${formatDate(entry.date)}</time>
                 <span class="changelog-summary-rhs">
                   <span class="changelog-count">${iconCount}</span>
                   <svg class="changelog-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m10 16 4-4-4-4"/></svg>
@@ -962,7 +1149,7 @@ const changelogEntriesHtml = changelog.entries
   .join('');
 
 const changelogPageHtml = `<!DOCTYPE html>
-<html lang="en" data-new-ui-theme="light--warm">
+<html lang="en" data-new-ui-theme="dark--warm">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -1000,9 +1187,12 @@ const changelogPageHtml = `<!DOCTYPE html>
         <span class="version-pill" aria-label="Version">v${VERSION}</span>
       </div>
       <div class="rhs">
-        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
-          ${THEME_TOGGLE_SVGS}
-        </button>
+        <span class="t-tt-wrap">
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+            ${THEME_TOGGLE_SVGS}
+          </button>
+          <span class="t-tt" role="tooltip">Toggle theme</span>
+        </span>
       </div>
     </div>
   </nav>
@@ -1012,8 +1202,7 @@ const changelogPageHtml = `<!DOCTYPE html>
       <h1>Changelog</h1>
     </header>
 
-    <section id="changelog" class="changelog-section" aria-labelledby="changelog-heading">
-      <h2 id="changelog-heading" class="sr-only">Changelog</h2>
+    <section id="changelog" class="changelog-section" aria-label="Version history">
       <div class="changelog-container">
         ${changelogEntriesHtml}
       </div>
@@ -1022,7 +1211,11 @@ const changelogPageHtml = `<!DOCTYPE html>
 
   <footer>
     <div class="footer-content">
-      <a href="/">Home</a> &middot; <a href="https://github.com/planetabhi/sargam-icons" target="_blank" rel="noopener noreferrer">GitHub</a> &middot; <a href="https://github.com/SargamDesign/sargam-icons-react" target="_blank" rel="noopener noreferrer">React</a> &middot; <a href="https://github.com/planetabhi/sargam-icons/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License</a> <br /> By <a href="https://x.com/planetabhi" target="_blank" rel="noopener noreferrer">@PLANETABHI</a> &middot; ABHIMANYU RANA 2026 &copy; <br /> <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
+      <nav aria-label="Footer">
+        <a href="/">Home</a> &middot; <a href="https://github.com/planetabhi/sargam-icons" target="_blank" rel="noopener noreferrer">GitHub</a> &middot; <a href="https://github.com/SargamDesign/sargam-icons-react" target="_blank" rel="noopener noreferrer">React</a> &middot; <a href="https://github.com/planetabhi/sargam-icons/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">License</a>
+      </nav>
+      <address>By <a href="https://x.com/planetabhi" target="_blank" rel="author noopener noreferrer">@PLANETABHI</a> &middot; ABHIMANYU RANA <time datetime="2026">2026</time> &copy;</address>
+      <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
     </div>
   </footer>
 

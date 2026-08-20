@@ -1,14 +1,4 @@
-/* Sargam Icons — service worker
- *
- * Strategies:
- *   - HTML pages:        network-first, cache fallback (updates ship instantly)
- *   - App shell (JS/CSS/manifest/fonts): stale-while-revalidate
- *   - icons.json:        stale-while-revalidate (catalog is small, refreshes itself)
- *   - jsDelivr SVG icons: cache-first, version-keyed cache (offline-friendly)
- *
- * Cache version bumps with the npm package version; sargam.ts injects the
- * literal at build time via the {{VERSION}} token.
- */
+
 'use strict';
 
 const VERSION = '{{VERSION}}';
@@ -23,7 +13,7 @@ const SHELL_ASSETS = [
   '/.well-known/sargam-icons.json',
 ];
 
-const ICON_CDN_PREFIX = `https://cdn.jsdelivr.net/npm/sargam-icons@${VERSION}/Icons/`;
+const ICON_CDN_PREFIX = `https:
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -56,8 +46,7 @@ function isVersionedIconRequest(url) {
 }
 
 function isShellAsset(url) {
-  // Same-origin static assets: JS/CSS/fonts plus the explicit JSON catalog.
-  // (The .json regex below also covers /.well-known/sargam-icons.json.)
+
   if (url.origin !== self.location.origin) return false;
   if (url.pathname === '/manifest.webmanifest') return true;
   return /\.(?:js|css|woff2?|ttf|otf|eot|json)$/i.test(url.pathname);
@@ -74,7 +63,7 @@ async function networkFirst(request) {
   } catch (err) {
     const cached = await caches.match(request);
     if (cached) return cached;
-    // Last-ditch: serve the cached root document so the app shell still renders.
+
     const fallback = await caches.match('/');
     if (fallback) return fallback;
     throw err;
@@ -93,8 +82,7 @@ async function staleWhileRevalidate(request, cacheName) {
   if (cached) return cached;
   const fromNetwork = await networkPromise;
   if (fromNetwork) return fromNetwork;
-  // Both cache and network failed — return a clear offline response so
-  // respondWith() never resolves to a null Response.
+
   return new Response('', { status: 504, statusText: 'Offline' });
 }
 
@@ -127,10 +115,9 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(staleWhileRevalidate(request, SHELL_CACHE));
     return;
   }
-  // Anything else: let the network handle it.
+
 });
 
-// Allow the page to ask us to warm the icon cache in idle time.
 self.addEventListener('message', (event) => {
   const data = event.data || {};
   if (data.type === 'WARM_ICONS' && Array.isArray(data.urls)) {
@@ -152,7 +139,7 @@ async function warmIconCache(urls) {
           const res = await fetch(url, { mode: 'cors' });
           if (res && res.ok) await cache.put(url, res.clone());
         } catch (_) {
-          /* network errors are non-fatal during warm-up */
+
         }
       }),
     );
