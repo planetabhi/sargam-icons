@@ -1,0 +1,32 @@
+import * as React from "react";
+import { forwardRef, memo } from "react";
+import { useId } from "react";
+const SvgSiJsonAlt1 = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M6.816 3H7a1 1 0 0 1 0 2h-.18c-.825.005-1.12.101-1.23.182h-.001c-.022.016-.18.124-.18.828v3.893c0 .88-.45 1.526-.972 1.96.523.428.971 1.07.971 1.955v4.172c0 .71.16.816.18.83.11.08.404.175 1.231.18H7a1 1 0 1 1 0 2h-.189c-.797-.004-1.707-.062-2.394-.559-.786-.568-1.009-1.476-1.009-2.451v-4.172c0-.142-.065-.312-.376-.507-.321-.201-.763-.326-1.123-.359A1 1 0 0 1 1 11.956v-.166a1 1 0 0 1 .91-.996c.35-.031.79-.162 1.113-.371.318-.205.385-.383.385-.52V6.01c0-.972.224-1.878 1.007-2.447.687-.498 1.596-.559 2.396-.563zM16 4a1 1 0 0 1 1-1h.189c.8.004 1.71.065 2.396.563.784.569 1.007 1.475 1.007 2.447v3.893c0 .137.067.315.385.52.323.209.763.34 1.113.371a1 1 0 0 1 .91.996v.166a1 1 0 0 1-.91.996c-.359.033-.801.158-1.122.36-.31.194-.376.364-.376.506v4.172c0 .975-.223 1.883-1.009 2.451-.687.497-1.597.555-2.394.559H17a1 1 0 1 1 0-2h.18c.828-.005 1.121-.1 1.232-.18.02-.014.18-.12.18-.83v-4.172c0-.884.448-1.527.971-1.956-.521-.433-.971-1.08-.971-1.96V6.01c0-.704-.159-.812-.18-.827l-.002-.001c-.11-.08-.405-.177-1.23-.182H17a1 1 0 0 1-1-1M9 14a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1m3 0a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1m3 0a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
+SvgSiJsonAlt1.displayName = "SvgSiJsonAlt1";
+const ForwardRef = forwardRef(SvgSiJsonAlt1);
+const Memo = memo(ForwardRef);
+export default Memo;

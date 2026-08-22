@@ -1,0 +1,30 @@
+import * as React from "react";
+import { forwardRef, memo } from "react";
+import { useId } from "react";
+const SvgSiDollar = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        fill="currentColor"
+        d="M11 22v-1.019a7.4 7.4 0 0 1-3.392-1.077 1 1 0 0 1 1.05-1.703c.712.439 1.52.702 2.342.776v-6.292c-1.172-.477-2.09-1.006-2.749-1.68-.82-.837-1.166-1.814-1.24-2.933-.104-1.561.573-2.813 1.557-3.665A5.86 5.86 0 0 1 11 3.177V2a1 1 0 1 1 2 0v1.018a7.4 7.4 0 0 1 3.392 1.078 1 1 0 0 1-1.05 1.703A5.4 5.4 0 0 0 13 5.02v6.295c1.17.478 2.086 1.005 2.746 1.677.822.837 1.169 1.815 1.243 2.935.104 1.561-.573 2.813-1.557 3.665-.7.605-1.557 1.015-2.432 1.23V22a1 1 0 0 1-2 0m2-3.269a3.7 3.7 0 0 0 1.123-.65c.582-.503.928-1.173.871-2.02-.05-.747-.254-1.238-.675-1.666-.288-.294-.707-.587-1.319-.89zM11 5.268a3.7 3.7 0 0 0-1.123.65c-.582.504-.928 1.174-.871 2.021.05.748.253 1.24.673 1.667.288.295.707.588 1.321.891z"
+      />
+    </svg>
+  );
+};
+SvgSiDollar.displayName = "SvgSiDollar";
+const ForwardRef = forwardRef(SvgSiDollar);
+const Memo = memo(ForwardRef);
+export default Memo;

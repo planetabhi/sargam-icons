@@ -1,0 +1,30 @@
+import * as React from "react";
+import { forwardRef, memo } from "react";
+import { useId } from "react";
+const SvgSiAiAlt1 = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        fill="currentColor"
+        d="m14.04 9.137-.886-3.099c-.332-1.16-1.976-1.16-2.308 0l-.885 3.099a1.2 1.2 0 0 1-.824.824l-3.099.885c-1.16.332-1.16 1.976 0 2.308l3.099.885a1.2 1.2 0 0 1 .824.824l.885 3.099c.332 1.16 1.976 1.16 2.308 0l.885-3.099a1.2 1.2 0 0 1 .824-.824l3.099-.885c1.16-.332 1.16-1.976 0-2.308l-3.099-.885a1.2 1.2 0 0 1-.824-.824m-8.143 7.37c-.289-.844-1.504-.844-1.792 0l-.025.087-.297 1.188-1.188.296c-.959.24-.96 1.603 0 1.843l1.188.297.297 1.188c.24.959 1.602.959 1.842 0l.297-1.188 1.188-.297c.96-.24.96-1.603 0-1.843l-1.188-.296-.297-1.188zM5 18.797a1 1 0 0 0 .204.202 1 1 0 0 0-.204.204 1 1 0 0 0-.203-.204A1 1 0 0 0 5 18.796m14.896-16.29c-.298-.871-1.585-.842-1.817.087l-.297 1.188-1.188.297c-.959.24-.96 1.602 0 1.842l1.188.297.297 1.188c.24.959 1.602.959 1.842 0l.297-1.188 1.188-.297c.96-.24.96-1.603 0-1.842l-1.188-.297-.297-1.188zM19 4.797a1 1 0 0 0 .204.202 1 1 0 0 0-.204.204 1 1 0 0 0-.203-.204A1 1 0 0 0 19 4.796"
+      />
+    </svg>
+  );
+};
+SvgSiAiAlt1.displayName = "SvgSiAiAlt1";
+const ForwardRef = forwardRef(SvgSiAiAlt1);
+const Memo = memo(ForwardRef);
+export default Memo;

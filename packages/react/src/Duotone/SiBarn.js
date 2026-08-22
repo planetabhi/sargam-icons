@@ -1,0 +1,35 @@
+import * as React from "react";
+import { forwardRef, memo } from "react";
+import { useId } from "react";
+const SvgSiBarn = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        fill="currentColor"
+        fillOpacity={0.16}
+        d="M18 21h.6a2.4 2.4 0 0 0 2.4-2.412V9.332c0-.382-.18-.734-.48-.965L12.7 3.24a1.195 1.195 0 0 0-1.44 0L3.48 8.367c-.3.231-.48.583-.48.965v9.256A2.4 2.4 0 0 0 5.4 21H6v-5.2c0-.44.36-.8.8-.8h10.4c.44 0 .8.36.8.8z"
+      />
+      <path
+        fill="currentColor"
+        d="M.587 9.374a.75.75 0 1 0 .826 1.252L1 10zM11.26 3.24l.413.626.035-.024zm1.44 0-.448.602.037.025zm9.889 7.387a.75.75 0 1 0 .823-1.254L23 10zm-.839-1.94a.75.75 0 0 0-1.5 0zm-18-.005a.75.75 0 0 0-1.5 0zM11 11.25a.75.75 0 0 0 0 1.5zm2 1.5a.75.75 0 0 0 0-1.5zM17.25 21a.75.75 0 0 0 1.5 0zm-12 0a.75.75 0 0 0 1.5 0zm.94-1.183a.75.75 0 0 0 .62 1.366L6.5 20.5zm11.62-3.634a.75.75 0 0 0-.62-1.366l.31.683zm-.62 5a.75.75 0 0 0 .62-1.366l-.31.683zM6.81 14.817a.75.75 0 0 0-.62 1.366l.31-.683zM1 10l.413.626 10.26-6.76-.413-.626-.413-.626-10.26 6.76zm10.26-6.76.448.602a.45.45 0 0 1 .544 0l.448-.602.448-.602a1.95 1.95 0 0 0-2.336 0zm1.44 0-.411.627 10.3 6.76L23 10l.412-.627-10.3-6.76zM21 8.687h-.75V18.6h1.5V8.687zm0 9.913h-.75c0 .916-.734 1.65-1.65 1.65v1.5a3.144 3.144 0 0 0 3.15-3.15zM18.6 21v-.75H5.4v1.5h13.2zM5.4 21v-.75c-.916 0-1.65-.734-1.65-1.65h-1.5a3.144 3.144 0 0 0 3.15 3.15zM3 18.6h.75V8.682h-1.5V18.6zM15 21v-.75H9v1.5h6zm-4-9v.75h2v-1.5h-2zm-4.2 3v.75h10.4v-1.5H6.8zm10.4 0v.75a.05.05 0 0 1 .05.05h1.5a1.55 1.55 0 0 0-1.55-1.55zm.8.8h-.75V21h1.5v-5.2zM6 21h.75v-5.2h-1.5V21zm0-5.2h.75a.05.05 0 0 1 .05-.05v-1.5a1.55 1.55 0 0 0-1.55 1.55zm.5 4.7.31.683 11-5-.31-.683-.31-.683-11 5zm11 0 .31-.683-11-5-.31.683-.31.683 11 5z"
+      />
+    </svg>
+  );
+};
+SvgSiBarn.displayName = "SvgSiBarn";
+const ForwardRef = forwardRef(SvgSiBarn);
+const Memo = memo(ForwardRef);
+export default Memo;

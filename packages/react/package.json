@@ -1,0 +1,106 @@
+{
+  "name": "@sargamicons/react",
+  "version": "1.6.7",
+  "description": "Sargam Icons as tree-shakeable React components (Line, Duotone, Fill).",
+  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "line": "bunx svgr -d src/Line ../../Icons/Line",
+    "duotone": "bunx svgr -d src/Duotone ../../Icons/Duotone",
+    "fill": "bunx svgr -d src/Fill ../../Icons/Fill",
+    "generate": "bun run line && bun run duotone && bun run fill",
+    "build": "bun run generate && bunx --bun rollup -c rollup.config.ts && bun run gen:types",
+    "gen:types": "bun scripts/generate-types.ts",
+    "prepack": "bunx --bun rollup -c rollup.config.ts && bun run gen:types",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetabhi/sargam-icons.git",
+    "directory": "packages/react"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "icons",
+    "line-icons",
+    "fill-icons",
+    "duotone-icons",
+    "iconset",
+    "svg",
+    "react",
+    "react-icons",
+    "react-components",
+    "library",
+    "ui",
+    "components",
+    "sargam",
+    "sargam-icons",
+    "design-system",
+    "icon-pack",
+    "icon-library"
+  ],
+  "author": "@planetabhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planetabhi/sargam-icons/issues"
+  },
+  "homepage": "https://sargamicons.com/",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./line": {
+      "types": "./dist/line.d.ts",
+      "import": "./dist/line.mjs",
+      "require": "./dist/line.cjs"
+    },
+    "./duotone": {
+      "types": "./dist/duotone.d.ts",
+      "import": "./dist/duotone.mjs",
+      "require": "./dist/duotone.cjs"
+    },
+    "./fill": {
+      "types": "./dist/fill.d.ts",
+      "import": "./dist/fill.mjs",
+      "require": "./dist/fill.cjs"
+    }
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.28.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@svgr/cli": "^8.1.0",
+    "@types/react": "^19.2.7",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "rimraf": "^6.1.2",
+    "rollup": "^4.54.0",
+    "rollup-plugin-filesize": "^10.0.0",
+    "typescript": "^5.9.3"
+  }
+}

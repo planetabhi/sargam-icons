@@ -2,16 +2,25 @@
   "name": "sargam-icons",
   "version": "1.6.7",
   "description": "A collection of 1200+ open-source icons.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "clean": "rimraf package *.tgz",
-    "compress": "svgo -f ./src/assets/Duotone -o ./icons/Duotone && svgo -f ./src/assets/Fill -o ./icons/Fill && svgo -f ./src/assets/Line -o ./icons/Line",
+    "compress": "rimraf Icons/Duotone Icons/Fill Icons/Line && svgo -f ./src/assets/Duotone -o ./Icons/Duotone && svgo -f ./src/assets/Fill -o ./Icons/Fill && svgo -f ./src/assets/Line -o ./Icons/Line",
     "generate-icons": "bun run clean && bun run compress",
-    "generate-changelog": "bun run scripts/generate-changelog.ts",
-    "generate-template": "bun run generate-changelog && bun run src/sargam.ts",
+    "generate": "bun run tools/generate/index.ts",
+    "generate-template": "bun run src/sargam.ts",
     "build": "bun run generate-template && bunx rspack build",
     "dev": "bun run generate-template && bunx rspack serve",
     "build:dev": "bun run generate-template && bunx rspack build --mode development",
-    "preview": "bun run build && bunx serve dist"
+    "preview": "bun run build && bunx serve dist",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "changeset publish"
   },
   "repository": {
     "type": "git",
@@ -52,6 +61,7 @@
     "@babel/core": "^7.29.7",
     "@babel/preset-env": "^7.29.7",
     "@babel/preset-typescript": "^7.29.7",
+    "@changesets/cli": "^2.27.9",
     "@new-ui/colors": "^2.2.5",
     "@new-ui/reset": "^0.1.2",
     "@rspack/cli": "^2.0.8",

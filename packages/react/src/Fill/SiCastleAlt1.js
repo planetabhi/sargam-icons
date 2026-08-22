@@ -1,0 +1,32 @@
+import * as React from "react";
+import { forwardRef, memo } from "react";
+import { useId } from "react";
+const SvgSiCastleAlt1 = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M9.2 1A1.8 1.8 0 0 1 11 2.8V5h2V2.8A1.8 1.8 0 0 1 14.8 1h2.4A1.8 1.8 0 0 1 19 2.8V7h4a1 1 0 1 1 0 2v10.6a3.4 3.4 0 0 1-3.4 3.4H4.5C2.65 23 1 21.458 1 19.553V9a1 1 0 0 1 0-2h4V2.8A1.8 1.8 0 0 1 6.8 1zm1.6 16A1.8 1.8 0 0 0 9 18.8V22h2v-3h2v3h2v-3.2a1.8 1.8 0 0 0-1.8-1.8zm-.8-4a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2zm1-4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zM8 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2m8 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
+SvgSiCastleAlt1.displayName = "SvgSiCastleAlt1";
+const ForwardRef = forwardRef(SvgSiCastleAlt1);
+const Memo = memo(ForwardRef);
+export default Memo;

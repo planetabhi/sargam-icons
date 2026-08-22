@@ -1,0 +1,40 @@
+import * as React from "react";
+import { forwardRef, memo } from "react";
+import { useId } from "react";
+const SvgSiSettingsAlt2 = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        strokeWidth={1.5}
+        d="M22 13.435v-2.979l-1.74-.126a1.85 1.85 0 0 1-1.573-1.139V9.17a1.85 1.85 0 0 1 .309-1.922l1.139-1.305-2.118-2.121-1.304 1.139a1.85 1.85 0 0 1-1.922.309h-.021a1.81 1.81 0 0 1-1.14-1.548L13.487 2h-2.978l-.126 1.713a1.83 1.83 0 0 1-1.14 1.56 1.85 1.85 0 0 1-1.921-.308L6.017 3.826 3.874 5.913l1.139 1.304a1.85 1.85 0 0 1 .309 1.922 1.85 1.85 0 0 1-1.583 1.191L2 10.457v2.978l1.74.13a1.85 1.85 0 0 1 1.573 1.14v.021a1.85 1.85 0 0 1-.309 1.922l-1.139 1.304 2.105 2.104 1.304-1.139a1.85 1.85 0 0 1 1.922-.308h.021a1.89 1.89 0 0 1 1.14 1.604L10.509 22h2.978l.126-1.76a1.87 1.87 0 0 1 1.14-1.588h.02a1.85 1.85 0 0 1 1.923.304L18 20.092l2.104-2.108-1.139-1.305a1.85 1.85 0 0 1-.308-1.921v-.022a1.85 1.85 0 0 1 1.604-1.17z"
+      />
+      <path
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeMiterlimit={10}
+        strokeWidth={1.5}
+        d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+      />
+    </svg>
+  );
+};
+SvgSiSettingsAlt2.displayName = "SvgSiSettingsAlt2";
+const ForwardRef = forwardRef(SvgSiSettingsAlt2);
+const Memo = memo(ForwardRef);
+export default Memo;

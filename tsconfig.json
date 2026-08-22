@@ -8,6 +8,7 @@
       "DOM.Iterable"
     ],
     "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "allowJs": true,
     "checkJs": false,
@@ -28,6 +29,7 @@
   },
   "include": [
     "src/**/*",
+    "tools/**/*",
     "*.ts"
   ],
   "exclude": [

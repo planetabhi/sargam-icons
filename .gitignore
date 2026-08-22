@@ -1,9 +1,9 @@
 node_modules
 dist
+*.tgz
+/package/
 src/assets
 src/template.html
-src/changelog.html
-src/changelog.json
 public/sw.js
 icons.json
 Icons.d.ts
