@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { generateCoreArtifacts } from '../tools/generate/core.ts';
+import { toComponentName } from '../tools/generate/naming.ts';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -32,10 +33,12 @@ function buildSearchHaystack(
   iconName: string,
   category: string,
   entry: { tags: string[]; aliases: string[] },
+  componentName: string,
 ): string {
   const parts = [
     stripSiPrefix(iconName).replace(/_/g, ' ').toLowerCase(),
     category.toLowerCase(),
+    componentName.toLowerCase(),
     ...entry.tags,
     ...entry.aliases.map((a) => a.toLowerCase()),
   ]
@@ -140,14 +143,14 @@ function generatePopoverScript(
         });
       }
 
-      function svgToJsx(svg) {
-        return String(svg || '')
-          .replace(/ class=/g, ' className=')
-          .replace(/ ([a-zA-Z]+)-([a-zA-Z]+)=/g, function(_m, a, b) {
-            if (a === 'aria' || a === 'data' || a === 'xmlns' || a === 'xml') return _m;
-            return ' ' + a + b.charAt(0).toUpperCase() + b.slice(1) + '=';
-          })
-          .trim();
+      function componentNameFromIcon(name) {
+        var parts = String(name || '').replace(/^si_/, '').split('_').filter(Boolean);
+        if (parts.length === 0) return '';
+        var pascal = parts.map(function(p) {
+          if (/^[A-Z0-9]+$/.test(p)) return p.charAt(0).toUpperCase() + p.slice(1).toLowerCase();
+          return p.charAt(0).toUpperCase() + p.slice(1);
+        }).join('');
+        return 'Si' + pascal;
       }
 
       function isPanelOpen() {
@@ -376,12 +379,9 @@ function generatePopoverScript(
       if (copyJsxBtn) {
         copyJsxBtn.addEventListener('click', function() {
           if (!currentIconData) return;
-          loadSvgText(currentIconData.iconUrl).then(function(svg) {
-            copyTextToClipboard(svgToJsx(svg), copyJsxBtn);
-          }).catch(function(error) {
-            console.error('Failed to copy JSX:', error);
-            alert('Failed to copy JSX. Please try again.');
-          });
+          var comp = componentNameFromIcon(currentIconData.iconName);
+          var snippet = "import { " + comp + " } from '@sargamicons/react/" + currentIconData.iconType + "';\\n\\n<" + comp + " />";
+          copyTextToClipboard(snippet, copyJsxBtn);
         });
       }
     }
@@ -524,7 +524,7 @@ const criticalCSS = getCriticalCSS();
 let iconGridContent = '';
 iconNames.forEach((iconName: string, index: number) => {
   const entry = manifest.icons[index];
-  const search = buildSearchHaystack(iconName, entry.category, entry);
+  const search = buildSearchHaystack(iconName, entry.category, entry, toComponentName(iconName));
 
   const tagsAttr = entry.tags.join(',');
   iconGridContent += `
