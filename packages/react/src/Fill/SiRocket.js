@@ -1,0 +1,30 @@
+import * as React from "react";
+import { forwardRef, memo } from "react";
+import { useId } from "react";
+const SvgSiRocket = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        fill="currentColor"
+        d="M13.5 19.862c0 .276-.092.572-.192.822a7 7 0 0 1-.372.76 11 11 0 0 1-.513.824l-.01.013-.003.004v.001a.5.5 0 0 1-.739.091l-.08-.09-.002-.002-.002-.004-.01-.013-.034-.05-.119-.18c-.098-.15-.229-.36-.36-.595a7 7 0 0 1-.371-.76c-.1-.25-.193-.545-.193-.82 0-.502.2-.885.549-1.116.313-.206.68-.247.951-.247s.638.04.95.247c.35.23.55.614.55 1.115m1.805-12.125c0 1.047.693 1.975 1.619 2.836.456.424.935.804 1.375 1.163.42.344.839.694 1.092 1.027.157.201.247.46.305.69.06.245.1.516.125.777.052.514.059 1.065.072 1.355a.88.88 0 0 1-.89.915H15.33l-.533.639a.9.9 0 0 1-.722.361H9.927a.9.9 0 0 1-.72-.361l-.534-.639H5a.88.88 0 0 1-.89-.915l.022-.594c.01-.238.024-.504.05-.761.026-.261.064-.532.126-.777.058-.23.147-.489.305-.69.253-.333.67-.683 1.09-1.027.44-.36.92-.739 1.376-1.163.926-.861 1.618-1.79 1.618-2.836V6.59c0-1.274.425-2.504 1.017-3.426.297-.462.645-.86 1.02-1.152.37-.288.8-.497 1.252-.512h.034c.452.015.882.224 1.252.512.374.291.723.69 1.02 1.152a6.5 6.5 0 0 1 1.013 3.426z"
+      />
+    </svg>
+  );
+};
+SvgSiRocket.displayName = "SvgSiRocket";
+const ForwardRef = forwardRef(SvgSiRocket);
+const Memo = memo(ForwardRef);
+export default Memo;

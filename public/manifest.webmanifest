@@ -39,14 +39,6 @@
       "purpose": "maskable"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Changelog",
-      "short_name": "Changelog",
-      "description": "Recently added icons",
-      "url": "/changelog.html"
-    }
-  ],
   "launch_handler": {
     "client_mode": ["navigate-existing", "auto"]
   }

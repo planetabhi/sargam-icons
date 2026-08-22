@@ -8,7 +8,6 @@ const RUNTIME_CACHE = `sargam-runtime-v${VERSION}`;
 
 const SHELL_ASSETS = [
   '/',
-  '/changelog.html',
   '/manifest.webmanifest',
   '/.well-known/sargam-icons.json',
 ];
