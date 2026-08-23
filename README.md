@@ -5,16 +5,17 @@
 /___/\_,_/ /_/|_|\__/  \___/\_,_/ /_/  /_/\_,_/     
 ```
 
-Handcrafted icons for your exquisite designs.
+Handcrafted, optimized icons for better performance.
 
 ```sh
-npm install sargam-icons
-npm install @sargamicons/react
+npm install sargam-icons        # raw SVG icons
+npm install @sargamicons/react  # React components
 ```
 
-```tsx
-import { SiHeart } from '@sargamicons/react/line';
-```
+Community:
 
+```sh
+npm install @iconify-json/si    # Iconify data set
+```
 
 [![jsDelivr downloads badge](https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge)](https://www.jsdelivr.com/package/npm/sargam-icons)

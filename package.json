@@ -1,7 +1,7 @@
 {
   "name": "sargam-icons",
   "version": "1.6.7",
-  "description": "A collection of 1200+ open-source icons.",
+  "description": "Handcrafted, optimized icons for better performance.",
   "workspaces": [
     "packages/*"
   ],
