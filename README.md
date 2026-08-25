@@ -8,31 +8,18 @@
 Handcrafted, optimized icons for better performance.
 
 ```sh
-npm install sargam-icons        # raw SVG icons
-npm install @sargamicons/react  # React components
+npm install sargam-icons            # raw SVGs
+npm install @sargamicons/react      # React
+npm install @sargamicons/preact     # Preact
+npm install @sargamicons/vue        # Vue 3
+npm install @sargamicons/svelte     # Svelte 5
+npm install @sargamicons/solid      # Solid
+npm install @sargamicons/astro      # Astro
+npm install @sargamicons/static     # SVGs, sprite, manifest
+npm install @iconify-json/si        # Iconify [Community]
 ```
 
-## Packages
+> Every package ships the same icons in three styles (Line, Duotone, Fill) with `currentColor` theming and tree-shakeable `Si*` named exports.
 
-Every package ships the same icons in three styles — **Line**, **Duotone**,
-and **Fill** — with `currentColor` theming and tree-shakeable named exports
-(`Si*`).
-
-| Package | Install | Description |
-| --- | --- | --- |
-| [`sargam-icons`](https://www.npmjs.com/package/sargam-icons) | `npm install sargam-icons` | Raw, optimized SVG icons |
-| [`@sargamicons/react`](packages/react) | `npm install @sargamicons/react` | React components |
-| [`@sargamicons/preact`](packages/preact) | `npm install @sargamicons/preact` | Preact components |
-| [`@sargamicons/vue`](packages/vue) | `npm install @sargamicons/vue` | Vue 3 components |
-| [`@sargamicons/svelte`](packages/svelte) | `npm install @sargamicons/svelte` | Svelte 5 components |
-| [`@sargamicons/solid`](packages/solid) | `npm install @sargamicons/solid` | Solid components |
-| [`@sargamicons/astro`](packages/astro) | `npm install @sargamicons/astro` | Astro components |
-| [`@sargamicons/static`](packages/static) | `npm install @sargamicons/static` | SVGs, sprite & manifest |
-
-Community:
-
-```sh
-npm install @iconify-json/si    # Iconify data set
-```
 
 [![jsDelivr downloads badge](https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge)](https://www.jsdelivr.com/package/npm/sargam-icons)

@@ -97,12 +97,31 @@ function generatePopoverHtml(): string {
       <img class="panel-icon" src="" alt="" width="48" height="48">
     </div>
     <ul class="panel-tags" hidden aria-label="Related tags"></ul>
+    <div class="panel-menu" role="group" aria-label="Copy component code">
+      <button type="button" class="panel-menu-item" data-fw="react" aria-label="Copy React code">
+        <span class="t-text-swap">React</span>
+      </button>
+      <button type="button" class="panel-menu-item" data-fw="preact" aria-label="Copy Preact code">
+        <span class="t-text-swap">Preact</span>
+      </button>
+      <button type="button" class="panel-menu-item" data-fw="vue" aria-label="Copy Vue code">
+        <span class="t-text-swap">Vue</span>
+      </button>
+    </div>
+    <div class="panel-menu" role="group" aria-label="Copy component code">
+      <button type="button" class="panel-menu-item" data-fw="svelte" aria-label="Copy Svelte code">
+        <span class="t-text-swap">Svelte</span>
+      </button>
+      <button type="button" class="panel-menu-item" data-fw="solid" aria-label="Copy Solid code">
+        <span class="t-text-swap">Solid</span>
+      </button>
+      <button type="button" class="panel-menu-item" data-fw="astro" aria-label="Copy Astro code">
+        <span class="t-text-swap">Astro</span>
+      </button>
+    </div>
     <footer class="panel-menu">
       <button type="button" class="panel-menu-item" id="copy-svg-btn" aria-label="Copy SVG">
         <span class="t-text-swap">SVG</span>
-      </button>
-      <button type="button" class="panel-menu-item" id="copy-jsx-btn" aria-label="Copy JSX">
-        <span class="t-text-swap">JSX</span>
       </button>
       <button type="button" class="panel-menu-item" id="copy-cdn-btn" aria-label="Copy CDN URL">
         <span class="t-text-swap">CDN</span>
@@ -126,7 +145,7 @@ function generatePopoverScript(
       const panelTags = document.querySelector('.panel-tags');
       const copyBtn = document.getElementById('copy-svg-btn');
       const copyCdnBtn = document.getElementById('copy-cdn-btn');
-      const copyJsxBtn = document.getElementById('copy-jsx-btn');
+      const fwBtns = document.querySelectorAll('[data-fw]');
       const variantBtns = document.querySelectorAll('.panel-variant');
 
       let currentIconData = null;
@@ -376,14 +395,39 @@ function generatePopoverScript(
         });
       }
 
-      if (copyJsxBtn) {
-        copyJsxBtn.addEventListener('click', function() {
+      function snippetFor(fw, comp, variant) {
+        var pkg = "@sargamicons/" + fw + "/" + variant;
+        if (fw === 'vue') {
+          return "<script setup>\\n" +
+                 "import { " + comp + " } from '" + pkg + "';\\n" +
+                 "</scr" + "ipt>\\n\\n" +
+                 "<template>\\n" +
+                 "  <" + comp + " />\\n" +
+                 "</template>";
+        }
+        if (fw === 'svelte') {
+          return "<script>\\n" +
+                 "  import { " + comp + " } from '" + pkg + "';\\n" +
+                 "</scr" + "ipt>\\n\\n" +
+                 "<" + comp + " />";
+        }
+        if (fw === 'astro') {
+          return "---\\n" +
+                 "import { " + comp + " } from '" + pkg + "';\\n" +
+                 "---\\n\\n" +
+                 "<" + comp + " />";
+        }
+        return "import { " + comp + " } from '" + pkg + "';\\n\\n<" + comp + " />";
+      }
+
+      fwBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
           if (!currentIconData) return;
           var comp = componentNameFromIcon(currentIconData.iconName);
-          var snippet = "import { " + comp + " } from '@sargamicons/react/" + currentIconData.iconType + "';\\n\\n<" + comp + " />";
-          copyTextToClipboard(snippet, copyJsxBtn);
+          var fw = btn.getAttribute('data-fw') || 'react';
+          copyTextToClipboard(snippetFor(fw, comp, currentIconData.iconType), btn);
         });
-      }
+      });
     }
 
     if (document.readyState === 'loading') {
