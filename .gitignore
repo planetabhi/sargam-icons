@@ -2,6 +2,7 @@ node_modules
 dist
 *.tgz
 /package/
+.svelte-kit
 src/assets
 src/template.html
 public/sw.js

@@ -1,0 +1,17 @@
+<script>
+  const inner = "<path fill=\"currentColor\" fill-opacity=\".16\" fill-rule=\"evenodd\" d=\"M15 3a6 6 0 1 1-2.001 11.658l-5.76 5.764a1.994 1.994 0 0 1-2.817 0L3 19l1.458-1.458 1.85-.184.227-1.893 1.895-.228.227-1.894 1.219-1.219A6 6 0 0 1 15 3m0 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4\" clip-rule=\"evenodd\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"1.5\" d=\"M15 15a6 6 0 1 0-5.124-2.876l-1.22 1.22-.226 1.893-1.894.227-.228 1.894-1.85.184L3 19l1.422 1.422a1.99 1.99 0 0 0 2.817 0l5.76-5.764c.626.222 1.3.342 2.001.342\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"1.5\" d=\"M15 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4\"/>";
+  let { title, ...rest } = $props();
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  fill="none"
+  viewBox="0 0 24 24"
+  aria-hidden={title ? undefined : 'true'}
+  {...rest}
+>
+  {#if title}<title>{title}</title>{/if}
+  {@html inner}
+</svg>

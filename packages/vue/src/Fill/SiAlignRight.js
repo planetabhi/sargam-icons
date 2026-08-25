@@ -1,0 +1,2 @@
+import { createIcon } from '../_svg.js';
+export default createIcon("SiAlignRight", "0 0 24 24", "<path fill=\"currentColor\" d=\"M3 5a1 1 0 0 0 0 2h18a1 1 0 1 0 0-2zM9 9a1 1 0 0 0 0 2h12a1 1 0 1 0 0-2zM2 14a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1M9 17a1 1 0 1 0 0 2h12a1 1 0 1 0 0-2z\"/>");

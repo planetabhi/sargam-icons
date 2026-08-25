@@ -1,0 +1,2 @@
+import { createIcon } from '../_svg.js';
+export default createIcon("SiEye", "0 0 24 24", "<path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M12 5c6.074 0 11 7 11 7-.001.002-4.927 7-11 7S1 12 1 12s4.926-7 11-7m0 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8\" clip-rule=\"evenodd\"/>");

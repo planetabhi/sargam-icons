@@ -1,0 +1,2 @@
+import { createIcon } from '../_svg.js';
+export default createIcon("SiStreetSign", "0 0 24 24", "<path fill=\"currentColor\" fill-opacity=\".16\" d=\"M6 9 2 6l4-3h12v6zM18 18l4-3-4-3H6v6z\"/><path stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"1.5\" d=\"M12 1v2m0 15v5m0-14v3M6 9 2 6l4-3h12v6zm12 9 4-3-4-3H6v6z\"/>");

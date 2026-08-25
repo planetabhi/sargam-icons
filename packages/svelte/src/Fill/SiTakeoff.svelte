@@ -1,0 +1,17 @@
+<script>
+  const inner = "<path fill=\"currentColor\" d=\"M17.968 5.835c1.212-.681 2.755-.29 3.432.878L22.43 8.43a.5.5 0 0 1-.177.69l-10.355 6.036a.5.5 0 0 1-.148.057l-6.175 1.32a.5.5 0 0 1-.358-.058l-3.47-2.044a.5.5 0 0 1 .009-.866l.851-.48.005-.002a2.54 2.54 0 0 1 1.828-.232l1.225.174 3.73-2.209-4.332-1.779A.5.5 0 0 1 5 8.143l1.112-.649.028-.014a2.8 2.8 0 0 1 1.494-.302l.022.003 6.777.813 3.518-2.15zM18 18a1 1 0 1 1 0 2H6a1 1 0 1 1 0-2z\"/>";
+  let { title, ...rest } = $props();
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  fill="none"
+  viewBox="0 0 24 24"
+  aria-hidden={title ? undefined : 'true'}
+  {...rest}
+>
+  {#if title}<title>{title}</title>{/if}
+  {@html inner}
+</svg>

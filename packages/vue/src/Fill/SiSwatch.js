@@ -1,0 +1,2 @@
+import { createIcon } from '../_svg.js';
+export default createIcon("SiSwatch", "0 0 24 24", "<path fill=\"currentColor\" fill-rule=\"evenodd\" d=\"M6 2a4 4 0 0 1 4 4v2.313l1.9-1.899a4 4 0 0 1 5.657 5.657L15.627 14H18a4 4 0 0 1 .206 7.995L18 22H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4m0 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4m3.628 4H18a2 2 0 0 0 .204-3.99L18 16h-4.372zm6.515-12.172a2 2 0 0 0-2.83 0L10 11.142v5.657l2.5-2.501.01-.01 3.633-3.63a2 2 0 0 0 0-2.83\" clip-rule=\"evenodd\"/>");

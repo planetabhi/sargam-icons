@@ -1,0 +1,87 @@
+{
+  "name": "@sargamicons/svelte",
+  "version": "1.6.7",
+  "description": "Sargam Icons as tree-shakeable Svelte components (Line, Duotone, Fill).",
+  "type": "module",
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "generate": "bun run ../../tools/generate/emit/svelte.ts",
+    "build": "bun run generate && bunx svelte-package -i src -o dist",
+    "prepack": "bunx svelte-package -i src -o dist",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetabhi/sargam-icons.git",
+    "directory": "packages/svelte"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "icons",
+    "line-icons",
+    "fill-icons",
+    "duotone-icons",
+    "iconset",
+    "svg",
+    "svelte",
+    "svelte-icons",
+    "svelte-components",
+    "library",
+    "ui",
+    "components",
+    "sargam",
+    "sargam-icons",
+    "design-system",
+    "icon-pack",
+    "icon-library"
+  ],
+  "author": "@planetabhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planetabhi/sargam-icons/issues"
+  },
+  "homepage": "https://sargamicons.com/",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./line": {
+      "types": "./dist/Line/index.d.ts",
+      "svelte": "./dist/Line/index.js",
+      "default": "./dist/Line/index.js"
+    },
+    "./duotone": {
+      "types": "./dist/Duotone/index.d.ts",
+      "svelte": "./dist/Duotone/index.js",
+      "default": "./dist/Duotone/index.js"
+    },
+    "./fill": {
+      "types": "./dist/Fill/index.d.ts",
+      "svelte": "./dist/Fill/index.js",
+      "default": "./dist/Fill/index.js"
+    }
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "^2.3.0",
+    "rimraf": "^6.1.2",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,17 @@
+<script>
+  const inner = "<path fill=\"currentColor\" d=\"M12.9 14c4.474 0 8.1 3.582 8.1 8H3c0-4.418 3.626-8 8.1-8zM12 1.25A4.75 4.75 0 0 1 16.75 6v1a4.75 4.75 0 1 1-9.5 0V6A4.75 4.75 0 0 1 12 1.25\"/>";
+  let { title, ...rest } = $props();
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  fill="none"
+  viewBox="0 0 24 24"
+  aria-hidden={title ? undefined : 'true'}
+  {...rest}
+>
+  {#if title}<title>{title}</title>{/if}
+  {@html inner}
+</svg>

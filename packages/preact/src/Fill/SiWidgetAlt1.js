@@ -1,0 +1,35 @@
+import { forwardRef, memo } from "preact/compat";
+import { useId } from "preact/hooks";
+const SvgSiWidgetAlt1 = ({ title, titleId, ...props }, ref) => {
+  const generatedId = useId();
+  const validTitleId = titleId || generatedId;
+  const isTitlePresent = !!title;
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      fill="none"
+      viewBox="0 0 24 24"
+      aria-hidden={!isTitlePresent}
+      aria-labelledby={titleId}
+      ref={ref}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <path
+        fill="currentColor"
+        d="M6.5 2a1 1 0 0 1 .868.504l4 7A1 1 0 0 1 10.5 11h-8a1 1 0 0 1-.868-1.496l4-7 .073-.111A1 1 0 0 1 6.5 2M11 17.5a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0m11 2.7a1.8 1.8 0 0 1-1.8 1.8h-5.4a1.8 1.8 0 0 1-1.8-1.8v-5.4a1.8 1.8 0 0 1 1.8-1.8h5.4a1.8 1.8 0 0 1 1.8 1.8z"
+      />
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M19.275 2.5c1.721 0 3.062 1.43 3.062 3.132 0 1.467-.711 2.654-1.727 3.668l-.208.2c-.525.494-1.133.955-1.596 1.286a22 22 0 0 1-.756.516l-.048.031-.013.009-.005.002-.002.002a1 1 0 0 1-1.062.004l-.006-.004-.014-.01-.05-.031-.177-.115a21 21 0 0 1-.596-.407 14 14 0 0 1-1.594-1.294c-.986-.956-1.923-2.28-1.923-3.857 0-1.697 1.34-3.132 3.062-3.132.692 0 1.32.235 1.826.621a3 3 0 0 1 1.826-.621m0 2c-.388 0-.747.227-.935.598a1 1 0 0 1-1.783 0 1.06 1.06 0 0 0-.935-.598c-.556 0-1.062.477-1.062 1.132 0 .774.477 1.607 1.316 2.42.403.391.922.79 1.36 1.1q.11.077.208.143.094-.063.199-.136a14 14 0 0 0 1.39-1.117c.916-.86 1.304-1.616 1.304-2.41 0-.658-.505-1.132-1.062-1.132"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+};
+SvgSiWidgetAlt1.displayName = "SvgSiWidgetAlt1";
+const ForwardRef = forwardRef(SvgSiWidgetAlt1);
+const Memo = memo(ForwardRef);
+export default Memo;
