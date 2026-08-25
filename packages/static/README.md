@@ -1,9 +1,8 @@
 # @sargamicons/static
 
 [Sargam Icons](https://sargamicons.com/) as framework-agnostic assets in three
-styles — **Line**, **Duotone**, and **Fill** — as standalone SVGs, an SVG
-sprite, and a manifest. Every icon uses `currentColor`, so it inherits text
-color.
+styles (Line, Duotone, Fill): standalone SVGs, an SVG sprite, and a manifest.
+Every icon uses `currentColor`, so it inherits text color.
 
 ## Install
 
@@ -16,9 +15,9 @@ bun add @sargamicons/static
 
 ## Contents
 
-- `icons/<variant>/<slug>.svg` — one themeable SVG per icon per variant.
-- `sprite.svg` — every icon as a `<symbol id="si-<variant>-<slug>">`.
-- `manifest.json` — `{ "SiName": { base, slug, viewBox, variants } }`.
+- `icons/<variant>/<slug>.svg`: one themeable SVG per icon per variant.
+- `sprite.svg`: every icon as a `<symbol id="si-<variant>-<slug>">`.
+- `manifest.json`: `{ "SiName": { base, slug, viewBox, variants } }`.
 
 ## Usage
 
