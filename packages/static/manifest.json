@@ -1,0 +1,4332 @@
+{
+  "SiActions": {
+    "base": "si_Actions",
+    "slug": "actions",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiActivity": {
+    "base": "si_Activity",
+    "slug": "activity",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAdd": {
+    "base": "si_Add",
+    "slug": "add",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAddAlarm": {
+    "base": "si_Add_alarm",
+    "slug": "add-alarm",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAddCircle": {
+    "base": "si_Add_circle",
+    "slug": "add-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAddSquare": {
+    "base": "si_Add_square",
+    "slug": "add-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAddToLibrary": {
+    "base": "si_Add_to_library",
+    "slug": "add-to-library",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAddToPlaylist": {
+    "base": "si_Add_to_playlist",
+    "slug": "add-to-playlist",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAi": {
+    "base": "si_AI",
+    "slug": "ai",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiAlt1": {
+    "base": "si_AI_alt_1",
+    "slug": "ai-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiAlt2": {
+    "base": "si_AI_alt_2",
+    "slug": "ai-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiArchive": {
+    "base": "si_AI_archive",
+    "slug": "ai-archive",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiBriefcase": {
+    "base": "si_AI_briefcase",
+    "slug": "ai-briefcase",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiChat": {
+    "base": "si_AI_chat",
+    "slug": "ai-chat",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiChecklist": {
+    "base": "si_AI_checklist",
+    "slug": "ai-checklist",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiEdit": {
+    "base": "si_AI_edit",
+    "slug": "ai-edit",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiEditAlt1": {
+    "base": "si_AI_edit_alt_1",
+    "slug": "ai-edit-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiEditAlt2": {
+    "base": "si_AI_edit_alt_2",
+    "slug": "ai-edit-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiFact": {
+    "base": "si_AI_fact",
+    "slug": "ai-fact",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiFactAlt1": {
+    "base": "si_AI_fact_alt_1",
+    "slug": "ai-fact-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiInventory": {
+    "base": "si_AI_inventory",
+    "slug": "ai-inventory",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiLock": {
+    "base": "si_AI_lock",
+    "slug": "ai-lock",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiMonitor": {
+    "base": "si_AI_monitor",
+    "slug": "ai-monitor",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiNote": {
+    "base": "si_AI_note",
+    "slug": "ai-note",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiNoteAlt1": {
+    "base": "si_AI_note_alt_1",
+    "slug": "ai-note-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiPhone": {
+    "base": "si_AI_phone",
+    "slug": "ai-phone",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiPhoneAlt1": {
+    "base": "si_AI_phone_alt_1",
+    "slug": "ai-phone-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiScan": {
+    "base": "si_AI_scan",
+    "slug": "ai-scan",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiSearch": {
+    "base": "si_AI_search",
+    "slug": "ai-search",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiShield": {
+    "base": "si_AI_shield",
+    "slug": "ai-shield",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiSmartphone": {
+    "base": "si_AI_smartphone",
+    "slug": "ai-smartphone",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiSort": {
+    "base": "si_AI_sort",
+    "slug": "ai-sort",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiSortAlt1": {
+    "base": "si_AI_sort_alt_1",
+    "slug": "ai-sort-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiSummarize": {
+    "base": "si_AI_summarize",
+    "slug": "ai-summarize",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiSummarizeAlt": {
+    "base": "si_AI_summarize_alt",
+    "slug": "ai-summarize-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAiUnlock": {
+    "base": "si_AI_unlock",
+    "slug": "ai-unlock",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAirplane": {
+    "base": "si_Airplane",
+    "slug": "airplane",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAirplaneAlt": {
+    "base": "si_Airplane_alt",
+    "slug": "airplane-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlbum": {
+    "base": "si_Album",
+    "slug": "album",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlert": {
+    "base": "si_Alert",
+    "slug": "alert",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignBottomDetailed": {
+    "base": "si_Align_bottom_detailed",
+    "slug": "align-bottom-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignBottomSimple": {
+    "base": "si_Align_bottom_simple",
+    "slug": "align-bottom-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignCenter": {
+    "base": "si_Align_center",
+    "slug": "align-center",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignHorizCenterDetailed": {
+    "base": "si_Align_horiz_center_detailed",
+    "slug": "align-horiz-center-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignHorizCenterSimple": {
+    "base": "si_Align_horiz_center_simple",
+    "slug": "align-horiz-center-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignJustify": {
+    "base": "si_Align_justify",
+    "slug": "align-justify",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignLeft": {
+    "base": "si_Align_left",
+    "slug": "align-left",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignLeftDetailed": {
+    "base": "si_Align_left_detailed",
+    "slug": "align-left-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignLeftSimple": {
+    "base": "si_Align_left_simple",
+    "slug": "align-left-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignRight": {
+    "base": "si_Align_right",
+    "slug": "align-right",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignRightDetailed": {
+    "base": "si_Align_right_detailed",
+    "slug": "align-right-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignRightSimple": {
+    "base": "si_Align_right_simple",
+    "slug": "align-right-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignTopDetailed": {
+    "base": "si_Align_top_detailed",
+    "slug": "align-top-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignTopSimple": {
+    "base": "si_Align_top_simple",
+    "slug": "align-top-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignVertCenterDetailed": {
+    "base": "si_Align_vert_center_detailed",
+    "slug": "align-vert-center-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAlignVertCenterSimple": {
+    "base": "si_Align_vert_center_simple",
+    "slug": "align-vert-center-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiApple": {
+    "base": "si_Apple",
+    "slug": "apple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArchive": {
+    "base": "si_Archive",
+    "slug": "archive",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArchiveAlt": {
+    "base": "si_Archive_alt",
+    "slug": "archive-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowDownward": {
+    "base": "si_Arrow_downward",
+    "slug": "arrow-downward",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowDownwardCircle": {
+    "base": "si_Arrow_downward_circle",
+    "slug": "arrow-downward-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowDownwardSquare": {
+    "base": "si_Arrow_downward_square",
+    "slug": "arrow-downward-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowLeft": {
+    "base": "si_Arrow_left",
+    "slug": "arrow-left",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowLeftCircle": {
+    "base": "si_Arrow_left_circle",
+    "slug": "arrow-left-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowLeftSquare": {
+    "base": "si_Arrow_left_square",
+    "slug": "arrow-left-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowRight": {
+    "base": "si_Arrow_right",
+    "slug": "arrow-right",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowRightCircle": {
+    "base": "si_Arrow_right_circle",
+    "slug": "arrow-right-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowRightSquare": {
+    "base": "si_Arrow_right_square",
+    "slug": "arrow-right-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowUpward": {
+    "base": "si_Arrow_upward",
+    "slug": "arrow-upward",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowUpwardCircle": {
+    "base": "si_Arrow_upward_circle",
+    "slug": "arrow-upward-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArrowUpwardSquare": {
+    "base": "si_Arrow_upward_square",
+    "slug": "arrow-upward-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiArticle": {
+    "base": "si_Article",
+    "slug": "article",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAssignment": {
+    "base": "si_Assignment",
+    "slug": "assignment",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiAttachment": {
+    "base": "si_Attachment",
+    "slug": "attachment",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBallot": {
+    "base": "si_Ballot",
+    "slug": "ballot",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBarChart": {
+    "base": "si_Bar_chart",
+    "slug": "bar-chart",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBarcode": {
+    "base": "si_Barcode",
+    "slug": "barcode",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBarcodeScan": {
+    "base": "si_Barcode_scan",
+    "slug": "barcode-scan",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBarcodeScanAlt": {
+    "base": "si_Barcode_scan_alt",
+    "slug": "barcode-scan-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBarn": {
+    "base": "si_Barn",
+    "slug": "barn",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBin": {
+    "base": "si_Bin",
+    "slug": "bin",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBluetooth": {
+    "base": "si_Bluetooth",
+    "slug": "bluetooth",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBold": {
+    "base": "si_Bold",
+    "slug": "bold",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBook": {
+    "base": "si_Book",
+    "slug": "book",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBookmark": {
+    "base": "si_Bookmark",
+    "slug": "bookmark",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBriefcase": {
+    "base": "si_Briefcase",
+    "slug": "briefcase",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBriefcaseDetailed": {
+    "base": "si_Briefcase_detailed",
+    "slug": "briefcase-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBriefcaseMedical": {
+    "base": "si_Briefcase_medical",
+    "slug": "briefcase-medical",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBriefcases": {
+    "base": "si_Briefcases",
+    "slug": "briefcases",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBuilding": {
+    "base": "si_Building",
+    "slug": "building",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBuildingAlt1": {
+    "base": "si_Building_alt_1",
+    "slug": "building-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBuildingAlt2": {
+    "base": "si_Building_alt_2",
+    "slug": "building-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBuildingAlt3": {
+    "base": "si_Building_alt_3",
+    "slug": "building-alt-3",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiBus": {
+    "base": "si_Bus",
+    "slug": "bus",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCancelPhoto": {
+    "base": "si_Cancel_photo",
+    "slug": "cancel-photo",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCancelPresentation": {
+    "base": "si_Cancel_presentation",
+    "slug": "cancel-presentation",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCastle": {
+    "base": "si_Castle",
+    "slug": "castle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCastleAlt1": {
+    "base": "si_Castle_alt_1",
+    "slug": "castle-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChat": {
+    "base": "si_Chat",
+    "slug": "chat",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChatText": {
+    "base": "si_Chat_text",
+    "slug": "chat-text",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCheck": {
+    "base": "si_Check",
+    "slug": "check",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCheckAlt": {
+    "base": "si_Check_alt",
+    "slug": "check-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCheckCircle": {
+    "base": "si_Check_circle",
+    "slug": "check-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCheckSquare": {
+    "base": "si_Check_square",
+    "slug": "check-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChecklist": {
+    "base": "si_Checklist",
+    "slug": "checklist",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChecklistAlt": {
+    "base": "si_Checklist_alt",
+    "slug": "checklist-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronLeft": {
+    "base": "si_Chevron_left",
+    "slug": "chevron-left",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronLeftAlt": {
+    "base": "si_Chevron_left_alt",
+    "slug": "chevron-left-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronLeftCircle": {
+    "base": "si_Chevron_left_circle",
+    "slug": "chevron-left-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronLeftSquare": {
+    "base": "si_Chevron_left_square",
+    "slug": "chevron-left-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronRight": {
+    "base": "si_Chevron_right",
+    "slug": "chevron-right",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronRightAlt": {
+    "base": "si_Chevron_right_alt",
+    "slug": "chevron-right-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronRightCircle": {
+    "base": "si_Chevron_right_circle",
+    "slug": "chevron-right-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiChevronRightSquare": {
+    "base": "si_Chevron_right_square",
+    "slug": "chevron-right-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCity": {
+    "base": "si_City",
+    "slug": "city",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClearAll": {
+    "base": "si_Clear_all",
+    "slug": "clear-all",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClearDay": {
+    "base": "si_Clear_day",
+    "slug": "clear-day",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClick": {
+    "base": "si_Click",
+    "slug": "click",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClipboard": {
+    "base": "si_Clipboard",
+    "slug": "clipboard",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClipboardAlt": {
+    "base": "si_Clipboard_alt",
+    "slug": "clipboard-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClipboardCheck": {
+    "base": "si_Clipboard_check",
+    "slug": "clipboard-check",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClipboardCheckAlt": {
+    "base": "si_Clipboard_check_alt",
+    "slug": "clipboard-check-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClipboardFilled": {
+    "base": "si_Clipboard_filled",
+    "slug": "clipboard-filled",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClipboardFilledAlt": {
+    "base": "si_Clipboard_filled_alt",
+    "slug": "clipboard-filled-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClock": {
+    "base": "si_Clock",
+    "slug": "clock",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClockAlt": {
+    "base": "si_Clock_alt",
+    "slug": "clock-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiClose": {
+    "base": "si_Close",
+    "slug": "close",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCloseCircle": {
+    "base": "si_Close_circle",
+    "slug": "close-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCloseSquare": {
+    "base": "si_Close_square",
+    "slug": "close-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCloud": {
+    "base": "si_Cloud",
+    "slug": "cloud",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCode": {
+    "base": "si_Code",
+    "slug": "code",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCodeMuted": {
+    "base": "si_Code_muted",
+    "slug": "code-muted",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiColumns": {
+    "base": "si_Columns",
+    "slug": "columns",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCopy": {
+    "base": "si_Copy",
+    "slug": "copy",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCopyAlt": {
+    "base": "si_Copy_alt",
+    "slug": "copy-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCopyright": {
+    "base": "si_Copyright",
+    "slug": "copyright",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCopyrightAlt": {
+    "base": "si_Copyright_alt",
+    "slug": "copyright-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCreditCard": {
+    "base": "si_Credit_card",
+    "slug": "credit-card",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCreditCardDetailed": {
+    "base": "si_Credit_card_detailed",
+    "slug": "credit-card-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCreditCardDetailedAlt": {
+    "base": "si_Credit_card_detailed_alt",
+    "slug": "credit-card-detailed-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCrop": {
+    "base": "si_Crop",
+    "slug": "crop",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCrosshairDetailed": {
+    "base": "si_Crosshair_detailed",
+    "slug": "crosshair-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiCrosshairSimple": {
+    "base": "si_Crosshair_simple",
+    "slug": "crosshair-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDangerous": {
+    "base": "si_Dangerous",
+    "slug": "dangerous",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDashboard": {
+    "base": "si_Dashboard",
+    "slug": "dashboard",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDashboardCustomize": {
+    "base": "si_Dashboard_customize",
+    "slug": "dashboard-customize",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDashboardHorz": {
+    "base": "si_Dashboard_horz",
+    "slug": "dashboard-horz",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDashboardVert": {
+    "base": "si_Dashboard_vert",
+    "slug": "dashboard-vert",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDeleteAlarm": {
+    "base": "si_Delete_alarm",
+    "slug": "delete-alarm",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDiamondsFour": {
+    "base": "si_Diamonds_four",
+    "slug": "diamonds-four",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDirection": {
+    "base": "si_Direction",
+    "slug": "direction",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDirectionAlt": {
+    "base": "si_Direction_alt",
+    "slug": "direction-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDollar": {
+    "base": "si_Dollar",
+    "slug": "dollar",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDollarAlt1": {
+    "base": "si_Dollar_alt_1",
+    "slug": "dollar-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDollarAlt2": {
+    "base": "si_Dollar_alt_2",
+    "slug": "dollar-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDoubleArrowRight": {
+    "base": "si_Double_arrow_right",
+    "slug": "double-arrow-right",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDownLeft": {
+    "base": "si_Down_left",
+    "slug": "down-left",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDownRight": {
+    "base": "si_Down_right",
+    "slug": "down-right",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDownTwoHeaded": {
+    "base": "si_Down_two_headed",
+    "slug": "down-two-headed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDownloadOffline": {
+    "base": "si_Download_offline",
+    "slug": "download-offline",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDragHandle": {
+    "base": "si_Drag_handle",
+    "slug": "drag-handle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDragIndicator": {
+    "base": "si_Drag_indicator",
+    "slug": "drag-indicator",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiDragIndicatorAlt": {
+    "base": "si_Drag_indicator_alt",
+    "slug": "drag-indicator-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEditDetailed": {
+    "base": "si_Edit_detailed",
+    "slug": "edit-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEditDetailedAlt": {
+    "base": "si_Edit_detailed_alt",
+    "slug": "edit-detailed-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEditSimple": {
+    "base": "si_Edit_simple",
+    "slug": "edit-simple",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEject": {
+    "base": "si_Eject",
+    "slug": "eject",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEmoji": {
+    "base": "si_Emoji",
+    "slug": "emoji",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEmojiAlt": {
+    "base": "si_Emoji_alt",
+    "slug": "emoji-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEqualizer": {
+    "base": "si_Equalizer",
+    "slug": "equalizer",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiError": {
+    "base": "si_Error",
+    "slug": "error",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandLess": {
+    "base": "si_Expand_less",
+    "slug": "expand-less",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandLessAlt": {
+    "base": "si_Expand_less_alt",
+    "slug": "expand-less-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandLessCircle": {
+    "base": "si_Expand_less_circle",
+    "slug": "expand-less-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandLessSquare": {
+    "base": "si_Expand_less_square",
+    "slug": "expand-less-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandMore": {
+    "base": "si_Expand_more",
+    "slug": "expand-more",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandMoreAlt": {
+    "base": "si_Expand_more_alt",
+    "slug": "expand-more-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandMoreCircle": {
+    "base": "si_Expand_more_circle",
+    "slug": "expand-more-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiExpandMoreSquare": {
+    "base": "si_Expand_more_square",
+    "slug": "expand-more-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiEye": {
+    "base": "si_Eye",
+    "slug": "eye",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFactCheck": {
+    "base": "si_Fact_check",
+    "slug": "fact-check",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFeaturedPlaylist": {
+    "base": "si_Featured_playlist",
+    "slug": "featured-playlist",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFileDownload": {
+    "base": "si_File_download",
+    "slug": "file-download",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFileUpload": {
+    "base": "si_File_upload",
+    "slug": "file-upload",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFilterList": {
+    "base": "si_Filter_list",
+    "slug": "filter-list",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFilterListAlt": {
+    "base": "si_Filter_list_alt",
+    "slug": "filter-list-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFilterNone": {
+    "base": "si_Filter_none",
+    "slug": "filter-none",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlag": {
+    "base": "si_Flag",
+    "slug": "flag",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlagAlt1": {
+    "base": "si_Flag_alt_1",
+    "slug": "flag-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlagAlt2": {
+    "base": "si_Flag_alt_2",
+    "slug": "flag-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlagAlt3": {
+    "base": "si_Flag_alt_3",
+    "slug": "flag-alt-3",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlagAlt4": {
+    "base": "si_Flag_alt_4",
+    "slug": "flag-alt-4",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlare": {
+    "base": "si_Flare",
+    "slug": "flare",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlow": {
+    "base": "si_Flow",
+    "slug": "flow",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlowBranch": {
+    "base": "si_Flow_branch",
+    "slug": "flow-branch",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlowCascade": {
+    "base": "si_Flow_cascade",
+    "slug": "flow-cascade",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlowLine": {
+    "base": "si_Flow_line",
+    "slug": "flow-line",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlowParallel": {
+    "base": "si_Flow_parallel",
+    "slug": "flow-parallel",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiFlowTree": {
+    "base": "si_Flow_tree",
+    "slug": "flow-tree",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiGarage": {
+    "base": "si_Garage",
+    "slug": "garage",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiGlobeDetailed": {
+    "base": "si_Globe_detailed",
+    "slug": "globe-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiGrid": {
+    "base": "si_Grid",
+    "slug": "grid",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiGridOn": {
+    "base": "si_Grid_on",
+    "slug": "grid-on",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiGridView": {
+    "base": "si_Grid_view",
+    "slug": "grid-view",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHammer": {
+    "base": "si_Hammer",
+    "slug": "hammer",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHammerAlt": {
+    "base": "si_Hammer_alt",
+    "slug": "hammer-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHeart": {
+    "base": "si_Heart",
+    "slug": "heart",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHeartAlt": {
+    "base": "si_Heart_alt",
+    "slug": "heart-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHelp": {
+    "base": "si_Help",
+    "slug": "help",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHome": {
+    "base": "si_Home",
+    "slug": "home",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHomeDetailed": {
+    "base": "si_Home_detailed",
+    "slug": "home-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHospital": {
+    "base": "si_Hospital",
+    "slug": "hospital",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHospitalAlt1": {
+    "base": "si_Hospital_alt_1",
+    "slug": "hospital-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiHourglass": {
+    "base": "si_Hourglass",
+    "slug": "hourglass",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiInflight": {
+    "base": "si_Inflight",
+    "slug": "inflight",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiInfo": {
+    "base": "si_Info",
+    "slug": "info",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiInput": {
+    "base": "si_Input",
+    "slug": "input",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiInsights": {
+    "base": "si_Insights",
+    "slug": "insights",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiInventory": {
+    "base": "si_Inventory",
+    "slug": "inventory",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiItalic": {
+    "base": "si_Italic",
+    "slug": "italic",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiJson": {
+    "base": "si_JSON",
+    "slug": "json",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiJsonAlt1": {
+    "base": "si_JSON_alt_1",
+    "slug": "json-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiJsonAlt2": {
+    "base": "si_JSON_alt_2",
+    "slug": "json-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiJsonAlt3": {
+    "base": "si_JSON_alt_3",
+    "slug": "json-alt-3",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiJsonAlt4": {
+    "base": "si_JSON_alt_4",
+    "slug": "json-alt-4",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiJsonAlt5": {
+    "base": "si_JSON_alt_5",
+    "slug": "json-alt-5",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiKey": {
+    "base": "si_Key",
+    "slug": "key",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiKeypad": {
+    "base": "si_Keypad",
+    "slug": "keypad",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiKnob": {
+    "base": "si_Knob",
+    "slug": "knob",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLamp": {
+    "base": "si_Lamp",
+    "slug": "lamp",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLanding": {
+    "base": "si_Landing",
+    "slug": "landing",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLayers": {
+    "base": "si_Layers",
+    "slug": "layers",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLeftDown": {
+    "base": "si_Left_down",
+    "slug": "left-down",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLeftRight": {
+    "base": "si_Left_right",
+    "slug": "left-right",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLeftTwoHeaded": {
+    "base": "si_Left_two_headed",
+    "slug": "left-two-headed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLeftUp": {
+    "base": "si_Left_up",
+    "slug": "left-up",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLibraryBooks": {
+    "base": "si_Library_books",
+    "slug": "library-books",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLightMode": {
+    "base": "si_Light_mode",
+    "slug": "light-mode",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLightning": {
+    "base": "si_Lightning",
+    "slug": "lightning",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLink": {
+    "base": "si_Link",
+    "slug": "link",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLock": {
+    "base": "si_Lock",
+    "slug": "lock",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLockAlt": {
+    "base": "si_Lock_alt",
+    "slug": "lock-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiLockMuted": {
+    "base": "si_Lock_muted",
+    "slug": "lock-muted",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMail": {
+    "base": "si_Mail",
+    "slug": "mail",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMap": {
+    "base": "si_Map",
+    "slug": "map",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMemory": {
+    "base": "si_Memory",
+    "slug": "memory",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMeter": {
+    "base": "si_Meter",
+    "slug": "meter",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMic": {
+    "base": "si_Mic",
+    "slug": "mic",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMicDetailed": {
+    "base": "si_Mic_detailed",
+    "slug": "mic-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoney": {
+    "base": "si_Money",
+    "slug": "money",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitor": {
+    "base": "si_Monitor",
+    "slug": "monitor",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitorCheck": {
+    "base": "si_Monitor_check",
+    "slug": "monitor-check",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitorClose": {
+    "base": "si_Monitor_close",
+    "slug": "monitor-close",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitorDown": {
+    "base": "si_Monitor_down",
+    "slug": "monitor-down",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitorPause": {
+    "base": "si_Monitor_pause",
+    "slug": "monitor-pause",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitorPlay": {
+    "base": "si_Monitor_play",
+    "slug": "monitor-play",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitorStop": {
+    "base": "si_Monitor_stop",
+    "slug": "monitor-stop",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMonitorUp": {
+    "base": "si_Monitor_up",
+    "slug": "monitor-up",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoon": {
+    "base": "si_Moon",
+    "slug": "moon",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreHoriz": {
+    "base": "si_More_horiz",
+    "slug": "more-horiz",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreHorizCircle": {
+    "base": "si_More_horiz_circle",
+    "slug": "more-horiz-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreHorizSquare": {
+    "base": "si_More_horiz_square",
+    "slug": "more-horiz-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreMutedHoriz": {
+    "base": "si_More_muted_horiz",
+    "slug": "more-muted-horiz",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreMutedHorizCircle": {
+    "base": "si_More_muted_horiz_circle",
+    "slug": "more-muted-horiz-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreMutedHorizSquare": {
+    "base": "si_More_muted_horiz_square",
+    "slug": "more-muted-horiz-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreMutedVert": {
+    "base": "si_More_muted_vert",
+    "slug": "more-muted-vert",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreMutedVertCircle": {
+    "base": "si_More_muted_vert_circle",
+    "slug": "more-muted-vert-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreMutedVertSquare": {
+    "base": "si_More_muted_vert_square",
+    "slug": "more-muted-vert-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreSquareHoriz": {
+    "base": "si_More_square_horiz",
+    "slug": "more-square-horiz",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreSquareVert": {
+    "base": "si_More_square_vert",
+    "slug": "more-square-vert",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreVert": {
+    "base": "si_More_vert",
+    "slug": "more-vert",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreVertCircle": {
+    "base": "si_More_vert_circle",
+    "slug": "more-vert-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMoreVertSquare": {
+    "base": "si_More_vert_square",
+    "slug": "more-vert-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMove": {
+    "base": "si_Move",
+    "slug": "move",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiMovie": {
+    "base": "si_Movie",
+    "slug": "movie",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNope": {
+    "base": "si_Nope",
+    "slug": "nope",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthEast": {
+    "base": "si_North_east",
+    "slug": "north-east",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthEastCircle": {
+    "base": "si_North_east_circle",
+    "slug": "north-east-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthEastEscape": {
+    "base": "si_North_east_escape",
+    "slug": "north-east-escape",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthEastEscapeAlt": {
+    "base": "si_North_east_escape_alt",
+    "slug": "north-east-escape-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthEastSquare": {
+    "base": "si_North_east_square",
+    "slug": "north-east-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthWest": {
+    "base": "si_North_west",
+    "slug": "north-west",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthWestCircle": {
+    "base": "si_North_west_circle",
+    "slug": "north-west-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthWestEscape": {
+    "base": "si_North_west_escape",
+    "slug": "north-west-escape",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthWestEscapeAlt": {
+    "base": "si_North_west_escape_alt",
+    "slug": "north-west-escape-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthWestSquare": {
+    "base": "si_North_west_square",
+    "slug": "north-west-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNortheastSouthwest": {
+    "base": "si_Northeast_southwest",
+    "slug": "northeast-southwest",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNorthwestSoutheast": {
+    "base": "si_Northwest_southeast",
+    "slug": "northwest-southeast",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNotifications": {
+    "base": "si_Notifications",
+    "slug": "notifications",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNotificationsAlt": {
+    "base": "si_Notifications_alt",
+    "slug": "notifications-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNotificationsAlt2": {
+    "base": "si_Notifications_alt_2",
+    "slug": "notifications-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiNotificationsThick": {
+    "base": "si_Notifications_thick",
+    "slug": "notifications-thick",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiOctagon": {
+    "base": "si_Octagon",
+    "slug": "octagon",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiOctagonCheck": {
+    "base": "si_Octagon_check",
+    "slug": "octagon-check",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPause": {
+    "base": "si_Pause",
+    "slug": "pause",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPausePresentation": {
+    "base": "si_Pause_presentation",
+    "slug": "pause-presentation",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPentagon": {
+    "base": "si_Pentagon",
+    "slug": "pentagon",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPhone": {
+    "base": "si_Phone",
+    "slug": "phone",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPhoneAddCall": {
+    "base": "si_Phone_add_call",
+    "slug": "phone-add-call",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPhoneCallback": {
+    "base": "si_Phone_callback",
+    "slug": "phone-callback",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPhoneEnabled": {
+    "base": "si_Phone_enabled",
+    "slug": "phone-enabled",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPhoneForwarded": {
+    "base": "si_Phone_forwarded",
+    "slug": "phone-forwarded",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPhoneLocked": {
+    "base": "si_Phone_locked",
+    "slug": "phone-locked",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPhonePaused": {
+    "base": "si_Phone_paused",
+    "slug": "phone-paused",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPieChart": {
+    "base": "si_Pie_chart",
+    "slug": "pie-chart",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPin": {
+    "base": "si_Pin",
+    "slug": "pin",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPinAlt1": {
+    "base": "si_Pin_alt_1",
+    "slug": "pin-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPinAlt2": {
+    "base": "si_Pin_alt_2",
+    "slug": "pin-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPlay": {
+    "base": "si_Play",
+    "slug": "play",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPlayForward": {
+    "base": "si_Play_forward",
+    "slug": "play-forward",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPlayNext": {
+    "base": "si_Play_next",
+    "slug": "play-next",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPlayPrevious": {
+    "base": "si_Play_previous",
+    "slug": "play-previous",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPlayRewind": {
+    "base": "si_Play_rewind",
+    "slug": "play-rewind",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiProjects": {
+    "base": "si_Projects",
+    "slug": "projects",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiProjectsAlt": {
+    "base": "si_Projects_alt",
+    "slug": "projects-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiPullRequest": {
+    "base": "si_Pull_request",
+    "slug": "pull-request",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiQuote": {
+    "base": "si_Quote",
+    "slug": "quote",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRecord": {
+    "base": "si_Record",
+    "slug": "record",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiReleaseNotes": {
+    "base": "si_Release_notes",
+    "slug": "release-notes",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRemove": {
+    "base": "si_Remove",
+    "slug": "remove",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRemoveAlarm": {
+    "base": "si_Remove_alarm",
+    "slug": "remove-alarm",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRemoveCircle": {
+    "base": "si_Remove_circle",
+    "slug": "remove-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRemoveFromLibrary": {
+    "base": "si_Remove_from_library",
+    "slug": "remove-from-library",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRemoveSquare": {
+    "base": "si_Remove_square",
+    "slug": "remove-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiReorder": {
+    "base": "si_Reorder",
+    "slug": "reorder",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiReorderAlt": {
+    "base": "si_Reorder_alt",
+    "slug": "reorder-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRightTwoHeaded": {
+    "base": "si_Right_two_headed",
+    "slug": "right-two-headed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRocket": {
+    "base": "si_Rocket",
+    "slug": "rocket",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiRupee": {
+    "base": "si_Rupee",
+    "slug": "rupee",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSearch": {
+    "base": "si_Search",
+    "slug": "search",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSearchAlt": {
+    "base": "si_Search_alt",
+    "slug": "search-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSegment": {
+    "base": "si_Segment",
+    "slug": "segment",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiServer": {
+    "base": "si_Server",
+    "slug": "server",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSettings": {
+    "base": "si_Settings",
+    "slug": "settings",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSettingsAlt": {
+    "base": "si_Settings_alt",
+    "slug": "settings-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSettingsAlt2": {
+    "base": "si_Settings_alt_2",
+    "slug": "settings-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSettingsApplications": {
+    "base": "si_Settings_applications",
+    "slug": "settings-applications",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSettingsCute": {
+    "base": "si_Settings_cute",
+    "slug": "settings-cute",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSettingsThick": {
+    "base": "si_Settings_thick",
+    "slug": "settings-thick",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShield": {
+    "base": "si_Shield",
+    "slug": "shield",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShieldAlert": {
+    "base": "si_Shield_alert",
+    "slug": "shield-alert",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShieldBad": {
+    "base": "si_Shield_bad",
+    "slug": "shield-bad",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShieldHealthSafety": {
+    "base": "si_Shield_health_safety",
+    "slug": "shield-health-safety",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShieldPolice": {
+    "base": "si_Shield_police",
+    "slug": "shield-police",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShieldSecurity": {
+    "base": "si_Shield_security",
+    "slug": "shield-security",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShieldTip": {
+    "base": "si_Shield_tip",
+    "slug": "shield-tip",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiShieldVerified": {
+    "base": "si_Shield_verified",
+    "slug": "shield-verified",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSignIn": {
+    "base": "si_Sign_in",
+    "slug": "sign-in",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSignInAlt": {
+    "base": "si_Sign_in_alt",
+    "slug": "sign-in-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSignOut": {
+    "base": "si_Sign_out",
+    "slug": "sign-out",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSignOutAlt": {
+    "base": "si_Sign_out_alt",
+    "slug": "sign-out-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSmartPhone": {
+    "base": "si_Smart_phone",
+    "slug": "smart-phone",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSort": {
+    "base": "si_Sort",
+    "slug": "sort",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSortAlt": {
+    "base": "si_Sort_alt",
+    "slug": "sort-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthEast": {
+    "base": "si_South_east",
+    "slug": "south-east",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthEastCircle": {
+    "base": "si_South_east_circle",
+    "slug": "south-east-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthEastEscape": {
+    "base": "si_South_east_escape",
+    "slug": "south-east-escape",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthEastEscapeAlt": {
+    "base": "si_South_east_escape_alt",
+    "slug": "south-east-escape-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthEastSquare": {
+    "base": "si_South_east_square",
+    "slug": "south-east-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthWest": {
+    "base": "si_South_west",
+    "slug": "south-west",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthWestCircle": {
+    "base": "si_South_west_circle",
+    "slug": "south-west-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthWestEscape": {
+    "base": "si_South_west_escape",
+    "slug": "south-west-escape",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthWestEscapeAlt": {
+    "base": "si_South_west_escape_alt",
+    "slug": "south-west-escape-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSouthWestSquare": {
+    "base": "si_South_west_square",
+    "slug": "south-west-square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSpark": {
+    "base": "si_Spark",
+    "slug": "spark",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSpinner": {
+    "base": "si_Spinner",
+    "slug": "spinner",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSquare": {
+    "base": "si_Square",
+    "slug": "square",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiStar": {
+    "base": "si_Star",
+    "slug": "star",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiStarAlt": {
+    "base": "si_Star_alt",
+    "slug": "star-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiStop": {
+    "base": "si_Stop",
+    "slug": "stop",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiStopCircle": {
+    "base": "si_Stop_circle",
+    "slug": "stop-circle",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiStreetSign": {
+    "base": "si_Street_sign",
+    "slug": "street-sign",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiStrikethrough": {
+    "base": "si_Strikethrough",
+    "slug": "strikethrough",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSun": {
+    "base": "si_Sun",
+    "slug": "sun",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSunSet": {
+    "base": "si_Sun_set",
+    "slug": "sun-set",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSunnySnowing": {
+    "base": "si_Sunny_snowing",
+    "slug": "sunny-snowing",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSwapHoriz": {
+    "base": "si_Swap_horiz",
+    "slug": "swap-horiz",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSwapVert": {
+    "base": "si_Swap_vert",
+    "slug": "swap-vert",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiSwatch": {
+    "base": "si_Swatch",
+    "slug": "swatch",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTable": {
+    "base": "si_Table",
+    "slug": "table",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTableColumns": {
+    "base": "si_Table_columns",
+    "slug": "table-columns",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTableRows": {
+    "base": "si_Table_rows",
+    "slug": "table-rows",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTakeoff": {
+    "base": "si_Takeoff",
+    "slug": "takeoff",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTarget": {
+    "base": "si_Target",
+    "slug": "target",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTaxiing": {
+    "base": "si_Taxiing",
+    "slug": "taxiing",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTerminal": {
+    "base": "si_Terminal",
+    "slug": "terminal",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTerminalAlt": {
+    "base": "si_Terminal_alt",
+    "slug": "terminal-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiText": {
+    "base": "si_Text",
+    "slug": "text",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiThumbDown": {
+    "base": "si_Thumb_down",
+    "slug": "thumb-down",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiThumbDownAlt1": {
+    "base": "si_Thumb_down_alt_1",
+    "slug": "thumb-down-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiThumbDownAlt2": {
+    "base": "si_Thumb_down_alt_2",
+    "slug": "thumb-down-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiThumbUp": {
+    "base": "si_Thumb_up",
+    "slug": "thumb-up",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiThumbUpAlt1": {
+    "base": "si_Thumb_up_alt_1",
+    "slug": "thumb-up-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiThumbUpAlt2": {
+    "base": "si_Thumb_up_alt_2",
+    "slug": "thumb-up-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTicket": {
+    "base": "si_Ticket",
+    "slug": "ticket",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTicketAlt1": {
+    "base": "si_Ticket_alt_1",
+    "slug": "ticket-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiToggleOff": {
+    "base": "si_Toggle_off",
+    "slug": "toggle-off",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiToggleOn": {
+    "base": "si_Toggle_on",
+    "slug": "toggle-on",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTrafficCone": {
+    "base": "si_Traffic_cone",
+    "slug": "traffic-cone",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTrain": {
+    "base": "si_Train",
+    "slug": "train",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiTwitter": {
+    "base": "si_Twitter",
+    "slug": "twitter",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUmbrella": {
+    "base": "si_Umbrella",
+    "slug": "umbrella",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUnderline": {
+    "base": "si_Underline",
+    "slug": "underline",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUnfoldMore": {
+    "base": "si_Unfold_more",
+    "slug": "unfold-more",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUnlink": {
+    "base": "si_Unlink",
+    "slug": "unlink",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUnlock": {
+    "base": "si_Unlock",
+    "slug": "unlock",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUnlockAlt": {
+    "base": "si_Unlock_alt",
+    "slug": "unlock-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUnlockMuted": {
+    "base": "si_Unlock_muted",
+    "slug": "unlock-muted",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUpDown": {
+    "base": "si_Up_down",
+    "slug": "up-down",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUpTwoHeaded": {
+    "base": "si_Up_two_headed",
+    "slug": "up-two-headed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUser": {
+    "base": "si_User",
+    "slug": "user",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUserAlt": {
+    "base": "si_User_alt",
+    "slug": "user-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUserAlt2": {
+    "base": "si_User_alt_2",
+    "slug": "user-alt-2",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUserAlt3": {
+    "base": "si_User_alt_3",
+    "slug": "user-alt-3",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUserAlt4": {
+    "base": "si_User_alt_4",
+    "slug": "user-alt-4",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUserAlt5": {
+    "base": "si_User_alt_5",
+    "slug": "user-alt-5",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiUserAlt6": {
+    "base": "si_User_alt_6",
+    "slug": "user-alt-6",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiVerified": {
+    "base": "si_Verified",
+    "slug": "verified",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiVideo": {
+    "base": "si_Video",
+    "slug": "video",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiViewCompact": {
+    "base": "si_View_compact",
+    "slug": "view-compact",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiViewStream": {
+    "base": "si_View_stream",
+    "slug": "view-stream",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWallet": {
+    "base": "si_Wallet",
+    "slug": "wallet",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWalletAlt": {
+    "base": "si_Wallet_alt",
+    "slug": "wallet-alt",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWalletDetailed": {
+    "base": "si_Wallet_detailed",
+    "slug": "wallet-detailed",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWarning": {
+    "base": "si_Warning",
+    "slug": "warning",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWebcam": {
+    "base": "si_Webcam",
+    "slug": "webcam",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWidget": {
+    "base": "si_Widget",
+    "slug": "widget",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWidgetAlt1": {
+    "base": "si_Widget_alt_1",
+    "slug": "widget-alt-1",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWindow": {
+    "base": "si_Window",
+    "slug": "window",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiWrench": {
+    "base": "si_Wrench",
+    "slug": "wrench",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiYouTube": {
+    "base": "si_YouTube",
+    "slug": "youtube",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiZoomIn": {
+    "base": "si_Zoom_in",
+    "slug": "zoom-in",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  },
+  "SiZoomOut": {
+    "base": "si_Zoom_out",
+    "slug": "zoom-out",
+    "viewBox": "0 0 24 24",
+    "variants": [
+      "line",
+      "duotone",
+      "fill"
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "@sargamicons/astro",
+  "version": "1.6.7",
+  "description": "Sargam Icons as Astro components (Line, Duotone, Fill).",
+  "type": "module",
+  "files": [
+    "line",
+    "duotone",
+    "fill",
+    "index.ts"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "generate": "bun run ../../tools/generate/emit/astro.ts",
+    "build": "bun run generate",
+    "prepack": "bun run generate",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetabhi/sargam-icons.git",
+    "directory": "packages/astro"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "icons",
+    "line-icons",
+    "fill-icons",
+    "duotone-icons",
+    "iconset",
+    "svg",
+    "astro",
+    "astro-icons",
+    "astro-components",
+    "library",
+    "ui",
+    "components",
+    "sargam",
+    "sargam-icons",
+    "design-system",
+    "icon-pack",
+    "icon-library"
+  ],
+  "author": "@planetabhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planetabhi/sargam-icons/issues"
+  },
+  "homepage": "https://sargamicons.com/",
+  "exports": {
+    ".": "./index.ts",
+    "./line": "./line/index.ts",
+    "./duotone": "./duotone/index.ts",
+    "./fill": "./fill/index.ts",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "astro": ">=4"
+  }
+}

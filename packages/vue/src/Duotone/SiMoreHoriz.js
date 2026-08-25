@@ -1,0 +1,2 @@
+import { createIcon } from '../_svg.js';
+export default createIcon("SiMoreHoriz", "0 0 24 24", "<path fill=\"currentColor\" fill-opacity=\".16\" d=\"M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2M5 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2M19 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2\"/><path stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"1.5\" d=\"M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM5 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM19 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z\"/>");

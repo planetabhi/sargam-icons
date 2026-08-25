@@ -1,0 +1,17 @@
+<script>
+  const inner = "<path stroke=\"currentColor\" stroke-linejoin=\"round\" stroke-miterlimit=\"10\" stroke-width=\"1.5\" d=\"M12.467 11h-.934a.533.533 0 0 0-.533.533v.934c0 .294.239.533.533.533h.934a.533.533 0 0 0 .533-.533v-.934a.533.533 0 0 0-.533-.533ZM19.467 11h-.934a.533.533 0 0 0-.533.533v.934c0 .294.239.533.533.533h.934a.533.533 0 0 0 .533-.533v-.934a.533.533 0 0 0-.533-.533ZM5.467 11h-.934a.533.533 0 0 0-.533.533v.934c0 .294.239.533.533.533h.934A.533.533 0 0 0 6 12.467v-.934A.533.533 0 0 0 5.467 11Z\"/>";
+  let { title, ...rest } = $props();
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
+  height="1em"
+  fill="none"
+  viewBox="0 0 24 24"
+  aria-hidden={title ? undefined : 'true'}
+  {...rest}
+>
+  {#if title}<title>{title}</title>{/if}
+  {@html inner}
+</svg>

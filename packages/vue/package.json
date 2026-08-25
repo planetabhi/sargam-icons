@@ -1,0 +1,101 @@
+{
+  "name": "@sargamicons/vue",
+  "version": "1.6.7",
+  "description": "Sargam Icons as tree-shakeable Vue 3 components (Line, Duotone, Fill).",
+  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "browserslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "generate": "bun run ../../tools/generate/emit/vue.ts",
+    "build": "bun run generate && bunx --bun rollup -c rollup.config.ts && bun run gen:types",
+    "gen:types": "bun scripts/generate-types.ts",
+    "prepack": "bunx --bun rollup -c rollup.config.ts && bun run gen:types",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetabhi/sargam-icons.git",
+    "directory": "packages/vue"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "icons",
+    "line-icons",
+    "fill-icons",
+    "duotone-icons",
+    "iconset",
+    "svg",
+    "vue",
+    "vue3",
+    "vue-icons",
+    "vue-components",
+    "library",
+    "ui",
+    "components",
+    "sargam",
+    "sargam-icons",
+    "design-system",
+    "icon-pack",
+    "icon-library"
+  ],
+  "author": "@planetabhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planetabhi/sargam-icons/issues"
+  },
+  "homepage": "https://sargamicons.com/",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./line": {
+      "types": "./dist/line.d.ts",
+      "import": "./dist/line.mjs",
+      "require": "./dist/line.cjs"
+    },
+    "./duotone": {
+      "types": "./dist/duotone.d.ts",
+      "import": "./dist/duotone.mjs",
+      "require": "./dist/duotone.cjs"
+    },
+    "./fill": {
+      "types": "./dist/fill.d.ts",
+      "import": "./dist/fill.mjs",
+      "require": "./dist/fill.cjs"
+    }
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.28.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
+    "@rollup/plugin-babel": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@vue/server-renderer": "^3.5.0",
+    "rimraf": "^6.1.2",
+    "rollup": "^4.54.0",
+    "rollup-plugin-filesize": "^10.0.0",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.0"
+  }
+}

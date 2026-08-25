@@ -1,0 +1,2 @@
+import { createIcon } from '../_svg.js';
+export default createIcon("0 0 24 24", "<path fill=\"currentColor\" d=\"M20 5a1 1 0 1 1 0 2h-2v10h2a1 1 0 1 1 0 2h-6a1 1 0 1 1 0-2h2V7h-2a1 1 0 1 1 0-2zM5 11h4V7H5zm6 7a1 1 0 1 1-2 0v-5H5v5a1 1 0 1 1-2 0V6.8A1.8 1.8 0 0 1 4.8 5h4.4A1.8 1.8 0 0 1 11 6.8z\"/>");

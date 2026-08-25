@@ -1,0 +1,54 @@
+{
+  "name": "@sargamicons/static",
+  "version": "1.6.7",
+  "description": "Sargam Icons as optimized standalone SVGs, an SVG sprite, and a manifest (Line, Duotone, Fill).",
+  "type": "module",
+  "files": [
+    "icons",
+    "sprite.svg",
+    "manifest.json"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "generate": "bun run ../../tools/generate/emit/static.ts",
+    "build": "bun run generate",
+    "prepack": "bun run generate",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planetabhi/sargam-icons.git",
+    "directory": "packages/static"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "icons",
+    "line-icons",
+    "fill-icons",
+    "duotone-icons",
+    "iconset",
+    "svg",
+    "svg-sprite",
+    "sprite",
+    "static",
+    "sargam",
+    "sargam-icons",
+    "design-system",
+    "icon-pack",
+    "icon-library"
+  ],
+  "author": "@planetabhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/planetabhi/sargam-icons/issues"
+  },
+  "homepage": "https://sargamicons.com/",
+  "exports": {
+    "./sprite.svg": "./sprite.svg",
+    "./manifest.json": "./manifest.json",
+    "./icons/*": "./icons/*",
+    "./package.json": "./package.json"
+  }
+}
