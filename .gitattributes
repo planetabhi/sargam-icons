@@ -1,0 +1,10 @@
+# Exclude generated package files from GitHub language statistics
+packages/** linguist-generated=true
+packages/** linguist-vendored=true
+
+# Common package/framework file formats
+*.astro linguist-vendored=true
+*.jsx linguist-vendored=true
+*.tsx linguist-vendored=true
+*.vue linguist-vendored=true
+*.svelte linguist-vendored=true
