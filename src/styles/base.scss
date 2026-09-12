@@ -1,5 +1,6 @@
-@use "@new-ui/reset";
-@use "@new-ui/colors";
+@use '@new-ui/reset/scss' as reset;
+@use '@new-ui/colors/scss' as colors;
+@use '@new-ui/themes/scss' as themes;
 
 @font-face {
   font-family: "Jiva Mono";
@@ -318,6 +319,7 @@ main#main-content {
     content-visibility: auto;
     contain-intrinsic-size: 0 calc(9.5rem * var(--zoom, 1));
     border: 1.5px dotted var(--border-muted);
+    border-radius: 1rem;
     list-style: none;
     transition:
       flex-basis var(--resize-dur) var(--resize-ease),
@@ -372,8 +374,16 @@ main#main-content {
   z-index: 999;
   position: fixed;
   inset: 0% 0% auto;
-  border-bottom: 1px solid var(--border-muted);
-  background: var(--background);
+  background: linear-gradient(
+    to bottom,
+    var(--background) 0%,
+    color-mix(in srgb, var(--background) 60%, transparent) 55%,
+    transparent 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
 
   &-inner {
     max-width: var(--container-max-width);
@@ -551,12 +561,11 @@ main#main-content {
 
 footer {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 0 2rem 0;
   margin: 0;
   text-align: center;
   font: var(--type);
   color: var(--content-secondary);
-  border-top: 1px dotted var(--border-muted);
 
   .footer-content {
     @include container-base;
@@ -648,7 +657,6 @@ html[data-panel-open="true"] {
 
   background: var(--background-high-contrast);
   border: 2px solid var(--black);
-  box-shadow: -2px 0 0 0 var(--border);
 
   transform: translateX(100%);
   opacity: 0;
