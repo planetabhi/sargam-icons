@@ -700,7 +700,7 @@ const fullHtmlContent = `<!DOCTYPE html>
 
   <footer>
     <div class="footer-content">
-      <address>By <a href="https://x.com/planetabhi" target="_blank" rel="author noopener noreferrer">@PLANETABHI</a> &middot; ABHIMANYU RANA <time datetime="2026">2026</time> &copy;</address>
+      <address>By <a href="https://planetabhi.com/" target="_blank" rel="author noopener noreferrer">@PLANETABHI</a> &middot; ABHIMANYU RANA <time datetime="2026">2026</time> &copy;</address>
       <a href="https://www.jsdelivr.com/package/npm/sargam-icons"><img src="https://data.jsdelivr.com/v1/package/npm/sargam-icons/badge" alt="jsdelivr package download stats" style="margin: 0 auto; padding-top: 0.5rem; aspect-ratio: auto;"></a>
     </div>
   </footer>
