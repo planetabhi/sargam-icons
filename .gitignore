@@ -13,3 +13,5 @@ Icons.d.ts
 **/.DS_Store
 plans/
 skills/
+.agents/
+skills-lock.json
